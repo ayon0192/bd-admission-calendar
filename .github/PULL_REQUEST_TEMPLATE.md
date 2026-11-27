@@ -1,4 +1,3 @@
-
 ## Change Summary
 
 Describe what this pull request changes and why.
@@ -35,5 +34,4 @@ Describe what this pull request changes and why.
 
 ## Additional Notes
 
-Mention limitations, risks, or anything reviewers 
-should know.
+Mention limitations, risks, or anything reviewers should know.
