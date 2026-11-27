@@ -1,0 +1,12 @@
+# Temporary protection while Cloudflare Pages still publishes the repository root.
+# Once Pages is configured to publish dist/, these routes are not part of the release.
+/scripts/* /
+/tests/* /
+/design-reference/* /
+/.github/* /
+/.git/* /
+/.gitignore /
+/.node-version /
+/README.md /
+/netlify.toml /
+/requirements-notice-monitor.txt /
