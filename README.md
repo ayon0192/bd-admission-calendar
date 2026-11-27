@@ -1,4 +1,3 @@
-
 # BD Admission Calendar
 
 A public admission calendar for HSC 2026 candidates in Bangladesh.
