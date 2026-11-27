@@ -1,5 +1,7 @@
 # BD Admission Calendar
 
+![Repository checks](https://github.com/ayon0192/bd-admission-calendar/actions/workflows/ci.yml/badge.svg)
+
 A public admission calendar for HSC 2026 candidates in Bangladesh.
 
 ## Project Status
@@ -24,7 +26,7 @@ The project aims to publish verified university admission information, including
 
 ## Contributions
 
-Contributions are welcome through GitHub Pull Requests.
+Contributions are welcome through GitHub Pull Requests. Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting changes.
 
 Please provide reliable sources for admission-related data changes.
 
