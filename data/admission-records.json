@@ -10,16 +10,22 @@
       "admissionWebsite": "https://admission.eis.du.ac.bd",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-du-portal",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Current unit-wise Important Dates table states 28 Nov 2026 11:59 PM"
+            ]
+          },
+          {
+            "sourceId": "src-du-circular",
+            "supports": [
+              "Official DU special notice extending the application deadline"
             ]
           }
-        ]
+        ],
+        "changeNote": "The live unit-wise Important Dates table states 28 Nov 2026 at 23:59; the special notice uses ambiguous 12:00 AM wording. The explicit unit-wise table time is used and the discrepancy is recorded."
       }
     },
     {
@@ -80,13 +86,12 @@
       "admissionWebsite": "https://admission.juniv.edu",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -120,23 +125,16 @@
       "institutionGroup": "general_public_university",
       "verification": {
         "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
-          {
-            "sourceId": "src-ku-reschedule-bss",
-            "supports": [
-              "revised exam dates",
-              "A/B and C/D unit grouping"
-            ]
-          },
           {
             "sourceId": "src-ku-admission-portal",
             "supports": [
-              "official 2026–27 admission portal status"
+              "Official KU 2026–27 admission portal displays Launching Soon; no application window yet"
             ]
           }
         ],
-        "changeNote": "The test dates are revised to 4–5 February; the university stated that detailed application information would be published later."
+        "changeNote": "The official 2026–27 portal says Launching Soon; application dates remain unpublished."
       },
       "officialWebsite": "https://ku.ac.bd",
       "admissionWebsite": "https://admission.ku.ac.bd"
@@ -250,22 +248,22 @@
       "institutionGroup": "engineering_university",
       "verification": {
         "status": "tentative",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-cuet-official-date",
             "supports": [
-              "official CUET academic information page"
+              "Current official academic-information page does not display a final 2026–27 date"
             ]
           },
           {
             "sourceId": "src-cuet-date-dailysun",
             "supports": [
-              "chairman/PRO confirmation reported by Daily Sun"
+              "Daily Sun reported the 23 Jan date as probable"
             ]
           }
         ],
-        "changeNote": "CUET's own page describes 23 January 2027 as a probable date; final circular and application timeline are still pending."
+        "changeNote": "The 23 Jan 2027 date is not confirmed by a final circular; the current official page no longer displays it. Keep tentative."
       }
     },
     {
@@ -275,22 +273,34 @@
       "institutionGroup": "engineering_university",
       "verification": {
         "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-ruet-application-bss",
+            "supports": [
+              "BSS report quotes the RUET Steering Committee's 12 Dec–7 Jan application window and test format"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-application-jago",
+            "supports": [
+              "Independent Jago News report corroborates the application window"
+            ]
+          },
           {
             "sourceId": "src-ruet-date-bss",
             "supports": [
-              "Steering Committee decision and test date"
+              "BSS report on the 28 Jan 2027 test date and eligibility"
             ]
           },
           {
             "sourceId": "src-ruet-notices",
             "supports": [
-              "official university notice portal"
+              "Official RUET portal checked; 2026–27 circular not yet listed"
             ]
           }
         ],
-        "changeNote": "Admission test date 28 January 2027 announced by the Steering Committee; application timeline not yet added."
+        "changeNote": "Application dates are authority-announced from concordant BSS and Jago News reports of the Steering Committee decision; the official RUET portal still shows 2025–26. No application fee or admit-card window is inferred."
       },
       "officialWebsite": "https://ruet.ac.bd",
       "admissionWebsite": "https://admission.ruet.ac.bd"
@@ -323,13 +333,12 @@
       "institutionGroup": "specialized_public_institution",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-butex-circular",
             "supports": [
-              "2026–27 admission circular",
-              "published application/exam dates and relevant admission details"
+              "Official BUTEX circular: application, admit-card, test and probable shortlist/result schedule"
             ]
           }
         ]
@@ -343,23 +352,23 @@
       "shortName": "Bangladesh Agricultural University",
       "institutionGroup": "specialized_public_institution",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-agri-bau-circular",
+            "sourceId": "src-agri-acas-circular",
             "supports": [
-              "official BAU notice board lists the nine-university cluster circular"
+              "Official agricultural cluster circular lists Bangladesh Agricultural University among nine participating universities"
             ]
           },
           {
-            "sourceId": "src-agri-circular-copy",
+            "sourceId": "src-agri-bau-circular",
             "supports": [
-              "cluster circular application/test information"
+              "Official BAU notice board lists the cluster circular"
             ]
           }
         ],
-        "changeNote": "BAU is one of the nine institutions covered by the Agricultural Cluster circular; shared dates are shown under AGRI to avoid duplicate calendar events."
+        "changeNote": "BAU's participation in the 2026–27 agricultural cluster is confirmed by the official ACAS circular; shared dates remain under the AGRI route to avoid duplicate events."
       }
     },
     {
@@ -368,24 +377,25 @@
       "shortName": "Medical Colleges — MBBS",
       "institutionGroup": "medical_admission",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-medical-latest-star",
+            "sourceId": "src-medical-dghs-circular-2026-27",
             "supports": [
-              "DGME Director General's 23 November confirmation after Supreme Court order"
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
             ]
           },
           {
-            "sourceId": "src-medical-dgme",
+            "sourceId": "src-medical-teletalk-portal-2026-27",
             "supports": [
-              "official DGME notice index; circular still awaited"
+              "Official DGME Teletalk portal for Session 2026–27"
             ]
           }
         ],
-        "changeNote": "The 18 December test date was confirmed by the DGME Director General on 23 November after the Appellate Division stayed the High Court restriction; the full DGME circular was not yet published."
-      }
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
+      },
+      "admissionWebsite": "https://dgme.teletalk.com.bd/mbbs/main.php"
     },
     {
       "id": "BDS",
@@ -393,24 +403,25 @@
       "shortName": "Dental Colleges — BDS",
       "institutionGroup": "medical_admission",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-medical-latest-star",
+            "sourceId": "src-medical-dghs-circular-2026-27",
             "supports": [
-              "DGME Director General's 23 November confirmation after Supreme Court order"
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
             ]
           },
           {
-            "sourceId": "src-medical-dgme",
+            "sourceId": "src-medical-teletalk-portal-2026-27",
             "supports": [
-              "official DGME notice index; circular still awaited"
+              "Official DGME Teletalk portal for Session 2026–27"
             ]
           }
         ],
-        "changeNote": "The 18 December test date was confirmed by the DGME Director General on 23 November after the Appellate Division stayed the High Court restriction; the full DGME circular was not yet published."
-      }
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
+      },
+      "admissionWebsite": "https://dgme.teletalk.com.bd/mbbs/main.php"
     },
     {
       "id": "AFMC",
@@ -418,19 +429,26 @@
       "shortName": "Armed Forces Medical College",
       "institutionGroup": "specialized_public_institution",
       "verification": {
-        "status": "awaiting_official_notice",
-        "lastVerifiedAt": null,
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-afmc-circular-2026-27",
+            "supports": [
+              "Current-cycle application, fee, eligibility, admit-card and exam instructions"
+            ]
+          },
           {
             "sourceId": "src-afmc-site",
             "supports": [
-              "official portal checked",
-              "no 2026–27 circular or confirmed dates extracted in this pass"
+              "Official AFMC homepage lists the 2026–27 notice on 26 Nov 2026"
             ]
           }
-        ]
+        ],
+        "changeNote": "The official PDF page 1 summary gives the 2026–27 window (29 Nov–8 Dec 2026); page 2 repeats the previous-cycle 29 Nov 2025–4 Jan 2026 line. The current-cycle summary is used; recheck the Teletalk portal when it opens."
       },
-      "officialWebsite": "https://www.afmc.edu.bd"
+      "officialWebsite": "https://www.afmc.edu.bd",
+      "admissionWebsite": "https://afmc.teletalk.com.bd"
     },
     {
       "id": "MIST",
@@ -466,16 +484,16 @@
       "institutionGroup": "specialized_public_institution",
       "verification": {
         "status": "awaiting_official_notice",
-        "lastVerifiedAt": null,
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-iut-notices",
             "supports": [
-              "official portal checked",
-              "no 2026–27 circular or confirmed dates extracted in this pass"
+              "Official IUT admission portal checked; only the 2025–26 cycle is shown as closed"
             ]
           }
-        ]
+        ],
+        "changeNote": "No 2026–27 undergraduate admission notice or roadmap was listed on the official portal as of 28 Nov 2026."
       },
       "officialWebsite": "https://www.iutoic-dhaka.edu",
       "admissionWebsite": "https://admission.iutoic-dhaka.edu"
@@ -510,31 +528,31 @@
       "name": "কৃষি বিশ্ববিদ্যালয় গুচ্ছ",
       "shortName": "Agricultural Universities Cluster",
       "institutionGroup": "admission_cluster",
-      "admissionWebsite": "https://acas.edu.bd",
+      "admissionWebsite": "https://acas.edu.bd/",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
           {
             "sourceId": "src-agri-bau-circular",
             "supports": [
-              "official BAU notice-board circular listing"
+              "Official BAU notice board lists the agricultural cluster circular"
             ]
           },
           {
             "sourceId": "src-agri-test-date-sau",
             "supports": [
-              "official SAU cluster-test date notice"
-            ]
-          },
-          {
-            "sourceId": "src-agri-circular-copy",
-            "supports": [
-              "circular text details: application window, fee and exam time"
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
             ]
           }
         ],
-        "changeNote": "The 2026–27 circular is listed on BAU's official notice board. Exact application dates, fee and test time are recorded from the circular text archive; conflicting seat totals are deliberately omitted."
+        "changeNote": "The official ACAS circular now confirms the full schedule and total seats; prior conflicting third-party seat totals are superseded by the official 3,795-seat figure."
       },
       "officialWebsite": "https://acas.edu.bd"
     }
@@ -547,16 +565,22 @@
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-du-portal",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Current unit-wise Important Dates table states 28 Nov 2026 11:59 PM"
+            ]
+          },
+          {
+            "sourceId": "src-du-circular",
+            "supports": [
+              "Official DU special notice extending the application deadline"
             ]
           }
-        ]
+        ],
+        "changeNote": "The live unit-wise Important Dates table states 28 Nov 2026 at 23:59; the special notice uses ambiguous 12:00 AM wording. The explicit unit-wise table time is used and the discrepancy is recorded."
       }
     },
     {
@@ -611,13 +635,12 @@
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -649,23 +672,16 @@
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
         "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
-          {
-            "sourceId": "src-ku-reschedule-bss",
-            "supports": [
-              "revised exam dates",
-              "A/B and C/D unit grouping"
-            ]
-          },
           {
             "sourceId": "src-ku-admission-portal",
             "supports": [
-              "official 2026–27 admission portal status"
+              "Official KU 2026–27 admission portal displays Launching Soon; no application window yet"
             ]
           }
         ],
-        "changeNote": "The test dates are revised to 4–5 February; the university stated that detailed application information would be published later."
+        "changeNote": "The official 2026–27 portal says Launching Soon; application dates remain unpublished."
       }
     },
     {
@@ -775,22 +791,22 @@
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
         "status": "tentative",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-cuet-official-date",
             "supports": [
-              "official CUET academic information page"
+              "Current official academic-information page does not display a final 2026–27 date"
             ]
           },
           {
             "sourceId": "src-cuet-date-dailysun",
             "supports": [
-              "chairman/PRO confirmation reported by Daily Sun"
+              "Daily Sun reported the 23 Jan date as probable"
             ]
           }
         ],
-        "changeNote": "CUET's own page describes 23 January 2027 as a probable date; final circular and application timeline are still pending."
+        "changeNote": "The 23 Jan 2027 date is not confirmed by a final circular; the current official page no longer displays it. Keep tentative."
       }
     },
     {
@@ -800,22 +816,34 @@
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
         "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-ruet-application-bss",
+            "supports": [
+              "BSS report quotes the RUET Steering Committee's 12 Dec–7 Jan application window and test format"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-application-jago",
+            "supports": [
+              "Independent Jago News report corroborates the application window"
+            ]
+          },
           {
             "sourceId": "src-ruet-date-bss",
             "supports": [
-              "Steering Committee decision and test date"
+              "BSS report on the 28 Jan 2027 test date and eligibility"
             ]
           },
           {
             "sourceId": "src-ruet-notices",
             "supports": [
-              "official university notice portal"
+              "Official RUET portal checked; 2026–27 circular not yet listed"
             ]
           }
         ],
-        "changeNote": "Admission test date 28 January 2027 announced by the Steering Committee; application timeline not yet added."
+        "changeNote": "Application dates are authority-announced from concordant BSS and Jago News reports of the Steering Committee decision; the official RUET portal still shows 2025–26. No application fee or admit-card window is inferred."
       }
     },
     {
@@ -844,13 +872,12 @@
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-butex-circular",
             "supports": [
-              "2026–27 admission circular",
-              "published application/exam dates and relevant admission details"
+              "Official BUTEX circular: application, admit-card, test and probable shortlist/result schedule"
             ]
           }
         ]
@@ -862,23 +889,23 @@
       "session": "2026-27",
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-agri-bau-circular",
+            "sourceId": "src-agri-acas-circular",
             "supports": [
-              "official BAU notice board lists the nine-university cluster circular"
+              "Official agricultural cluster circular lists Bangladesh Agricultural University among nine participating universities"
             ]
           },
           {
-            "sourceId": "src-agri-circular-copy",
+            "sourceId": "src-agri-bau-circular",
             "supports": [
-              "cluster circular application/test information"
+              "Official BAU notice board lists the cluster circular"
             ]
           }
         ],
-        "changeNote": "BAU is one of the nine institutions covered by the Agricultural Cluster circular; shared dates are shown under AGRI to avoid duplicate calendar events."
+        "changeNote": "BAU participates in the agricultural cluster; shared dates remain under the AGRI route to avoid duplicate events."
       }
     },
     {
@@ -887,23 +914,23 @@
       "session": "2026-27",
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-medical-latest-star",
+            "sourceId": "src-medical-dghs-circular-2026-27",
             "supports": [
-              "DGME Director General's 23 November confirmation after Supreme Court order"
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
             ]
           },
           {
-            "sourceId": "src-medical-dgme",
+            "sourceId": "src-medical-teletalk-portal-2026-27",
             "supports": [
-              "official DGME notice index; circular still awaited"
+              "Official DGME Teletalk portal for Session 2026–27"
             ]
           }
         ],
-        "changeNote": "The 18 December test date was confirmed by the DGME Director General on 23 November after the Appellate Division stayed the High Court restriction; the full DGME circular was not yet published."
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
       }
     },
     {
@@ -912,23 +939,23 @@
       "session": "2026-27",
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-medical-latest-star",
+            "sourceId": "src-medical-dghs-circular-2026-27",
             "supports": [
-              "DGME Director General's 23 November confirmation after Supreme Court order"
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
             ]
           },
           {
-            "sourceId": "src-medical-dgme",
+            "sourceId": "src-medical-teletalk-portal-2026-27",
             "supports": [
-              "official DGME notice index; circular still awaited"
+              "Official DGME Teletalk portal for Session 2026–27"
             ]
           }
         ],
-        "changeNote": "The 18 December test date was confirmed by the DGME Director General on 23 November after the Appellate Division stayed the High Court restriction; the full DGME circular was not yet published."
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
       }
     },
     {
@@ -937,16 +964,23 @@
       "session": "2026-27",
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
-        "status": "awaiting_official_notice",
-        "lastVerifiedAt": null,
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-afmc-circular-2026-27",
+            "supports": [
+              "Current-cycle application, fee, eligibility, admit-card and exam instructions"
+            ]
+          },
           {
             "sourceId": "src-afmc-site",
             "supports": [
-              "official admission portal checked; 2026–27 admission details not confirmed"
+              "Official AFMC homepage lists the 2026–27 notice on 26 Nov 2026"
             ]
           }
-        ]
+        ],
+        "changeNote": "The official PDF page 1 summary gives the 2026–27 window (29 Nov–8 Dec 2026); page 2 repeats the previous-cycle 29 Nov 2025–4 Jan 2026 line. The current-cycle summary is used; recheck the Teletalk portal when it opens."
       }
     },
     {
@@ -981,15 +1015,16 @@
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
         "status": "awaiting_official_notice",
-        "lastVerifiedAt": null,
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-iut-notices",
             "supports": [
-              "official admission portal checked; 2026–27 admission details not confirmed"
+              "Official IUT admission portal checked; only the 2025–26 cycle is shown as closed"
             ]
           }
-        ]
+        ],
+        "changeNote": "No 2026–27 undergraduate admission notice or roadmap was listed on the official portal as of 28 Nov 2026."
       }
     },
     {
@@ -1023,29 +1058,29 @@
       "session": "2026-27",
       "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
           {
             "sourceId": "src-agri-bau-circular",
             "supports": [
-              "official BAU notice-board circular listing"
+              "Official BAU notice board lists the agricultural cluster circular"
             ]
           },
           {
             "sourceId": "src-agri-test-date-sau",
             "supports": [
-              "official SAU cluster-test date notice"
-            ]
-          },
-          {
-            "sourceId": "src-agri-circular-copy",
-            "supports": [
-              "circular text details: application window, fee and exam time"
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
             ]
           }
         ],
-        "changeNote": "The 2026–27 circular is listed on BAU's official notice board. Exact application dates, fee and test time are recorded from the circular text archive; conflicting seat totals are deliberately omitted."
+        "changeNote": "The official ACAS circular now confirms the full schedule and total seats; prior conflicting third-party seat totals are superseded by the official 3,795-seat figure."
       }
     }
   ],
@@ -1057,7 +1092,7 @@
       "application": {
         "applicationUrl": "https://admission.eis.du.ac.bd",
         "opensAt": "2026-11-11T12:00:00+06:00",
-        "closesAt": "2026-11-28T00:00:00+06:00"
+        "closesAt": "2026-11-28T23:59:00+06:00"
       },
       "exam": {
         "startsAt": "2026-12-05T10:00:00+06:00",
@@ -1072,16 +1107,22 @@
       "circularIds": [],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-du-portal",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Current unit-wise Important Dates table states 28 Nov 2026 11:59 PM"
+            ]
+          },
+          {
+            "sourceId": "src-du-circular",
+            "supports": [
+              "Official DU special notice extending the application deadline"
             ]
           }
-        ]
+        ],
+        "changeNote": "The live unit-wise Important Dates table states 28 Nov 2026 at 23:59; the special notice uses ambiguous 12:00 AM wording. The explicit unit-wise table time is used and the discrepancy is recorded."
       }
     },
     {
@@ -1091,7 +1132,7 @@
       "application": {
         "applicationUrl": "https://admission.eis.du.ac.bd",
         "opensAt": "2026-11-11T12:00:00+06:00",
-        "closesAt": "2026-11-28T00:00:00+06:00"
+        "closesAt": "2026-11-28T23:59:00+06:00"
       },
       "exam": {
         "startsAt": "2026-12-12T11:00:00+06:00",
@@ -1106,16 +1147,22 @@
       "circularIds": [],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-du-portal",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Current unit-wise Important Dates table states 28 Nov 2026 11:59 PM"
+            ]
+          },
+          {
+            "sourceId": "src-du-circular",
+            "supports": [
+              "Official DU special notice extending the application deadline"
             ]
           }
-        ]
+        ],
+        "changeNote": "The live unit-wise Important Dates table states 28 Nov 2026 at 23:59; the special notice uses ambiguous 12:00 AM wording. The explicit unit-wise table time is used and the discrepancy is recorded."
       }
     },
     {
@@ -1125,7 +1172,7 @@
       "application": {
         "applicationUrl": "https://admission.eis.du.ac.bd",
         "opensAt": "2026-11-11T12:00:00+06:00",
-        "closesAt": "2026-11-28T00:00:00+06:00"
+        "closesAt": "2026-11-28T23:59:00+06:00"
       },
       "exam": {
         "startsAt": "2026-12-19T11:00:00+06:00",
@@ -1140,16 +1187,22 @@
       "circularIds": [],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-du-portal",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Current unit-wise Important Dates table states 28 Nov 2026 11:59 PM"
+            ]
+          },
+          {
+            "sourceId": "src-du-circular",
+            "supports": [
+              "Official DU special notice extending the application deadline"
             ]
           }
-        ]
+        ],
+        "changeNote": "The live unit-wise Important Dates table states 28 Nov 2026 at 23:59; the special notice uses ambiguous 12:00 AM wording. The explicit unit-wise table time is used and the discrepancy is recorded."
       }
     },
     {
@@ -1159,7 +1212,7 @@
       "application": {
         "applicationUrl": "https://admission.eis.du.ac.bd",
         "opensAt": "2026-11-11T12:00:00+06:00",
-        "closesAt": "2026-11-28T00:00:00+06:00"
+        "closesAt": "2026-11-28T23:59:00+06:00"
       },
       "exam": {
         "startsAt": "2026-12-22T11:00:00+06:00",
@@ -1174,16 +1227,22 @@
       "circularIds": [],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-du-portal",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Current unit-wise Important Dates table states 28 Nov 2026 11:59 PM"
+            ]
+          },
+          {
+            "sourceId": "src-du-circular",
+            "supports": [
+              "Official DU special notice extending the application deadline"
             ]
           }
-        ]
+        ],
+        "changeNote": "The live unit-wise Important Dates table states 28 Nov 2026 at 23:59; the special notice uses ambiguous 12:00 AM wording. The explicit unit-wise table time is used and the discrepancy is recorded."
       }
     },
     {
@@ -1193,7 +1252,7 @@
       "application": {
         "applicationUrl": "https://admission.eis.du.ac.bd",
         "opensAt": "2026-11-11T12:00:00+06:00",
-        "closesAt": "2026-11-28T00:00:00+06:00"
+        "closesAt": "2026-11-28T23:59:00+06:00"
       },
       "exam": {
         "startsAt": "2026-12-26T11:00:00+06:00",
@@ -1208,16 +1267,22 @@
       "circularIds": [],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-du-portal",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Current unit-wise Important Dates table states 28 Nov 2026 11:59 PM"
+            ]
+          },
+          {
+            "sourceId": "src-du-circular",
+            "supports": [
+              "Official DU special notice extending the application deadline"
             ]
           }
-        ]
+        ],
+        "changeNote": "The live unit-wise Important Dates table states 28 Nov 2026 at 23:59; the special notice uses ambiguous 12:00 AM wording. The explicit unit-wise table time is used and the discrepancy is recorded."
       }
     },
     {
@@ -1321,13 +1386,12 @@
       ],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -1353,13 +1417,12 @@
       ],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -1385,13 +1448,12 @@
       ],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -1417,13 +1479,12 @@
       ],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -1449,13 +1510,12 @@
       ],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -1481,13 +1541,12 @@
       ],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -1513,13 +1572,12 @@
       ],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -1790,20 +1848,24 @@
         "shortlistExpectedOn": "2027-01-15",
         "shortlistDateTentative": true,
         "resultExpectedOn": "2027-02-15",
-        "resultDateTentative": true
+        "resultDateTentative": true,
+        "admitCard": {
+          "availableFrom": "2027-01-17T10:00:00+06:00",
+          "availableUntil": "2027-01-24T11:59:00+06:00",
+          "url": "http://but.teletalk.com.bd"
+        }
       },
       "circularIds": [
         "BUTEX-CIRCULAR-2026-27"
       ],
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-butex-circular",
             "supports": [
-              "2026–27 admission circular",
-              "published application/exam dates and relevant admission details"
+              "Official BUTEX circular: application, admit-card, test and probable shortlist/result schedule"
             ]
           }
         ]
@@ -2361,31 +2423,62 @@
       "cycleId": "RUET-2026-27",
       "unitGroup": "স্নাতক প্রথম বর্ষ",
       "application": {
-        "applicationUrl": "https://admission.ruet.ac.bd/"
+        "applicationUrl": "https://admission.ruet.ac.bd/",
+        "opensOn": "2026-12-12",
+        "closesOn": "2027-01-07"
       },
       "exam": {
         "dateOnly": "2027-01-28",
-        "note": "MCQ; centres RUET and BUET."
+        "note": "Reported test format: 80 MCQs, 400 marks in Higher Mathematics, Physics, Chemistry and English. Group Kha also has a 200-mark Freehand Drawing and Visual Spatial Intelligence test. BSS reports more than 1,200 seats; the exact seat count is not stated here."
       },
       "circularIds": [],
       "verification": {
         "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-ruet-application-bss",
+            "supports": [
+              "BSS report quotes the RUET Steering Committee's 12 Dec–7 Jan application window and test format"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-application-jago",
+            "supports": [
+              "Independent Jago News report corroborates the application window"
+            ]
+          },
           {
             "sourceId": "src-ruet-date-bss",
             "supports": [
-              "Steering Committee decision and test date"
+              "BSS report on the 28 Jan 2027 test date and eligibility"
             ]
           },
           {
             "sourceId": "src-ruet-notices",
             "supports": [
-              "official university notice portal"
+              "Official RUET portal checked; 2026–27 circular not yet listed"
             ]
           }
         ],
-        "changeNote": "RUET Steering Committee-এর সিদ্ধান্ত অনুযায়ী ২৮ জানুয়ারি ২০২৭ পরীক্ষা; আবেদন সূচি প্রকাশিত হলে হালনাগাদ করতে হবে।"
+        "changeNote": "Application dates are authority-announced from concordant BSS and Jago News reports of the Steering Committee decision; the official RUET portal still shows 2025–26. No application fee or admit-card window is inferred."
+      },
+      "eligibility": {
+        "minimumSscGpa": 4,
+        "minimumSubjectGradePointsTotal": 13,
+        "minimumGradePointPerRequiredSubject": 4,
+        "requiredHscSubjects": [
+          "Higher Mathematics",
+          "Physics",
+          "Chemistry"
+        ],
+        "sscPassingYears": [
+          2023,
+          2024
+        ],
+        "hscPassingYears": [
+          2026
+        ]
       }
     },
     {
@@ -2401,36 +2494,61 @@
       "exam": {
         "dateOnly": "2027-01-02",
         "startsAt": "2027-01-02T11:00:00+06:00",
-        "endsAt": "2027-01-02T12:00:00+06:00"
+        "endsAt": "2027-01-02T12:00:00+06:00",
+        "syllabus": "HSC 2026 syllabus: English 10, Zoology 15, Botany 15, Physics 20, Chemistry 20 and Mathematics 20 (100-mark MCQ).",
+        "note": "0.25 mark deducted per wrong answer. The official circular confirms 3,795 total seats across nine public universities; see the linked circular for the university-wise distribution.",
+        "admitCard": {
+          "url": "https://acas.edu.bd/"
+        }
       },
       "circularIds": [
         "AGRI-CIRCULAR-2026-27"
       ],
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
           {
             "sourceId": "src-agri-bau-circular",
             "supports": [
-              "official BAU notice-board circular listing"
+              "Official BAU notice board lists the agricultural cluster circular"
             ]
           },
           {
             "sourceId": "src-agri-test-date-sau",
             "supports": [
-              "official SAU cluster-test date notice"
-            ]
-          },
-          {
-            "sourceId": "src-agri-circular-copy",
-            "supports": [
-              "circular text details: application window, fee and exam time"
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
             ]
           }
         ],
-        "changeNote": "BAU-এর সরকারি নোটিশ বোর্ডে গুচ্ছ সার্কুলার তালিকাভুক্ত; সময়সীমা ও ফি সার্কুলার কপি এবং পরীক্ষার তারিখ সরকারি SAU নোটিশ থেকে নেওয়া হয়েছে।"
-      }
+        "changeNote": "The official ACAS circular now confirms the full schedule and total seats; prior conflicting third-party seat totals are superseded by the official 3,795-seat figure."
+      },
+      "eligibility": {
+        "minimumSscGpa": 4,
+        "minimumHscGpa": 4,
+        "requiredHscSubjects": [
+          "Biology",
+          "Chemistry",
+          "Physics",
+          "Mathematics"
+        ],
+        "sscPassingYears": [
+          2022,
+          2023,
+          2024
+        ],
+        "hscPassingYears": [
+          2025,
+          2026
+        ]
+      },
+      "seats": 3795
     },
     {
       "id": "BAU-AGRI-2026-27",
@@ -2472,58 +2590,122 @@
       "id": "MBBS-ALL-2026-27",
       "cycleId": "MBBS-2026-27",
       "unitGroup": "MBBS ভর্তি পরীক্ষা",
-      "application": {},
-      "exam": {
-        "dateOnly": "2026-12-18"
+      "application": {
+        "applicationUrl": "https://dgme.teletalk.com.bd/mbbs/",
+        "opensAt": "2026-11-25T18:30:00+06:00",
+        "closesAt": "2026-12-03T23:59:00+06:00",
+        "feeBDT": 1000,
+        "feePaymentDeadlineOn": "2026-12-04"
       },
-      "circularIds": [],
+      "exam": {
+        "dateOnly": "2026-12-18",
+        "startsAt": "2026-12-18T10:00:00+06:00",
+        "endsAt": "2026-12-18T11:15:00+06:00",
+        "durationMinutes": 75,
+        "syllabus": "HSC syllabus",
+        "note": "100 MCQ, 100 marks, 75 minutes: Biology 30, Chemistry 25, Physics 15, English 15 and General Knowledge/Professional Aptitude/Mental Qualities 15. 0.25 mark deducted per wrong answer; pass mark 40. Merit also includes SSC and HSC GPA.",
+        "admitCard": {
+          "url": "https://dgme.teletalk.com.bd/mbbs/"
+        }
+      },
+      "circularIds": [
+        "MBBS-CIRCULAR-2026-27"
+      ],
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-medical-latest-star",
+            "sourceId": "src-medical-dghs-circular-2026-27",
             "supports": [
-              "DGME Director General's 23 November confirmation after Supreme Court order"
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
             ]
           },
           {
-            "sourceId": "src-medical-dgme",
+            "sourceId": "src-medical-teletalk-portal-2026-27",
             "supports": [
-              "official DGME notice index; circular still awaited"
+              "Official DGME Teletalk portal for Session 2026–27"
             ]
           }
         ],
-        "changeNote": "DGME মহাপরিচালকের ২৩ নভেম্বরের বক্তব্য অনুযায়ী আদালতের আদেশের পর ১৮ ডিসেম্বর পরীক্ষা নির্ধারিত; পূর্ণ DGME সার্কুলার প্রকাশিত হলে পুনরায় যাচাই করতে হবে।"
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
+      },
+      "eligibility": {
+        "minimumCombinedGpa": 8.5,
+        "requiredHscSubjects": [
+          "Biology",
+          "Physics",
+          "Chemistry"
+        ],
+        "minimumBiologyGpa": 3.5,
+        "hscPassingYears": [
+          2025,
+          2026
+        ],
+        "sscPassingYearMin": 2023,
+        "specialQuotaMinimumCombinedGpa": 8,
+        "specialQuotaMinimumBiologyGpa": 3
       }
     },
     {
       "id": "BDS-ALL-2026-27",
       "cycleId": "BDS-2026-27",
       "unitGroup": "BDS ভর্তি পরীক্ষা",
-      "application": {},
-      "exam": {
-        "dateOnly": "2026-12-18"
+      "application": {
+        "applicationUrl": "https://dgme.teletalk.com.bd/mbbs/",
+        "opensAt": "2026-11-25T18:30:00+06:00",
+        "closesAt": "2026-12-03T23:59:00+06:00",
+        "feeBDT": 1000,
+        "feePaymentDeadlineOn": "2026-12-04"
       },
-      "circularIds": [],
+      "exam": {
+        "dateOnly": "2026-12-18",
+        "startsAt": "2026-12-18T10:00:00+06:00",
+        "endsAt": "2026-12-18T11:15:00+06:00",
+        "durationMinutes": 75,
+        "syllabus": "HSC syllabus",
+        "note": "100 MCQ, 100 marks, 75 minutes: Biology 30, Chemistry 25, Physics 15, English 15 and General Knowledge/Professional Aptitude/Mental Qualities 15. 0.25 mark deducted per wrong answer; pass mark 40. Merit also includes SSC and HSC GPA.",
+        "admitCard": {
+          "url": "https://dgme.teletalk.com.bd/mbbs/"
+        }
+      },
+      "circularIds": [
+        "BDS-CIRCULAR-2026-27"
+      ],
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-medical-latest-star",
+            "sourceId": "src-medical-dghs-circular-2026-27",
             "supports": [
-              "DGME Director General's 23 November confirmation after Supreme Court order"
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
             ]
           },
           {
-            "sourceId": "src-medical-dgme",
+            "sourceId": "src-medical-teletalk-portal-2026-27",
             "supports": [
-              "official DGME notice index; circular still awaited"
+              "Official DGME Teletalk portal for Session 2026–27"
             ]
           }
         ],
-        "changeNote": "DGME মহাপরিচালকের ২৩ নভেম্বরের বক্তব্য অনুযায়ী আদালতের আদেশের পর ১৮ ডিসেম্বর পরীক্ষা নির্ধারিত; পূর্ণ DGME সার্কুলার প্রকাশিত হলে পুনরায় যাচাই করতে হবে।"
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
+      },
+      "eligibility": {
+        "minimumCombinedGpa": 8.5,
+        "requiredHscSubjects": [
+          "Biology",
+          "Physics",
+          "Chemistry"
+        ],
+        "minimumBiologyGpa": 3.5,
+        "hscPassingYears": [
+          2025,
+          2026
+        ],
+        "sscPassingYearMin": 2023,
+        "specialQuotaMinimumCombinedGpa": 8,
+        "specialQuotaMinimumBiologyGpa": 3
       }
     },
     {
@@ -2539,22 +2721,22 @@
       "circularIds": [],
       "verification": {
         "status": "tentative",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-cuet-official-date",
             "supports": [
-              "official CUET academic information page"
+              "Current official academic-information page does not display a final 2026–27 date"
             ]
           },
           {
             "sourceId": "src-cuet-date-dailysun",
             "supports": [
-              "chairman/PRO confirmation reported by Daily Sun"
+              "Daily Sun reported the 23 Jan date as probable"
             ]
           }
         ],
-        "changeNote": "Official page labels the date as probable; do not treat as final."
+        "changeNote": "No final 2026–27 circular was found; retain the 23 Jan date as tentative only."
       }
     },
     {
@@ -2816,6 +2998,73 @@
         ],
         "changeNote": "PUST GST গুচ্ছের সদস্য; ইউনিটভিত্তিক যৌথ পরীক্ষার তারিখ GST রুটে দেখানো হয়েছে, পৃথক পরীক্ষা ধরে নেওয়া হয়নি।"
       }
+    },
+    {
+      "id": "AFMC-ALL-2026-27",
+      "cycleId": "AFMC-2026-27",
+      "unitGroup": "AFMC + 5 Army Medical Colleges + Navy Medical College",
+      "application": {
+        "applicationUrl": "https://afmc.teletalk.com.bd",
+        "opensAt": "2026-11-29T12:00:00+06:00",
+        "closesAt": "2026-12-08T23:59:00+06:00",
+        "feeBDT": 1000,
+        "feePaymentDeadlineHours": 24,
+        "paymentMethod": "Prepaid Teletalk; payment must be completed within 24 hours of application"
+      },
+      "eligibility": {
+        "minimumCombinedGpa": 8.5,
+        "requiredHscSubjects": [
+          "Biology",
+          "Physics",
+          "Chemistry"
+        ],
+        "minimumBiologyGpa": 3.5,
+        "hscPassingYears": [
+          2025,
+          2026
+        ],
+        "sscPassingYearMin": 2023,
+        "specialQuotaMinimumCombinedGpa": 8,
+        "specialQuotaMinimumExamGpa": 3,
+        "maximumAge": 20,
+        "ageAsOf": "2026-07-01",
+        "citizenship": "Bangladeshi",
+        "maritalStatus": "Unmarried"
+      },
+      "exam": {
+        "dateOnly": "2027-01-15",
+        "startsAt": "2027-01-15T10:00:00+06:00",
+        "endsAt": "2027-01-15T11:15:00+06:00",
+        "durationMinutes": 75,
+        "syllabus": "HSC/সমমানের পাঠ্যসূচি",
+        "note": "100-mark MCQ: Biology 30, Chemistry 25, Physics 15, English 15, General Knowledge/Professional Aptitude/Mental Qualities 15; 0.25 mark deducted per wrong answer; minimum qualifying mark 40. Seven cantonment centres: Dhaka, Chattogram, Cumilla, Jashore, Bogura, Rangpur and BNS Isa Khan (Patenga).",
+        "admitCard": {
+          "availableFrom": "2027-01-12T10:00:00+06:00",
+          "url": "https://afmc.teletalk.com.bd"
+        }
+      },
+      "circularIds": [
+        "AFMC-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-afmc-circular-2026-27",
+            "supports": [
+              "Current-cycle application, fee, eligibility, admit-card and exam instructions"
+            ]
+          },
+          {
+            "sourceId": "src-afmc-site",
+            "supports": [
+              "Official AFMC homepage lists the 2026–27 notice on 26 Nov 2026"
+            ]
+          }
+        ],
+        "changeNote": "The official PDF page 1 summary gives the 2026–27 window (29 Nov–8 Dec 2026); page 2 repeats the previous-cycle 29 Nov 2025–4 Jan 2026 line. The current-cycle summary is used; recheck the Teletalk portal when it opens."
+      }
     }
   ],
   "events": [
@@ -2847,20 +3096,26 @@
       "type": "application_deadline",
       "title": "অনলাইন আবেদন ও ফি জমার শেষ সময়",
       "appliesToAllUnits": true,
-      "startsAt": "2026-11-28T00:00:00+06:00",
+      "startsAt": "2026-11-28T23:59:00+06:00",
       "dateOnly": "2026-11-28",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-du-portal",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Current unit-wise Important Dates table states 28 Nov 2026 11:59 PM"
+            ]
+          },
+          {
+            "sourceId": "src-du-circular",
+            "supports": [
+              "Official DU special notice extending the application deadline"
             ]
           }
-        ]
+        ],
+        "changeNote": "The live unit-wise Important Dates table states 28 Nov 2026 at 23:59; the special notice uses ambiguous 12:00 AM wording. The explicit unit-wise table time is used and the discrepancy is recorded."
       }
     },
     {
@@ -3315,13 +3570,12 @@
       "dateOnly": "2026-11-22",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -3337,13 +3591,12 @@
       "dateOnly": "2026-12-15",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -3358,13 +3611,12 @@
       "dateOnly": "2026-12-25",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
         ]
@@ -3383,16 +3635,16 @@
       },
       "verification": {
         "status": "tentative",
-        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-ju-circular",
             "supports": [
-              "2026–27 admission information",
-              "published dates and admission process"
+              "Official JU circular: application dates, admit-card start and probable 10–21 Jan test window"
             ]
           }
-        ]
+        ],
+        "changeNote": "The official circular describes the 10–21 Jan 2027 exam window as probable; keep tentative."
       }
     },
     {
@@ -3670,16 +3922,16 @@
       "dateOnly": "2027-01-15",
       "verification": {
         "status": "tentative",
-        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-butex-circular",
             "supports": [
-              "2026–27 admission circular",
-              "published application/exam dates and relevant admission details"
+              "Official BUTEX circular: application, admit-card, test and probable shortlist/result schedule"
             ]
           }
-        ]
+        ],
+        "changeNote": "The official circular marks this date as probable; keep it tentative."
       }
     },
     {
@@ -3693,13 +3945,12 @@
       "dateOnly": "2027-01-29",
       "verification": {
         "status": "officially_confirmed",
-        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-butex-circular",
             "supports": [
-              "2026–27 admission circular",
-              "published application/exam dates and relevant admission details"
+              "Official BUTEX circular: application, admit-card, test and probable shortlist/result schedule"
             ]
           }
         ]
@@ -3714,16 +3965,16 @@
       "dateOnly": "2027-02-15",
       "verification": {
         "status": "tentative",
-        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-butex-circular",
             "supports": [
-              "2026–27 admission circular",
-              "published application/exam dates and relevant admission details"
+              "Official BUTEX circular: application, admit-card, test and probable shortlist/result schedule"
             ]
           }
-        ]
+        ],
+        "changeNote": "The official circular marks this date as probable; keep it tentative."
       }
     },
     {
@@ -4423,22 +4674,34 @@
       "dateOnly": "2027-01-28",
       "verification": {
         "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-ruet-application-bss",
+            "supports": [
+              "BSS report quotes the RUET Steering Committee's 12 Dec–7 Jan application window and test format"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-application-jago",
+            "supports": [
+              "Independent Jago News report corroborates the application window"
+            ]
+          },
           {
             "sourceId": "src-ruet-date-bss",
             "supports": [
-              "Steering Committee decision and test date"
+              "BSS report on the 28 Jan 2027 test date and eligibility"
             ]
           },
           {
             "sourceId": "src-ruet-notices",
             "supports": [
-              "official university notice portal"
+              "Official RUET portal checked; 2026–27 circular not yet listed"
             ]
           }
         ],
-        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+        "changeNote": "Application dates are authority-announced from concordant BSS and Jago News reports of the Steering Committee decision; the official RUET portal still shows 2025–26. No application fee or admit-card window is inferred."
       }
     },
     {
@@ -4449,29 +4712,29 @@
       "appliesToAllUnits": true,
       "dateOnly": "2026-11-25",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
           {
             "sourceId": "src-agri-bau-circular",
             "supports": [
-              "official BAU notice-board circular listing"
+              "Official BAU notice board lists the agricultural cluster circular"
             ]
           },
           {
             "sourceId": "src-agri-test-date-sau",
             "supports": [
-              "official SAU cluster-test date notice"
-            ]
-          },
-          {
-            "sourceId": "src-agri-circular-copy",
-            "supports": [
-              "circular text details: application window, fee and exam time"
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
             ]
           }
         ],
-        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+        "changeNote": "The official ACAS circular now confirms the full schedule and total seats; prior conflicting third-party seat totals are superseded by the official 3,795-seat figure."
       }
     },
     {
@@ -4482,29 +4745,29 @@
       "appliesToAllUnits": true,
       "dateOnly": "2026-12-15",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
           {
             "sourceId": "src-agri-bau-circular",
             "supports": [
-              "official BAU notice-board circular listing"
+              "Official BAU notice board lists the agricultural cluster circular"
             ]
           },
           {
             "sourceId": "src-agri-test-date-sau",
             "supports": [
-              "official SAU cluster-test date notice"
-            ]
-          },
-          {
-            "sourceId": "src-agri-circular-copy",
-            "supports": [
-              "circular text details: application window, fee and exam time"
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
             ]
           }
         ],
-        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+        "changeNote": "The official ACAS circular now confirms the full schedule and total seats; prior conflicting third-party seat totals are superseded by the official 3,795-seat figure."
       }
     },
     {
@@ -4517,29 +4780,29 @@
       "endsAt": "2027-01-02T12:00:00+06:00",
       "dateOnly": "2027-01-02",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
           {
             "sourceId": "src-agri-bau-circular",
             "supports": [
-              "official BAU notice-board circular listing"
+              "Official BAU notice board lists the agricultural cluster circular"
             ]
           },
           {
             "sourceId": "src-agri-test-date-sau",
             "supports": [
-              "official SAU cluster-test date notice"
-            ]
-          },
-          {
-            "sourceId": "src-agri-circular-copy",
-            "supports": [
-              "circular text details: application window, fee and exam time"
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
             ]
           }
         ],
-        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+        "changeNote": "The official ACAS circular now confirms the full schedule and total seats; prior conflicting third-party seat totals are superseded by the official 3,795-seat figure."
       }
     },
     {
@@ -4550,24 +4813,26 @@
       "admissionDetailId": "MBBS-ALL-2026-27",
       "dateOnly": "2026-12-18",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-medical-latest-star",
+            "sourceId": "src-medical-dghs-circular-2026-27",
             "supports": [
-              "DGME Director General's 23 November confirmation after Supreme Court order"
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
             ]
           },
           {
-            "sourceId": "src-medical-dgme",
+            "sourceId": "src-medical-teletalk-portal-2026-27",
             "supports": [
-              "official DGME notice index; circular still awaited"
+              "Official DGME Teletalk portal for Session 2026–27"
             ]
           }
         ],
-        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
-      }
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
+      },
+      "startsAt": "2026-12-18T10:00:00+06:00",
+      "endsAt": "2026-12-18T11:15:00+06:00"
     },
     {
       "id": "BDS-EXAM",
@@ -4577,24 +4842,26 @@
       "admissionDetailId": "BDS-ALL-2026-27",
       "dateOnly": "2026-12-18",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
-            "sourceId": "src-medical-latest-star",
+            "sourceId": "src-medical-dghs-circular-2026-27",
             "supports": [
-              "DGME Director General's 23 November confirmation after Supreme Court order"
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
             ]
           },
           {
-            "sourceId": "src-medical-dgme",
+            "sourceId": "src-medical-teletalk-portal-2026-27",
             "supports": [
-              "official DGME notice index; circular still awaited"
+              "Official DGME Teletalk portal for Session 2026–27"
             ]
           }
         ],
-        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
-      }
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
+      },
+      "startsAt": "2026-12-18T10:00:00+06:00",
+      "endsAt": "2026-12-18T11:15:00+06:00"
     },
     {
       "id": "CUET-EXAM-TENTATIVE",
@@ -4605,22 +4872,22 @@
       "dateOnly": "2027-01-23",
       "verification": {
         "status": "tentative",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
           {
             "sourceId": "src-cuet-official-date",
             "supports": [
-              "official CUET academic information page"
+              "Current official academic-information page does not display a final 2026–27 date"
             ]
           },
           {
             "sourceId": "src-cuet-date-dailysun",
             "supports": [
-              "chairman/PRO confirmation reported by Daily Sun"
+              "Daily Sun reported the 23 Jan date as probable"
             ]
           }
         ],
-        "changeNote": "সম্ভাব্য; চূড়ান্ত বিজ্ঞপ্তির অপেক্ষায়।"
+        "changeNote": "No final 2026–27 circular was found; retain the 23 Jan date as tentative only."
       }
     },
     {
@@ -4908,6 +5175,625 @@
         ],
         "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
       }
+    },
+    {
+      "id": "AFMC-APP-OPEN",
+      "cycleId": "AFMC-2026-27",
+      "admissionDetailId": "AFMC-ALL-2026-27",
+      "type": "application_open",
+      "title": "AFMC ও সংশ্লিষ্ট মেডিকেল কলেজে আবেদন শুরু",
+      "dateOnly": "2026-11-29",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-afmc-circular-2026-27",
+            "supports": [
+              "Current-cycle application, fee, eligibility, admit-card and exam instructions"
+            ]
+          },
+          {
+            "sourceId": "src-afmc-site",
+            "supports": [
+              "Official AFMC homepage lists the 2026–27 notice on 26 Nov 2026"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2026-11-29T12:00:00+06:00"
+    },
+    {
+      "id": "AFMC-APP-DEADLINE",
+      "cycleId": "AFMC-2026-27",
+      "admissionDetailId": "AFMC-ALL-2026-27",
+      "type": "application_deadline",
+      "title": "AFMC ও সংশ্লিষ্ট মেডিকেল কলেজে আবেদনের শেষ সময়",
+      "dateOnly": "2026-12-08",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-afmc-circular-2026-27",
+            "supports": [
+              "Current-cycle application, fee, eligibility, admit-card and exam instructions"
+            ]
+          },
+          {
+            "sourceId": "src-afmc-site",
+            "supports": [
+              "Official AFMC homepage lists the 2026–27 notice on 26 Nov 2026"
+            ]
+          }
+        ],
+        "changeNote": "The official PDF page 1 summary gives the 2026–27 window (29 Nov–8 Dec 2026); page 2 repeats the previous-cycle 29 Nov 2025–4 Jan 2026 line. The current-cycle summary is used; recheck the Teletalk portal when it opens."
+      },
+      "startsAt": "2026-12-08T23:59:00+06:00"
+    },
+    {
+      "id": "AFMC-ADMIT-OPEN",
+      "cycleId": "AFMC-2026-27",
+      "admissionDetailId": "AFMC-ALL-2026-27",
+      "type": "admit_card_open",
+      "title": "AFMC ভর্তি পরীক্ষার প্রবেশপত্র ডাউনলোড শুরু",
+      "dateOnly": "2027-01-12",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-afmc-circular-2026-27",
+            "supports": [
+              "Current-cycle application, fee, eligibility, admit-card and exam instructions"
+            ]
+          },
+          {
+            "sourceId": "src-afmc-site",
+            "supports": [
+              "Official AFMC homepage lists the 2026–27 notice on 26 Nov 2026"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2027-01-12T10:00:00+06:00"
+    },
+    {
+      "id": "AFMC-ADMIT-DEADLINE",
+      "cycleId": "AFMC-2026-27",
+      "admissionDetailId": "AFMC-ALL-2026-27",
+      "type": "admit_card_deadline",
+      "title": "AFMC প্রবেশপত্র ডাউনলোডের শেষ দিন",
+      "dateOnly": "2027-01-15",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-afmc-circular-2026-27",
+            "supports": [
+              "Current-cycle application, fee, eligibility, admit-card and exam instructions"
+            ]
+          },
+          {
+            "sourceId": "src-afmc-site",
+            "supports": [
+              "Official AFMC homepage lists the 2026–27 notice on 26 Nov 2026"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "AFMC-EXAM",
+      "cycleId": "AFMC-2026-27",
+      "admissionDetailId": "AFMC-ALL-2026-27",
+      "type": "admission_test",
+      "title": "AFMC ও সংশ্লিষ্ট মেডিকেল কলেজের ভর্তি পরীক্ষা",
+      "dateOnly": "2027-01-15",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-afmc-circular-2026-27",
+            "supports": [
+              "Current-cycle application, fee, eligibility, admit-card and exam instructions"
+            ]
+          },
+          {
+            "sourceId": "src-afmc-site",
+            "supports": [
+              "Official AFMC homepage lists the 2026–27 notice on 26 Nov 2026"
+            ]
+          }
+        ],
+        "changeNote": "The official PDF page 1 summary gives the 2026–27 window (29 Nov–8 Dec 2026); page 2 repeats the previous-cycle 29 Nov 2025–4 Jan 2026 line. The current-cycle summary is used; recheck the Teletalk portal when it opens."
+      },
+      "startsAt": "2027-01-15T10:00:00+06:00",
+      "endsAt": "2027-01-15T11:15:00+06:00"
+    },
+    {
+      "id": "AGRI-ADMIT-OPEN",
+      "cycleId": "AGRI-2026-27",
+      "admissionDetailId": "AGRI-ALL-2026-27",
+      "type": "admit_card_open",
+      "title": "কৃষি গুচ্ছ প্রবেশপত্র ডাউনলোড শুরু",
+      "dateOnly": "2026-12-21",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "Official BAU notice board lists the agricultural cluster circular"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "AGRI-SEAT-PLAN",
+      "cycleId": "AGRI-2026-27",
+      "admissionDetailId": "AGRI-ALL-2026-27",
+      "type": "other",
+      "title": "কৃষি গুচ্ছ ভর্তি পরীক্ষার আসনবিন্যাস প্রকাশ",
+      "dateOnly": "2026-12-27",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "Official BAU notice board lists the agricultural cluster circular"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "AGRI-RESULT",
+      "cycleId": "AGRI-2026-27",
+      "admissionDetailId": "AGRI-ALL-2026-27",
+      "type": "result_publication",
+      "title": "কৃষি গুচ্ছ ভর্তি পরীক্ষার ফলাফল প্রকাশ",
+      "dateOnly": "2027-01-07",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "Official BAU notice board lists the agricultural cluster circular"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RUET-APP-OPEN",
+      "cycleId": "RUET-2026-27",
+      "admissionDetailId": "RUET-ALL-2026-27",
+      "type": "application_open",
+      "title": "RUET অনলাইন আবেদন শুরু",
+      "dateOnly": "2026-12-12",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ruet-application-bss",
+            "supports": [
+              "BSS report quotes the RUET Steering Committee's 12 Dec–7 Jan application window and test format"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-application-jago",
+            "supports": [
+              "Independent Jago News report corroborates the application window"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-date-bss",
+            "supports": [
+              "BSS report on the 28 Jan 2027 test date and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-notices",
+            "supports": [
+              "Official RUET portal checked; 2026–27 circular not yet listed"
+            ]
+          }
+        ],
+        "changeNote": "Application dates are authority-announced from concordant BSS and Jago News reports of the Steering Committee decision; the official RUET portal still shows 2025–26. No application fee or admit-card window is inferred."
+      }
+    },
+    {
+      "id": "RUET-APP-DEADLINE",
+      "cycleId": "RUET-2026-27",
+      "admissionDetailId": "RUET-ALL-2026-27",
+      "type": "application_deadline",
+      "title": "RUET অনলাইন আবেদনের শেষ দিন",
+      "dateOnly": "2027-01-07",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ruet-application-bss",
+            "supports": [
+              "BSS report quotes the RUET Steering Committee's 12 Dec–7 Jan application window and test format"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-application-jago",
+            "supports": [
+              "Independent Jago News report corroborates the application window"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-date-bss",
+            "supports": [
+              "BSS report on the 28 Jan 2027 test date and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-notices",
+            "supports": [
+              "Official RUET portal checked; 2026–27 circular not yet listed"
+            ]
+          }
+        ],
+        "changeNote": "Application dates are authority-announced from concordant BSS and Jago News reports of the Steering Committee decision; the official RUET portal still shows 2025–26. No application fee or admit-card window is inferred."
+      }
+    },
+    {
+      "id": "MBBS-APP-OPEN",
+      "cycleId": "MBBS-2026-27",
+      "admissionDetailId": "MBBS-ALL-2026-27",
+      "type": "application_open",
+      "title": "MBBS অনলাইন আবেদন শুরু",
+      "dateOnly": "2026-11-25",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2026-11-25T18:30:00+06:00"
+    },
+    {
+      "id": "MBBS-APP-DEADLINE",
+      "cycleId": "MBBS-2026-27",
+      "admissionDetailId": "MBBS-ALL-2026-27",
+      "type": "application_deadline",
+      "title": "MBBS অনলাইন আবেদনের শেষ সময়",
+      "dateOnly": "2026-12-03",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2026-12-03T23:59:00+06:00"
+    },
+    {
+      "id": "MBBS-FEE-DEADLINE",
+      "cycleId": "MBBS-2026-27",
+      "admissionDetailId": "MBBS-ALL-2026-27",
+      "type": "application_deadline",
+      "title": "MBBS আবেদন ফি জমার শেষ সময়",
+      "dateOnly": "2026-12-04",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2026-12-04T23:59:00+06:00"
+    },
+    {
+      "id": "MBBS-ADMIT-OPEN",
+      "cycleId": "MBBS-2026-27",
+      "admissionDetailId": "MBBS-ALL-2026-27",
+      "type": "admit_card_open",
+      "title": "MBBS প্রবেশপত্র ডাউনলোড শুরু",
+      "dateOnly": "2026-12-14",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "MBBS-ADMIT-DEADLINE",
+      "cycleId": "MBBS-2026-27",
+      "admissionDetailId": "MBBS-ALL-2026-27",
+      "type": "admit_card_deadline",
+      "title": "MBBS প্রবেশপত্র ডাউনলোডের শেষ দিন",
+      "dateOnly": "2026-12-17",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BDS-APP-OPEN",
+      "cycleId": "BDS-2026-27",
+      "admissionDetailId": "BDS-ALL-2026-27",
+      "type": "application_open",
+      "title": "BDS অনলাইন আবেদন শুরু",
+      "dateOnly": "2026-11-25",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2026-11-25T18:30:00+06:00"
+    },
+    {
+      "id": "BDS-APP-DEADLINE",
+      "cycleId": "BDS-2026-27",
+      "admissionDetailId": "BDS-ALL-2026-27",
+      "type": "application_deadline",
+      "title": "BDS অনলাইন আবেদনের শেষ সময়",
+      "dateOnly": "2026-12-03",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2026-12-03T23:59:00+06:00"
+    },
+    {
+      "id": "BDS-FEE-DEADLINE",
+      "cycleId": "BDS-2026-27",
+      "admissionDetailId": "BDS-ALL-2026-27",
+      "type": "application_deadline",
+      "title": "BDS আবেদন ফি জমার শেষ সময়",
+      "dateOnly": "2026-12-04",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2026-12-04T23:59:00+06:00"
+    },
+    {
+      "id": "BDS-ADMIT-OPEN",
+      "cycleId": "BDS-2026-27",
+      "admissionDetailId": "BDS-ALL-2026-27",
+      "type": "admit_card_open",
+      "title": "BDS প্রবেশপত্র ডাউনলোড শুরু",
+      "dateOnly": "2026-12-14",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BDS-ADMIT-DEADLINE",
+      "cycleId": "BDS-2026-27",
+      "admissionDetailId": "BDS-ALL-2026-27",
+      "type": "admit_card_deadline",
+      "title": "BDS প্রবেশপত্র ডাউনলোডের শেষ দিন",
+      "dateOnly": "2026-12-17",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX-ADMIT-OPEN",
+      "cycleId": "BUTEX-2026-27",
+      "admissionDetailId": "BUTEX-ALL-2026-27",
+      "type": "admit_card_open",
+      "title": "BUTEX প্রবেশপত্র ডাউনলোড শুরু",
+      "dateOnly": "2027-01-17",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "Official BUTEX circular: application, admit-card, test and probable shortlist/result schedule"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2027-01-17T10:00:00+06:00"
+    },
+    {
+      "id": "BUTEX-ADMIT-DEADLINE",
+      "cycleId": "BUTEX-2026-27",
+      "admissionDetailId": "BUTEX-ALL-2026-27",
+      "type": "admit_card_deadline",
+      "title": "BUTEX প্রবেশপত্র ডাউনলোডের শেষ সময়",
+      "dateOnly": "2027-01-24",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "Official BUTEX circular: application, admit-card, test and probable shortlist/result schedule"
+            ]
+          }
+        ]
+      },
+      "startsAt": "2027-01-24T11:59:00+06:00"
     }
   ],
   "examCenters": [],
@@ -5010,33 +5896,114 @@
     {
       "id": "AGRI-CIRCULAR-2026-27",
       "cycleId": "AGRI-2026-27",
-      "title": "Agricultural Cluster 2026–27 undergraduate admission circular (listed by BAU on 22 November)",
-      "documentUrl": "https://bau.edu.bd/notice-board/1484",
+      "title": "Agricultural Cluster 2026–27 official admission circular (nine public universities)",
+      "documentUrl": "https://acas.edu.bd/api/file/download/notice/7aef7a89-d16a-40e3-ab57-5c664142c054.pdf",
       "publishedAt": "2026-11-22T00:00:00+06:00",
       "verification": {
-        "status": "authority_announced",
-        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
         "sources": [
+          {
+            "sourceId": "src-agri-acas-circular",
+            "supports": [
+              "Official ACAS circular: eligibility, nine universities, 3,795 seats and complete 2026–27 schedule"
+            ]
+          },
           {
             "sourceId": "src-agri-bau-circular",
             "supports": [
-              "official BAU notice-board circular listing"
+              "Official BAU notice board lists the agricultural cluster circular"
             ]
           },
           {
             "sourceId": "src-agri-test-date-sau",
             "supports": [
-              "official SAU cluster-test date notice"
-            ]
-          },
-          {
-            "sourceId": "src-agri-circular-copy",
-            "supports": [
-              "circular text details: application window, fee and exam time"
+              "Official SAU notice corroborates the 2 Jan 2027 test date"
             ]
           }
         ],
-        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+        "changeNote": "The official ACAS circular now confirms the full schedule and total seats; prior conflicting third-party seat totals are superseded by the official 3,795-seat figure."
+      }
+    },
+    {
+      "id": "AFMC-CIRCULAR-2026-27",
+      "cycleId": "AFMC-2026-27",
+      "universityId": "AFMC",
+      "title": "AFMC, five Army Medical Colleges and Navy Medical College 2026–27 MBBS admission circular",
+      "documentUrl": "https://afmc.edu.bd/upload/FileUpload/1795701854.pdf",
+      "publishedAt": "2026-11-26T00:00:00+06:00",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-afmc-circular-2026-27",
+            "supports": [
+              "Current-cycle application, fee, eligibility, admit-card and exam instructions"
+            ]
+          },
+          {
+            "sourceId": "src-afmc-site",
+            "supports": [
+              "Official AFMC homepage lists the 2026–27 notice on 26 Nov 2026"
+            ]
+          }
+        ],
+        "changeNote": "The official PDF page 1 summary gives the 2026–27 window (29 Nov–8 Dec 2026); page 2 repeats the previous-cycle 29 Nov 2025–4 Jan 2026 line. The current-cycle summary is used; recheck the Teletalk portal when it opens."
+      }
+    },
+    {
+      "id": "MBBS-CIRCULAR-2026-27",
+      "cycleId": "MBBS-2026-27",
+      "universityId": "MBBS",
+      "title": "২০২৬–২৭ শিক্ষাবর্ষের জাতীয় MBBS/BDS ভর্তি বিজ্ঞপ্তি (MBBS)",
+      "documentUrl": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2026/10/6bb5ad66-c385-4b3b-83ea-da6af5e71792.pdf",
+      "publishedAt": "2026-11-25T00:00:00+06:00",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ],
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
+      }
+    },
+    {
+      "id": "BDS-CIRCULAR-2026-27",
+      "cycleId": "BDS-2026-27",
+      "universityId": "BDS",
+      "title": "২০২৬–২৭ শিক্ষাবর্ষের জাতীয় MBBS/BDS ভর্তি বিজ্ঞপ্তি (BDS)",
+      "documentUrl": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2026/10/6bb5ad66-c385-4b3b-83ea-da6af5e71792.pdf",
+      "publishedAt": "2026-11-25T00:00:00+06:00",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-28T04:56:16+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-dghs-circular-2026-27",
+            "supports": [
+              "Official DGHS circular dated 25 Nov 2026 confirms the application, fee, admit-card and exam schedule and eligibility"
+            ]
+          },
+          {
+            "sourceId": "src-medical-teletalk-portal-2026-27",
+            "supports": [
+              "Official DGME Teletalk portal for Session 2026–27"
+            ]
+          }
+        ],
+        "changeNote": "Official DGHS circular published 25 Nov 2026; dates and criteria are now directly confirmed. Admit-card availability is date-only (14–17 Dec); no time-of-day is inferred."
       }
     }
   ],
@@ -5046,7 +6013,7 @@
       "cycleId": "DU-2026-27",
       "sourceId": "src-du-portal",
       "title": "DU online application deadline extended to 28 November 2026",
-      "summary": "Official special notice extends the application deadline by three days; all other unit schedules remain unchanged.",
+      "summary": "Official DU portal's current unit-wise Important Dates table lists the extended application and fee deadline as 28 Nov 2026, 11:59 PM. The special notice says 12:00 AM on 28 Nov, an ambiguous wording; the explicit table time is used and the discrepancy is logged.",
       "publishedAt": null,
       "reviewStatus": "reviewed"
     },
@@ -5094,6 +6061,42 @@
       "summary": "প্রথম আলোর ১৬ নভেম্বরের প্রতিবেদনে CU B Unit, Khulna University C Unit এবং CoU A Unit-এর পরীক্ষা একই দিনে নির্ধারিত বলে জানানো হয়েছে। সংশ্লিষ্ট কর্তৃপক্ষ নতুন সংশোধনী না দিলে বর্তমান ঘোষিত তারিখই বহাল থাকবে; নতুন নোটিশ এলে পুনরায় যাচাই করতে হবে।",
       "publishedAt": "2026-11-16T00:00:00+06:00",
       "reviewStatus": "reviewed"
+    },
+    {
+      "id": "AFMC-ADMISSION-CIRCULAR-2026-27",
+      "cycleId": "AFMC-2026-27",
+      "title": "AFMC ও সংশ্লিষ্ট Army/Navy Medical Colleges-এর ২০২৬–২৭ ভর্তি বিজ্ঞপ্তি",
+      "summary": "AFMC-এর অফিসিয়াল সাইটে ২৬ নভেম্বর বিজ্ঞপ্তি প্রকাশিত। আবেদন ২৯ নভেম্বর দুপুর ১২টা–৮ ডিসেম্বর রাত ১১:৫৯; ফি ১,০০০ টাকা, আবেদন করার ২৪ ঘণ্টার মধ্যে পরিশোধ করতে হবে; প্রবেশপত্র ১২ জানুয়ারি সকাল ১০টা থেকে; পরীক্ষা ১৫ জানুয়ারি সকাল ১০টা–১১:১৫। PDF-এর দ্বিতীয় পাতায় আগের শিক্ষাবর্ষের একটি পুরোনো তারিখের লাইন রয়ে গেছে; প্রথম পাতার ২০২৬–২৭ সারাংশ অনুসরণ করা হয়েছে।",
+      "sourceId": "src-afmc-circular-2026-27",
+      "publishedAt": "2026-11-26T00:00:00+06:00",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "AGRI-ADMISSION-GUIDELINE-2026-27",
+      "cycleId": "AGRI-2026-27",
+      "title": "কৃষি গুচ্ছের ২০২৬–২৭ সালের পূর্ণাঙ্গ ভর্তি নির্দেশিকা",
+      "summary": "ACAS-এর সরকারি নির্দেশিকায় ৯টি পাবলিক বিশ্ববিদ্যালয়ের মোট ৩,৭৯৫টি আসন নিশ্চিত। আবেদন ২৫ নভেম্বর–১৫ ডিসেম্বর, ফি ১,৬০০ টাকা; প্রবেশপত্র ২১ ডিসেম্বর থেকে, আসনবিন্যাস ২৭ ডিসেম্বর, পরীক্ষা ২ জানুয়ারি ২০২৭ সকাল ১১টা–দুপুর ১২টা এবং ফল ৭ জানুয়ারি।",
+      "sourceId": "src-agri-acas-circular",
+      "publishedAt": "2026-11-22T00:00:00+06:00",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "RUET-APPLICATION-WINDOW-2026-27",
+      "cycleId": "RUET-2026-27",
+      "title": "RUET ২০২৬–২৭ আবেদনের সময়সূচি — কর্তৃপক্ষের সিদ্ধান্তের প্রতিবেদন",
+      "summary": "BSS ও Jago News ২৫ নভেম্বর জানায়, RUET Steering Committee ১২ ডিসেম্বর ২০২৬–৭ জানুয়ারি ২০২৭ আবেদন-সময়সীমা নির্ধারণ করেছে। অফিসিয়াল RUET পোর্টালে তখনও ২০২৫–২৬ সেশন দেখানো হচ্ছিল; তাই সময়সূচি কর্তৃপক্ষ-ঘোষিত, অফিসিয়াল সার্কুলার-নিশ্চিত নয়। ফি ও অ্যাডমিট কার্ডের তারিখ প্রকাশিত হয়নি।",
+      "sourceId": "src-ruet-application-bss",
+      "publishedAt": "2026-11-25T00:00:00+06:00",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "MEDICAL-ADMISSION-CIRCULAR-2026-27",
+      "cycleId": "MBBS-2026-27",
+      "title": "২০২৬–২৭ শিক্ষাবর্ষের MBBS ও BDS ভর্তি বিজ্ঞপ্তি প্রকাশ",
+      "summary": "DGHS-এর সরকারি বিজ্ঞপ্তি ২৫ নভেম্বর প্রকাশিত। আবেদন ২৫ নভেম্বর সন্ধ্যা ৬:৩০–৩ ডিসেম্বর রাত ১১:৫৯; ফি ১,০০০ টাকা জমার শেষ সময় ৪ ডিসেম্বর রাত ১১:৫৯; প্রবেশপত্র ১৪–১৭ ডিসেম্বর; ভর্তি পরীক্ষা ১৮ ডিসেম্বর সকাল ১০টা–১১:১৫।",
+      "sourceId": "src-medical-dghs-circular-2026-27",
+      "publishedAt": "2026-11-25T00:00:00+06:00",
+      "reviewStatus": "reviewed"
     }
   ],
   "sources": [
@@ -5102,8 +6105,8 @@
       "label": "University of Dhaka official admission portal — 2026–27 important dates and special notice",
       "sourceType": "official_admission_portal",
       "url": "https://admission.eis.du.ac.bd/en/408b7c8ad06e4d9954fa2d948a01f508/1025155142_1",
-      "retrievedAt": "2026-11-23T19:45:00+06:00",
-      "documentReference": "2026–27 Important Dates; special notice extends application deadline to 28 November 2026."
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official live unit-wise Important Dates table: application and fee submission ends 28 Nov 2026 at 23:59; special-notice wording says 12:00 AM and is ambiguous. The explicit table time is used."
     },
     {
       "id": "src-ru-portal",
@@ -5118,8 +6121,8 @@
       "label": "Jahangirnagar University official 2026–27 admission circular",
       "sourceType": "official_university_notice",
       "url": "https://juniv.edu.bd/discussion/18670/file/18081",
-      "retrievedAt": "2026-11-23T19:45:00+06:00",
-      "documentReference": "Admission notice: application 22 November–15 December; admit card from 25 December; tentative test window 10–21 January."
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official JU circular rechecked: admit-card download begins 25 Dec 2026; the 10–21 Jan 2027 exam window is explicitly probable, not a confirmed unit-wise schedule."
     },
     {
       "id": "src-jnu-circular",
@@ -5158,8 +6161,8 @@
       "label": "RUET official admission notices archive",
       "sourceType": "official_admission_portal",
       "url": "https://admission.ruet.ac.bd/notices/",
-      "retrievedAt": "2026-11-23T21:23:00+06:00",
-      "documentReference": "RUET official notices portal; a new Steering Committee date announcement (28 January 2027) is reported by BSS on 19 November."
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official RUET portal still displays the 2025–26 admission cycle; no 2026–27 circular or application window was visible on 28 Nov 2026. Reported 2026–27 dates remain authority-announced, not officially confirmed."
     },
     {
       "id": "src-mist-portal",
@@ -5174,16 +6177,16 @@
       "label": "IUT official admission portal notices",
       "sourceType": "official_admission_portal",
       "url": "https://admission.iutoic-dhaka.edu/notice",
-      "retrievedAt": "2026-11-23T20:05:00+06:00",
-      "documentReference": "The retrieved portal identifies 2025–26 admission as closed; no 2026–27 cycle verified."
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official IUT admission portal still shows the 2025–26 cycle as closed; no 2026–27 circular or roadmap was listed on 28 Nov 2026."
     },
     {
       "id": "src-afmc-site",
       "label": "AFMC official website",
       "sourceType": "official_admission_portal",
       "url": "https://www.afmc.edu.bd/",
-      "retrievedAt": "2026-11-23T20:05:00+06:00",
-      "documentReference": "Official notice index checked; no 2026–27 admission circular verified in the retrieved page."
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official AFMC homepage lists the 2026–27 AFMC & AMC admission notice and instruction dated 26 Nov 2026; detailed PDF is src-afmc-circular-2026-27."
     },
     {
       "id": "src-butex-portal",
@@ -5206,8 +6209,8 @@
       "label": "BUTEX official 2026–27 undergraduate admission circular (19 November 2026)",
       "sourceType": "official_university_notice",
       "url": "https://www.butex.edu.bd/wp-content/uploads/2026/11/20261119_%E0%A6%AD%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BF-%E0%A6%AC%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%AA%E0%A7%8D%E0%A6%A4%E0%A6%BF.pdf",
-      "retrievedAt": "2026-11-23T20:25:00+06:00",
-      "documentReference": "2026–27 BSc in Textile Engineering admission circular; application 1 Dec 2026–10 Jan 2027; written test 29 Jan 2027."
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official BUTEX 19 Nov 2026 circular rechecked: admit-card download 17 Jan 10:00–24 Jan 11:59; shortlist and result dates are marked probable."
     },
     {
       "id": "src-cou-home",
@@ -5262,8 +6265,8 @@
       "label": "Khulna University official undergraduate admission portal",
       "sourceType": "official_admission_portal",
       "url": "https://admission.ku.ac.bd/",
-      "retrievedAt": "2026-11-23T21:23:00+06:00",
-      "documentReference": "Portal identifies 2026–27 undergraduate admission; application portal was still marked launching soon when checked."
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official KU 2026–27 admission portal currently displays 'Launching Soon'; no application dates or full circular were visible on 28 Nov 2026."
     },
     {
       "id": "src-sust-reschedule",
@@ -5326,8 +6329,8 @@
       "label": "Bangladesh Agricultural University official notice — Agricultural Cluster 2026–27 circular (22 November 2026)",
       "sourceType": "official_notice_board",
       "url": "https://bau.edu.bd/notice-board/1484",
-      "retrievedAt": "2026-11-23T21:23:00+06:00",
-      "documentReference": "BAU official notice board lists the 2026–27 admission circular for nine agricultural public universities, dated 22 November."
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official BAU notice-board listing for the nine-university 2026–27 agricultural cluster; direct ACAS signed guideline is src-agri-acas-circular."
     },
     {
       "id": "src-agri-circular-copy",
@@ -5366,8 +6369,8 @@
       "label": "CUET official academic information — 2026–27 undergraduate admission test date",
       "sourceType": "official_university_notice",
       "url": "https://cuet.ac.bd/academic-information",
-      "retrievedAt": "2026-11-23T21:23:00+06:00",
-      "documentReference": "CUET page says the probable Level-1 undergraduate admission test date is 23 January 2027."
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Current CUET academic-information page rechecked; it does not currently expose a final 2026–27 admission date. The previously listed 23 Jan date remains tentative pending a final circular."
     },
     {
       "id": "src-cuet-date-dailysun",
@@ -5400,6 +6403,54 @@
       "url": "https://www.prothomalo.com/amp/story/education/admission/sopv7g6sp3",
       "retrievedAt": "2026-11-23T21:23:00+06:00",
       "documentReference": "Reports possible date clash on 5 February 2027 between CU B Unit, KU C Unit and CoU A Unit; no revision reported in that article."
+    },
+    {
+      "id": "src-afmc-circular-2026-27",
+      "label": "AFMC official 2026–27 admission circular",
+      "url": "https://afmc.edu.bd/upload/FileUpload/1795701854.pdf",
+      "sourceType": "official_university_notice",
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Signed AFMC 2026–27 instruction PDF. Page 1 summary gives 29 Nov–8 Dec 2026 application dates and 15 Jan 2027 test; page 2 contains a stale previous-cycle date line."
+    },
+    {
+      "id": "src-agri-acas-circular",
+      "label": "Official ACAS 2026–27 agricultural cluster guideline",
+      "url": "https://acas.edu.bd/api/file/download/notice/7aef7a89-d16a-40e3-ab57-5c664142c054.pdf",
+      "sourceType": "official_admission_portal",
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official ACAS PDF signed by the Central Admission Committee. Confirms nine public universities, 3,795 total seats, application and fee, admit-card date, seat-plan date, test schedule and result date."
+    },
+    {
+      "id": "src-ruet-application-bss",
+      "label": "BSS — RUET 2026–27 application schedule",
+      "url": "https://www.bssnews.net/news/450074",
+      "sourceType": "third_party_discovery_only",
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "BSS report dated 25 Nov 2026 quotes the RUET Steering Committee decision: applications 12 Dec 2026–7 Jan 2027; test 28 Jan; 80 MCQs/400 marks; Group Kha has an additional 200-mark drawing and visual-spatial test."
+    },
+    {
+      "id": "src-ruet-application-jago",
+      "label": "Jago News — RUET 2026–27 application schedule",
+      "url": "https://www.jagonews24.com/en/education/news/98796",
+      "sourceType": "third_party_discovery_only",
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Independent 25 Nov 2026 report corroborates the 12 Dec–7 Jan application window and test format; official RUET portal had not yet posted the 2026–27 circular."
+    },
+    {
+      "id": "src-medical-dghs-circular-2026-27",
+      "label": "DGHS official 2026–27 MBBS/BDS admission circular",
+      "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2026/10/6bb5ad66-c385-4b3b-83ea-da6af5e71792.pdf",
+      "sourceType": "official_authority_announcement",
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official DGHS circular dated 25 Nov 2026, signed by the DGME Director; memo 59.14.0000.000.103.31.0001.26.1484. Full MBBS/BDS schedule, fee, eligibility and test pattern."
+    },
+    {
+      "id": "src-medical-teletalk-portal-2026-27",
+      "label": "DGME Teletalk 2026–27 MBBS/BDS application portal",
+      "url": "https://dgme.teletalk.com.bd/mbbs/main.php",
+      "sourceType": "official_admission_portal",
+      "retrievedAt": "2026-11-28T04:56:16+06:00",
+      "documentReference": "Official DGME Teletalk application portal for Session 2026–27; application and admit-card access."
     }
   ]
 }

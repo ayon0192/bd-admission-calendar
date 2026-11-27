@@ -23,8 +23,17 @@ test("ics with known time uses UTC DTSTART and all selected VALARM offsets", () 
  assert.ok(!ics.includes("(সম্ভাব্য)"));
 });
 
-test("ics with unknown time (or 00:00) uses VALUE=DATE, 8am morning trigger, and unpublished-time note", () => {
- const ev = { id: "DU-APP-DEADLINE", university: "ঢাকা বিশ্ববিদ্যালয়", unit: "সকল ইউনিট", type: "application_deadline", title: "আবেদন শেষ", date: "2026-11-28", time: "00:00", verified: true, status: "officially_confirmed", sourceUrl: "https://du.ac.bd" };
+
+test("DU extended application deadline exports the official 23:59 time", () => {
+ const ev = { id: "DU-APP-DEADLINE", university: "ঢাকা বিশ্ববিদ্যালয়", unit: "সকল ইউনিট", type: "application_deadline", title: "আবেদন শেষ", date: "2026-11-28", time: "23:59", verified: true, status: "officially_confirmed", sourceUrl: "https://admission.eis.du.ac.bd" };
+ const ics = I.buildIcsCalendar([ev], [10080, 4320, 1440, 180], "2026-11-27T10:00:00Z");
+ assert.ok(ics.includes("DTSTART:20261128T175900Z"));
+ assert.ok(ics.includes("TRIGGER:-PT180M"));
+ assert.ok(!ics.includes("DTSTART;VALUE=DATE:20261128"));
+});
+
+test("ics with unknown time uses VALUE=DATE, 8am morning trigger, and unpublished-time note", () => {
+ const ev = { id: "IUT-UNKNOWN-TIME", university: "Islamic University of Technology", unit: "সকল ইউনিট", type: "admission_test", title: "ভর্তি পরীক্ষা", date: "2026-11-28", time: "", verified: false, status: "tentative", sourceUrl: "https://admission.iutoic-dhaka.edu" };
  const ics = I.buildIcsCalendar([ev], [10080, 4320, 1440, 180], "2026-11-27T10:00:00Z");
  assert.ok(ics.includes("DTSTART;VALUE=DATE:20261128"));
  assert.ok(ics.includes("DTEND;VALUE=DATE:20261129"));
