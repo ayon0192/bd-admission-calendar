@@ -1,0 +1,29 @@
+name: Runner allocation diagnostic
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/runner-diagnostic.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  runner-smoke:
+    name: Runner smoke test (${{ matrix.runner }})
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-latest]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 5
+    steps:
+      - name: Confirm runner allocation
+        run: |
+          echo "Runner allocated successfully"
+          echo "OS: $(uname -s)"
+          echo "Kernel: $(uname -r)"
+          echo "Runner: $RUNNER_NAME"
+          node --version

@@ -1,0 +1,5405 @@
+{
+  "schemaVersion": "1.0.0",
+  "universities": [
+    {
+      "id": "DU",
+      "name": "ঢাকা বিশ্ববিদ্যালয়",
+      "shortName": "Dhaka University",
+      "institutionGroup": "general_public_university",
+      "officialWebsite": "https://du.ac.bd",
+      "admissionWebsite": "https://admission.eis.du.ac.bd",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU",
+      "name": "রাজশাহী বিশ্ববিদ্যালয়",
+      "shortName": "Rajshahi University",
+      "institutionGroup": "general_public_university",
+      "officialWebsite": "https://ru.ac.bd",
+      "admissionWebsite": "https://admission.ru.ac.bd",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CU",
+      "name": "চট্টগ্রাম বিশ্ববিদ্যালয়",
+      "shortName": "University of Chittagong",
+      "institutionGroup": "general_public_university",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "Dates are confirmed by the Pro-Vice-Chancellor as reported 11 November; application and fee deadlines are updated from the revised announcement."
+      },
+      "officialWebsite": "https://cu.ac.bd",
+      "admissionWebsite": "https://admission.cu.ac.bd"
+    },
+    {
+      "id": "JU",
+      "name": "জাহাঙ্গীরনগর বিশ্ববিদ্যালয়",
+      "shortName": "Jahangirnagar University",
+      "institutionGroup": "general_public_university",
+      "officialWebsite": "https://juniv.edu.bd",
+      "admissionWebsite": "https://admission.juniv.edu",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU",
+      "name": "জগন্নাথ বিশ্ববিদ্যালয়",
+      "shortName": "Jagannath University",
+      "institutionGroup": "general_public_university",
+      "officialWebsite": "https://jnu.ac.bd",
+      "admissionWebsite": "https://admission.jnu.ac.bd",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "KU",
+      "name": "খুলনা বিশ্ববিদ্যালয়",
+      "shortName": "Khulna University",
+      "institutionGroup": "general_public_university",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "The test dates are revised to 4–5 February; the university stated that detailed application information would be published later."
+      },
+      "officialWebsite": "https://ku.ac.bd",
+      "admissionWebsite": "https://admission.ku.ac.bd"
+    },
+    {
+      "id": "SUST",
+      "name": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়",
+      "shortName": "Shahjalal University of Science and Technology",
+      "institutionGroup": "general_public_university",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-sust-reschedule",
+            "supports": [
+              "SUST press release dated 1 November 2026"
+            ]
+          },
+          {
+            "sourceId": "src-sust-official",
+            "supports": [
+              "issuing university"
+            ]
+          }
+        ],
+        "changeNote": "Only the revised 17–18 January exam dates are announced in the retrieved SUST press release; unit-wise allocation and application dates remain unknown."
+      }
+    },
+    {
+      "id": "CoU",
+      "name": "কুমিল্লা বিশ্ববিদ্যালয়",
+      "shortName": "Comilla University",
+      "institutionGroup": "general_public_university",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ],
+        "changeNote": "Official university press releases dated 24 September and 11 November provide unit-wise exam dates and the revised application window."
+      },
+      "officialWebsite": "https://www.cou.ac.bd/",
+      "admissionWebsite": "https://www.cou.ac.bd/"
+    },
+    {
+      "id": "PUST",
+      "name": "পাবনা বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়",
+      "shortName": "Pabna University of Science and Technology",
+      "institutionGroup": "general_public_university",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "GST committee's 2026–27 cluster schedule"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "reported membership list identifies PUST among the GST cluster institutions"
+            ]
+          }
+        ],
+        "changeNote": "PUST participates through the GST cluster; shared test dates are listed under GST, not duplicated here."
+      }
+    },
+    {
+      "id": "BUET",
+      "name": "বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয়",
+      "shortName": "Bangladesh University of Engineering and Technology",
+      "institutionGroup": "engineering_university",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-buet-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-buet-admission-bdnews24",
+            "supports": [
+              "application/test dates and seats"
+            ]
+          }
+        ],
+        "changeNote": "BUET's 2026–27 circular was reported published; application 1 December–7 January and test 1 February are source-confirmed. The separate payment deadline is 8 January."
+      }
+    },
+    {
+      "id": "CUET",
+      "name": "চট্টগ্রাম প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়",
+      "shortName": "Chittagong University of Engineering & Technology",
+      "institutionGroup": "engineering_university",
+      "verification": {
+        "status": "tentative",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cuet-official-date",
+            "supports": [
+              "official CUET academic information page"
+            ]
+          },
+          {
+            "sourceId": "src-cuet-date-dailysun",
+            "supports": [
+              "chairman/PRO confirmation reported by Daily Sun"
+            ]
+          }
+        ],
+        "changeNote": "CUET's own page describes 23 January 2027 as a probable date; final circular and application timeline are still pending."
+      }
+    },
+    {
+      "id": "RUET",
+      "name": "রাজশাহী প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়",
+      "shortName": "Rajshahi University of Engineering & Technology",
+      "institutionGroup": "engineering_university",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ruet-date-bss",
+            "supports": [
+              "Steering Committee decision and test date"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-notices",
+            "supports": [
+              "official university notice portal"
+            ]
+          }
+        ],
+        "changeNote": "Admission test date 28 January 2027 announced by the Steering Committee; application timeline not yet added."
+      },
+      "officialWebsite": "https://ruet.ac.bd",
+      "admissionWebsite": "https://admission.ruet.ac.bd"
+    },
+    {
+      "id": "KUET",
+      "name": "খুলনা প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়",
+      "shortName": "Khulna University of Engineering & Technology",
+      "institutionGroup": "engineering_university",
+      "officialWebsite": "https://kuet.ac.bd",
+      "admissionWebsite": "https://admission.kuet.ac.bd",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-kuet-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX",
+      "name": "বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়",
+      "shortName": "Bangladesh University of Textiles",
+      "institutionGroup": "specialized_public_institution",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "2026–27 admission circular",
+              "published application/exam dates and relevant admission details"
+            ]
+          }
+        ]
+      },
+      "officialWebsite": "https://www.butex.edu.bd/",
+      "admissionWebsite": "http://but.teletalk.com.bd"
+    },
+    {
+      "id": "BAU",
+      "name": "বাংলাদেশ কৃষি বিশ্ববিদ্যালয়",
+      "shortName": "Bangladesh Agricultural University",
+      "institutionGroup": "specialized_public_institution",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice board lists the nine-university cluster circular"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "cluster circular application/test information"
+            ]
+          }
+        ],
+        "changeNote": "BAU is one of the nine institutions covered by the Agricultural Cluster circular; shared dates are shown under AGRI to avoid duplicate calendar events."
+      }
+    },
+    {
+      "id": "MBBS",
+      "name": "সরকারি ও বেসরকারি মেডিকেল কলেজ (MBBS)",
+      "shortName": "Medical Colleges — MBBS",
+      "institutionGroup": "medical_admission",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-latest-star",
+            "supports": [
+              "DGME Director General's 23 November confirmation after Supreme Court order"
+            ]
+          },
+          {
+            "sourceId": "src-medical-dgme",
+            "supports": [
+              "official DGME notice index; circular still awaited"
+            ]
+          }
+        ],
+        "changeNote": "The 18 December test date was confirmed by the DGME Director General on 23 November after the Appellate Division stayed the High Court restriction; the full DGME circular was not yet published."
+      }
+    },
+    {
+      "id": "BDS",
+      "name": "সরকারি ও বেসরকারি ডেন্টাল কলেজ (BDS)",
+      "shortName": "Dental Colleges — BDS",
+      "institutionGroup": "medical_admission",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-latest-star",
+            "supports": [
+              "DGME Director General's 23 November confirmation after Supreme Court order"
+            ]
+          },
+          {
+            "sourceId": "src-medical-dgme",
+            "supports": [
+              "official DGME notice index; circular still awaited"
+            ]
+          }
+        ],
+        "changeNote": "The 18 December test date was confirmed by the DGME Director General on 23 November after the Appellate Division stayed the High Court restriction; the full DGME circular was not yet published."
+      }
+    },
+    {
+      "id": "AFMC",
+      "name": "আর্মড ফোর্সেস মেডিকেল কলেজ",
+      "shortName": "Armed Forces Medical College",
+      "institutionGroup": "specialized_public_institution",
+      "verification": {
+        "status": "awaiting_official_notice",
+        "lastVerifiedAt": null,
+        "sources": [
+          {
+            "sourceId": "src-afmc-site",
+            "supports": [
+              "official portal checked",
+              "no 2026–27 circular or confirmed dates extracted in this pass"
+            ]
+          }
+        ]
+      },
+      "officialWebsite": "https://www.afmc.edu.bd"
+    },
+    {
+      "id": "MIST",
+      "name": "মিলিটারি ইনস্টিটিউট অব সায়েন্স অ্যান্ড টেকনোলজি",
+      "shortName": "Military Institute of Science and Technology",
+      "institutionGroup": "specialized_public_institution",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "A full 2026–27 MIST notice copy provides application and unit-wise exam schedule; verify against the official portal when its notice page is readable."
+      },
+      "officialWebsite": "https://mist.ac.bd",
+      "admissionWebsite": "https://admission.mist.ac.bd"
+    },
+    {
+      "id": "IUT",
+      "name": "ইসলামিক ইউনিভার্সিটি অব টেকনোলজি",
+      "shortName": "Islamic University of Technology",
+      "institutionGroup": "specialized_public_institution",
+      "verification": {
+        "status": "awaiting_official_notice",
+        "lastVerifiedAt": null,
+        "sources": [
+          {
+            "sourceId": "src-iut-notices",
+            "supports": [
+              "official portal checked",
+              "no 2026–27 circular or confirmed dates extracted in this pass"
+            ]
+          }
+        ]
+      },
+      "officialWebsite": "https://www.iutoic-dhaka.edu",
+      "admissionWebsite": "https://admission.iutoic-dhaka.edu"
+    },
+    {
+      "id": "GST",
+      "name": "সাধারণ, বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয় গুচ্ছ (GST)",
+      "shortName": "General Universities Cluster (GST)",
+      "institutionGroup": "admission_cluster",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "Unit-wise test dates confirmed by the GST committee co-convener; application dates, fee and eligibility details remain unannounced."
+      }
+    },
+    {
+      "id": "AGRI",
+      "name": "কৃষি বিশ্ববিদ্যালয় গুচ্ছ",
+      "shortName": "Agricultural Universities Cluster",
+      "institutionGroup": "admission_cluster",
+      "admissionWebsite": "https://acas.edu.bd",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice-board circular listing"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "official SAU cluster-test date notice"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "circular text details: application window, fee and exam time"
+            ]
+          }
+        ],
+        "changeNote": "The 2026–27 circular is listed on BAU's official notice board. Exact application dates, fee and test time are recorded from the circular text archive; conflicting seat totals are deliberately omitted."
+      },
+      "officialWebsite": "https://acas.edu.bd"
+    }
+  ],
+  "admissionCycles": [
+    {
+      "id": "DU-2026-27",
+      "universityId": "DU",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU-2026-27",
+      "universityId": "RU",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CU-2026-27",
+      "universityId": "CU",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "Dates are confirmed by the Pro-Vice-Chancellor as reported 11 November; application and fee deadlines are updated from the revised announcement."
+      }
+    },
+    {
+      "id": "JU-2026-27",
+      "universityId": "JU",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-2026-27",
+      "universityId": "JnU",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "KU-2026-27",
+      "universityId": "KU",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "The test dates are revised to 4–5 February; the university stated that detailed application information would be published later."
+      }
+    },
+    {
+      "id": "SUST-2026-27",
+      "universityId": "SUST",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-sust-reschedule",
+            "supports": [
+              "SUST press release dated 1 November 2026"
+            ]
+          },
+          {
+            "sourceId": "src-sust-official",
+            "supports": [
+              "issuing university"
+            ]
+          }
+        ],
+        "changeNote": "Only the revised 17–18 January exam dates are announced in the retrieved SUST press release; unit-wise allocation and application dates remain unknown."
+      }
+    },
+    {
+      "id": "CoU-2026-27",
+      "universityId": "CoU",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ],
+        "changeNote": "Official university press releases dated 24 September and 11 November provide unit-wise exam dates and the revised application window."
+      }
+    },
+    {
+      "id": "PUST-2026-27",
+      "universityId": "PUST",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "GST committee's 2026–27 cluster schedule"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "reported membership list identifies PUST among the GST cluster institutions"
+            ]
+          }
+        ],
+        "changeNote": "PUST participates through the GST cluster; shared test dates are listed under GST, not duplicated here."
+      }
+    },
+    {
+      "id": "BUET-2026-27",
+      "universityId": "BUET",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-buet-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-buet-admission-bdnews24",
+            "supports": [
+              "application/test dates and seats"
+            ]
+          }
+        ],
+        "changeNote": "BUET's 2026–27 circular was reported published; application 1 December–7 January and test 1 February are source-confirmed. The separate payment deadline is 8 January."
+      }
+    },
+    {
+      "id": "CUET-2026-27",
+      "universityId": "CUET",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "tentative",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cuet-official-date",
+            "supports": [
+              "official CUET academic information page"
+            ]
+          },
+          {
+            "sourceId": "src-cuet-date-dailysun",
+            "supports": [
+              "chairman/PRO confirmation reported by Daily Sun"
+            ]
+          }
+        ],
+        "changeNote": "CUET's own page describes 23 January 2027 as a probable date; final circular and application timeline are still pending."
+      }
+    },
+    {
+      "id": "RUET-2026-27",
+      "universityId": "RUET",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ruet-date-bss",
+            "supports": [
+              "Steering Committee decision and test date"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-notices",
+            "supports": [
+              "official university notice portal"
+            ]
+          }
+        ],
+        "changeNote": "Admission test date 28 January 2027 announced by the Steering Committee; application timeline not yet added."
+      }
+    },
+    {
+      "id": "KUET-2026-27",
+      "universityId": "KUET",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-kuet-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX-2026-27",
+      "universityId": "BUTEX",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "2026–27 admission circular",
+              "published application/exam dates and relevant admission details"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BAU-2026-27",
+      "universityId": "BAU",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice board lists the nine-university cluster circular"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "cluster circular application/test information"
+            ]
+          }
+        ],
+        "changeNote": "BAU is one of the nine institutions covered by the Agricultural Cluster circular; shared dates are shown under AGRI to avoid duplicate calendar events."
+      }
+    },
+    {
+      "id": "MBBS-2026-27",
+      "universityId": "MBBS",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-latest-star",
+            "supports": [
+              "DGME Director General's 23 November confirmation after Supreme Court order"
+            ]
+          },
+          {
+            "sourceId": "src-medical-dgme",
+            "supports": [
+              "official DGME notice index; circular still awaited"
+            ]
+          }
+        ],
+        "changeNote": "The 18 December test date was confirmed by the DGME Director General on 23 November after the Appellate Division stayed the High Court restriction; the full DGME circular was not yet published."
+      }
+    },
+    {
+      "id": "BDS-2026-27",
+      "universityId": "BDS",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-latest-star",
+            "supports": [
+              "DGME Director General's 23 November confirmation after Supreme Court order"
+            ]
+          },
+          {
+            "sourceId": "src-medical-dgme",
+            "supports": [
+              "official DGME notice index; circular still awaited"
+            ]
+          }
+        ],
+        "changeNote": "The 18 December test date was confirmed by the DGME Director General on 23 November after the Appellate Division stayed the High Court restriction; the full DGME circular was not yet published."
+      }
+    },
+    {
+      "id": "AFMC-2026-27",
+      "universityId": "AFMC",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "awaiting_official_notice",
+        "lastVerifiedAt": null,
+        "sources": [
+          {
+            "sourceId": "src-afmc-site",
+            "supports": [
+              "official admission portal checked; 2026–27 admission details not confirmed"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "MIST-2026-27",
+      "universityId": "MIST",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "A full 2026–27 MIST notice copy provides application and unit-wise exam schedule; verify against the official portal when its notice page is readable."
+      }
+    },
+    {
+      "id": "IUT-2026-27",
+      "universityId": "IUT",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "awaiting_official_notice",
+        "lastVerifiedAt": null,
+        "sources": [
+          {
+            "sourceId": "src-iut-notices",
+            "supports": [
+              "official admission portal checked; 2026–27 admission details not confirmed"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "GST-2026-27",
+      "universityId": "GST",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "Unit-wise test dates confirmed by the GST committee co-convener; application dates, fee and eligibility details remain unannounced."
+      }
+    },
+    {
+      "id": "AGRI-2026-27",
+      "universityId": "AGRI",
+      "session": "2026-27",
+      "cycleLabel": "২০২৬–২০২৭ শিক্ষাবর্ষ",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice-board circular listing"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "official SAU cluster-test date notice"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "circular text details: application window, fee and exam time"
+            ]
+          }
+        ],
+        "changeNote": "The 2026–27 circular is listed on BAU's official notice board. Exact application dates, fee and test time are recorded from the circular text archive; conflicting seat totals are deliberately omitted."
+      }
+    }
+  ],
+  "admissionDetails": [
+    {
+      "id": "DU-IBA-2026-27",
+      "cycleId": "DU-2026-27",
+      "unitGroup": "IBA Unit",
+      "application": {
+        "applicationUrl": "https://admission.eis.du.ac.bd",
+        "opensAt": "2026-11-11T12:00:00+06:00",
+        "closesAt": "2026-11-28T00:00:00+06:00"
+      },
+      "exam": {
+        "startsAt": "2026-12-05T10:00:00+06:00",
+        "endsAt": "2026-12-05T12:00:00+06:00",
+        "dateOnly": "2026-12-05",
+        "admitCard": {
+          "availableFrom": "2026-12-02T15:00:00+06:00",
+          "availableUntil": "2026-12-05T09:00:00+06:00",
+          "url": "https://admission.eis.du.ac.bd"
+        }
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-SCI-2026-27",
+      "cycleId": "DU-2026-27",
+      "unitGroup": "Science Unit",
+      "application": {
+        "applicationUrl": "https://admission.eis.du.ac.bd",
+        "opensAt": "2026-11-11T12:00:00+06:00",
+        "closesAt": "2026-11-28T00:00:00+06:00"
+      },
+      "exam": {
+        "startsAt": "2026-12-12T11:00:00+06:00",
+        "endsAt": "2026-12-12T12:30:00+06:00",
+        "dateOnly": "2026-12-12",
+        "admitCard": {
+          "availableFrom": "2026-12-02T15:00:00+06:00",
+          "availableUntil": "2026-12-12T10:00:00+06:00",
+          "url": "https://admission.eis.du.ac.bd"
+        }
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-ALSS-2026-27",
+      "cycleId": "DU-2026-27",
+      "unitGroup": "Arts, Law and Social Science Unit",
+      "application": {
+        "applicationUrl": "https://admission.eis.du.ac.bd",
+        "opensAt": "2026-11-11T12:00:00+06:00",
+        "closesAt": "2026-11-28T00:00:00+06:00"
+      },
+      "exam": {
+        "startsAt": "2026-12-19T11:00:00+06:00",
+        "endsAt": "2026-12-19T12:30:00+06:00",
+        "dateOnly": "2026-12-19",
+        "admitCard": {
+          "availableFrom": "2026-12-07T15:00:00+06:00",
+          "availableUntil": "2026-12-19T10:00:00+06:00",
+          "url": "https://admission.eis.du.ac.bd"
+        }
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-FINE-2026-27",
+      "cycleId": "DU-2026-27",
+      "unitGroup": "Fine Arts Unit",
+      "application": {
+        "applicationUrl": "https://admission.eis.du.ac.bd",
+        "opensAt": "2026-11-11T12:00:00+06:00",
+        "closesAt": "2026-11-28T00:00:00+06:00"
+      },
+      "exam": {
+        "startsAt": "2026-12-22T11:00:00+06:00",
+        "endsAt": "2026-12-22T12:30:00+06:00",
+        "dateOnly": "2026-12-22",
+        "admitCard": {
+          "availableFrom": "2026-12-07T15:00:00+06:00",
+          "availableUntil": "2026-12-22T10:00:00+06:00",
+          "url": "https://admission.eis.du.ac.bd"
+        }
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-BUS-2026-27",
+      "cycleId": "DU-2026-27",
+      "unitGroup": "Business Studies Unit",
+      "application": {
+        "applicationUrl": "https://admission.eis.du.ac.bd",
+        "opensAt": "2026-11-11T12:00:00+06:00",
+        "closesAt": "2026-11-28T00:00:00+06:00"
+      },
+      "exam": {
+        "startsAt": "2026-12-26T11:00:00+06:00",
+        "endsAt": "2026-12-26T12:30:00+06:00",
+        "dateOnly": "2026-12-26",
+        "admitCard": {
+          "availableFrom": "2026-12-07T15:00:00+06:00",
+          "availableUntil": "2026-12-26T10:00:00+06:00",
+          "url": "https://admission.eis.du.ac.bd"
+        }
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU-A-2026-27",
+      "cycleId": "RU-2026-27",
+      "unitGroup": "Unit A",
+      "application": {
+        "applicationUrl": "https://admission.ru.ac.bd",
+        "opensAt": "2026-11-15T12:00:00+06:00",
+        "closesAt": "2026-11-30T23:59:00+06:00"
+      },
+      "exam": {
+        "dateOnly": "2027-02-20"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU-B-2026-27",
+      "cycleId": "RU-2026-27",
+      "unitGroup": "Unit B",
+      "application": {
+        "applicationUrl": "https://admission.ru.ac.bd",
+        "opensAt": "2026-11-15T12:00:00+06:00",
+        "closesAt": "2026-11-30T23:59:00+06:00"
+      },
+      "exam": {
+        "dateOnly": "2027-02-12"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU-C-2026-27",
+      "cycleId": "RU-2026-27",
+      "unitGroup": "Unit C",
+      "application": {
+        "applicationUrl": "https://admission.ru.ac.bd",
+        "opensAt": "2026-11-15T12:00:00+06:00",
+        "closesAt": "2026-11-30T23:59:00+06:00"
+      },
+      "exam": {
+        "dateOnly": "2027-02-13"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-A-2026-27",
+      "cycleId": "JU-2026-27",
+      "unitGroup": "A Unit",
+      "application": {
+        "applicationUrl": "https://admission.juniv.edu",
+        "opensAt": "2026-11-22T10:00:00+06:00",
+        "closesAt": "2026-12-15T23:59:00+06:00",
+        "feeBDT": 800
+      },
+      "exam": {
+        "admitCard": {
+          "url": "https://admission.juniv.edu"
+        }
+      },
+      "circularIds": [
+        "JU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-B-2026-27",
+      "cycleId": "JU-2026-27",
+      "unitGroup": "B Unit",
+      "application": {
+        "applicationUrl": "https://admission.juniv.edu",
+        "opensAt": "2026-11-22T10:00:00+06:00",
+        "closesAt": "2026-12-15T23:59:00+06:00",
+        "feeBDT": 800
+      },
+      "exam": {
+        "admitCard": {
+          "url": "https://admission.juniv.edu"
+        }
+      },
+      "circularIds": [
+        "JU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-C-2026-27",
+      "cycleId": "JU-2026-27",
+      "unitGroup": "C Unit",
+      "application": {
+        "applicationUrl": "https://admission.juniv.edu",
+        "opensAt": "2026-11-22T10:00:00+06:00",
+        "closesAt": "2026-12-15T23:59:00+06:00",
+        "feeBDT": 800
+      },
+      "exam": {
+        "admitCard": {
+          "url": "https://admission.juniv.edu"
+        }
+      },
+      "circularIds": [
+        "JU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-D-2026-27",
+      "cycleId": "JU-2026-27",
+      "unitGroup": "D Unit",
+      "application": {
+        "applicationUrl": "https://admission.juniv.edu",
+        "opensAt": "2026-11-22T10:00:00+06:00",
+        "closesAt": "2026-12-15T23:59:00+06:00",
+        "feeBDT": 800
+      },
+      "exam": {
+        "admitCard": {
+          "url": "https://admission.juniv.edu"
+        }
+      },
+      "circularIds": [
+        "JU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-E-2026-27",
+      "cycleId": "JU-2026-27",
+      "unitGroup": "E Unit",
+      "application": {
+        "applicationUrl": "https://admission.juniv.edu",
+        "opensAt": "2026-11-22T10:00:00+06:00",
+        "closesAt": "2026-12-15T23:59:00+06:00",
+        "feeBDT": 700
+      },
+      "exam": {
+        "admitCard": {
+          "url": "https://admission.juniv.edu"
+        }
+      },
+      "circularIds": [
+        "JU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-C1-2026-27",
+      "cycleId": "JU-2026-27",
+      "unitGroup": "C1 Unit",
+      "application": {
+        "applicationUrl": "https://admission.juniv.edu",
+        "opensAt": "2026-11-22T10:00:00+06:00",
+        "closesAt": "2026-12-15T23:59:00+06:00",
+        "feeBDT": 600
+      },
+      "exam": {
+        "admitCard": {
+          "url": "https://admission.juniv.edu"
+        }
+      },
+      "circularIds": [
+        "JU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-IBA-2026-27",
+      "cycleId": "JU-2026-27",
+      "unitGroup": "IBA-JU",
+      "application": {
+        "applicationUrl": "https://admission.juniv.edu",
+        "opensAt": "2026-11-22T10:00:00+06:00",
+        "closesAt": "2026-12-15T23:59:00+06:00",
+        "feeBDT": 600
+      },
+      "exam": {
+        "admitCard": {
+          "url": "https://admission.juniv.edu"
+        }
+      },
+      "circularIds": [
+        "JU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-A-2026-27",
+      "cycleId": "JnU-2026-27",
+      "unitGroup": "Unit A",
+      "application": {
+        "applicationUrl": "https://admission.jnu.ac.bd",
+        "opensAt": "2026-11-25T12:00:00+06:00",
+        "closesAt": "2026-12-10T23:59:00+06:00",
+        "feeBDT": 1200
+      },
+      "exam": {
+        "startsAt": "2027-01-01T10:00:00+06:00",
+        "endsAt": "2027-01-01T11:00:00+06:00",
+        "dateOnly": "2027-01-01"
+      },
+      "circularIds": [
+        "JnU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-E-2026-27",
+      "cycleId": "JnU-2026-27",
+      "unitGroup": "Unit E — Fine Arts",
+      "application": {
+        "applicationUrl": "https://admission.jnu.ac.bd",
+        "opensAt": "2026-11-25T12:00:00+06:00",
+        "closesAt": "2026-12-10T23:59:00+06:00",
+        "feeBDT": 1500
+      },
+      "exam": {
+        "startsAt": "2027-01-08T10:00:00+06:00",
+        "endsAt": "2027-01-08T11:30:00+06:00",
+        "dateOnly": "2027-01-08"
+      },
+      "circularIds": [
+        "JnU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-B-2026-27",
+      "cycleId": "JnU-2026-27",
+      "unitGroup": "Unit B",
+      "application": {
+        "applicationUrl": "https://admission.jnu.ac.bd",
+        "opensAt": "2026-11-25T12:00:00+06:00",
+        "closesAt": "2026-12-10T23:59:00+06:00",
+        "feeBDT": 1200
+      },
+      "exam": {
+        "startsAt": "2027-01-15T10:00:00+06:00",
+        "endsAt": "2027-01-15T11:00:00+06:00",
+        "dateOnly": "2027-01-15"
+      },
+      "circularIds": [
+        "JnU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-C-2026-27",
+      "cycleId": "JnU-2026-27",
+      "unitGroup": "Unit C",
+      "application": {
+        "applicationUrl": "https://admission.jnu.ac.bd",
+        "opensAt": "2026-11-25T12:00:00+06:00",
+        "closesAt": "2026-12-10T23:59:00+06:00",
+        "feeBDT": 1200
+      },
+      "exam": {
+        "startsAt": "2027-01-22T10:00:00+06:00",
+        "endsAt": "2027-01-22T11:00:00+06:00",
+        "dateOnly": "2027-01-22"
+      },
+      "circularIds": [
+        "JnU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-D-2026-27",
+      "cycleId": "JnU-2026-27",
+      "unitGroup": "Unit D",
+      "application": {
+        "applicationUrl": "https://admission.jnu.ac.bd",
+        "opensAt": "2026-11-25T12:00:00+06:00",
+        "closesAt": "2026-12-10T23:59:00+06:00",
+        "feeBDT": 1200
+      },
+      "exam": {
+        "startsAt": "2027-01-23T10:00:00+06:00",
+        "endsAt": "2027-01-23T11:00:00+06:00",
+        "dateOnly": "2027-01-23"
+      },
+      "circularIds": [
+        "JnU-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "KUET-ALL-2026-27",
+      "cycleId": "KUET-2026-27",
+      "unitGroup": "Engineering, BURP & B.Arch",
+      "application": {
+        "applicationUrl": "https://admission.kuet.ac.bd",
+        "closesAt": "2026-12-10T17:00:00+06:00"
+      },
+      "exam": {
+        "dateOnly": "2027-01-08",
+        "durationMinutes": null
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-kuet-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX-ALL-2026-27",
+      "cycleId": "BUTEX-2026-27",
+      "unitGroup": "BSc in Textile Engineering — 11 departments",
+      "seats": 630,
+      "programmes": [
+        {
+          "name": "Yarn Engineering",
+          "seats": 80
+        },
+        {
+          "name": "Fabric Engineering",
+          "seats": 80
+        },
+        {
+          "name": "Wet Process Engineering",
+          "seats": 80
+        },
+        {
+          "name": "Apparel Engineering",
+          "seats": 80
+        },
+        {
+          "name": "Textile Engineering Management",
+          "seats": 80
+        },
+        {
+          "name": "Textile Fashion and Design",
+          "seats": 40
+        },
+        {
+          "name": "Industrial and Production Engineering",
+          "seats": 40
+        },
+        {
+          "name": "Textile Machinery Design and Maintenance",
+          "seats": 40
+        },
+        {
+          "name": "Dyes and Chemical Engineering",
+          "seats": 40
+        },
+        {
+          "name": "Environmental Science and Engineering",
+          "seats": 40
+        },
+        {
+          "name": "Textile Materials Engineering",
+          "seats": 30
+        }
+      ],
+      "application": {
+        "opensAt": "2026-12-01T10:00:00+06:00",
+        "closesAt": "2027-01-10T23:59:00+06:00",
+        "feeBDT": 300,
+        "applicationUrl": "http://but.teletalk.com.bd"
+      },
+      "eligibility": {
+        "minimumSscGpa": 4,
+        "minimumHscGpa": 4,
+        "minimumSubjectGradePointsTotal": 16.5,
+        "requiredHscSubjects": [
+          "Mathematics",
+          "Physics",
+          "Chemistry",
+          "English"
+        ],
+        "minimumGradePointPerRequiredSubject": 3.5
+      },
+      "exam": {
+        "startsAt": "2027-01-29T10:00:00+06:00",
+        "endsAt": "2027-01-29T12:00:00+06:00",
+        "dateOnly": "2027-01-29",
+        "durationMinutes": 120,
+        "examFeeBDT": 1200,
+        "shortlistExpectedOn": "2027-01-15",
+        "shortlistDateTentative": true,
+        "resultExpectedOn": "2027-02-15",
+        "resultDateTentative": true
+      },
+      "circularIds": [
+        "BUTEX-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "2026–27 admission circular",
+              "published application/exam dates and relevant admission details"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CU-A-2026-27",
+      "cycleId": "CU-2026-27",
+      "unitGroup": "A Unit",
+      "application": {
+        "applicationUrl": "https://admission.cu.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2027-01-10",
+        "feePaymentDeadlineOn": "2027-01-12"
+      },
+      "exam": {
+        "dateOnly": "2027-01-30"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "Application period was revised; unit-wise test dates remain as previously announced."
+      }
+    },
+    {
+      "id": "CU-B-2026-27",
+      "cycleId": "CU-2026-27",
+      "unitGroup": "B Unit",
+      "application": {
+        "applicationUrl": "https://admission.cu.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2027-01-10",
+        "feePaymentDeadlineOn": "2027-01-12"
+      },
+      "exam": {
+        "dateOnly": "2027-02-05"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "Application period was revised; unit-wise test dates remain as previously announced."
+      }
+    },
+    {
+      "id": "CU-C-2026-27",
+      "cycleId": "CU-2026-27",
+      "unitGroup": "C Unit",
+      "application": {
+        "applicationUrl": "https://admission.cu.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2027-01-10",
+        "feePaymentDeadlineOn": "2027-01-12"
+      },
+      "exam": {
+        "dateOnly": "2027-01-29"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "Application period was revised; unit-wise test dates remain as previously announced."
+      }
+    },
+    {
+      "id": "CU-D-2026-27",
+      "cycleId": "CU-2026-27",
+      "unitGroup": "D Unit",
+      "application": {
+        "applicationUrl": "https://admission.cu.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2027-01-10",
+        "feePaymentDeadlineOn": "2027-01-12"
+      },
+      "exam": {
+        "dateOnly": "2027-02-06"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "Application period was revised; unit-wise test dates remain as previously announced."
+      }
+    },
+    {
+      "id": "CU-B1-2026-27",
+      "cycleId": "CU-2026-27",
+      "unitGroup": "B-1 Sub-unit",
+      "application": {
+        "applicationUrl": "https://admission.cu.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2027-01-10",
+        "feePaymentDeadlineOn": "2027-01-12"
+      },
+      "exam": {
+        "dateOnly": "2027-02-03"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "Application period was revised; unit-wise test dates remain as previously announced."
+      }
+    },
+    {
+      "id": "CU-B2-2026-27",
+      "cycleId": "CU-2026-27",
+      "unitGroup": "B-2 Sub-unit",
+      "application": {
+        "applicationUrl": "https://admission.cu.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2027-01-10",
+        "feePaymentDeadlineOn": "2027-01-12"
+      },
+      "exam": {
+        "dateOnly": "2027-02-04"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "Application period was revised; unit-wise test dates remain as previously announced."
+      }
+    },
+    {
+      "id": "CU-D1-2026-27",
+      "cycleId": "CU-2026-27",
+      "unitGroup": "D-1 Sub-unit",
+      "application": {
+        "applicationUrl": "https://admission.cu.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2027-01-10",
+        "feePaymentDeadlineOn": "2027-01-12"
+      },
+      "exam": {
+        "dateOnly": "2027-02-08"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "Application period was revised; unit-wise test dates remain as previously announced."
+      }
+    },
+    {
+      "id": "KU-A-2026-27",
+      "cycleId": "KU-2026-27",
+      "unitGroup": "Unit A",
+      "application": {
+        "applicationUrl": "https://admission.ku.ac.bd/"
+      },
+      "exam": {
+        "dateOnly": "2027-02-04"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "Application window and detailed eligibility were not yet published in the sources checked."
+      }
+    },
+    {
+      "id": "KU-B-2026-27",
+      "cycleId": "KU-2026-27",
+      "unitGroup": "Unit B",
+      "application": {
+        "applicationUrl": "https://admission.ku.ac.bd/"
+      },
+      "exam": {
+        "dateOnly": "2027-02-04"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "Application window and detailed eligibility were not yet published in the sources checked."
+      }
+    },
+    {
+      "id": "KU-C-2026-27",
+      "cycleId": "KU-2026-27",
+      "unitGroup": "Unit C",
+      "application": {
+        "applicationUrl": "https://admission.ku.ac.bd/"
+      },
+      "exam": {
+        "dateOnly": "2027-02-05"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "Application window and detailed eligibility were not yet published in the sources checked."
+      }
+    },
+    {
+      "id": "KU-D-2026-27",
+      "cycleId": "KU-2026-27",
+      "unitGroup": "Unit D",
+      "application": {
+        "applicationUrl": "https://admission.ku.ac.bd/"
+      },
+      "exam": {
+        "dateOnly": "2027-02-05"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "Application window and detailed eligibility were not yet published in the sources checked."
+      }
+    },
+    {
+      "id": "SUST-ALL-2026-27",
+      "cycleId": "SUST-2026-27",
+      "unitGroup": "১ম বর্ষ ১ম সেমিস্টার — দুই দিনের পরীক্ষা",
+      "application": {},
+      "exam": {
+        "dateOnly": "2027-01-17",
+        "dateRange": {
+          "startsOn": "2027-01-17",
+          "endsOn": "2027-01-18"
+        },
+        "note": "Unit-wise date allocation not yet announced."
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-sust-reschedule",
+            "supports": [
+              "SUST press release dated 1 November 2026"
+            ]
+          },
+          {
+            "sourceId": "src-sust-official",
+            "supports": [
+              "issuing university"
+            ]
+          }
+        ],
+        "changeNote": "শাহজালাল বিশ্ববিদ্যালয়ের ১ নভেম্বরের প্রেস বিজ্ঞপ্তিতে ১৭–১৮ জানুয়ারি ২০২৭ তারিখ নিশ্চিত; ইউনিটভিত্তিক দিন ও আবেদন সময় এখনো এই বিজ্ঞপ্তিতে নেই।"
+      }
+    },
+    {
+      "id": "BUET-ALL-2026-27",
+      "cycleId": "BUET-2026-27",
+      "unitGroup": "স্নাতক প্রথম বর্ষ — সকল বিভাগ",
+      "seats": 1309,
+      "application": {
+        "applicationUrl": "https://ugadmission.buet.ac.bd/",
+        "opensAt": "2026-12-01T10:00:00+06:00",
+        "closesOn": "2027-01-07",
+        "feePaymentDeadlineOn": "2027-01-08"
+      },
+      "exam": {
+        "dateOnly": "2027-02-01"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-buet-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-buet-admission-bdnews24",
+            "supports": [
+              "application/test dates and seats"
+            ]
+          }
+        ],
+        "changeNote": "BUET-এর ২০২৬–২৭ বিজ্ঞপ্তি প্রকাশের খবর ও ভর্তি পোর্টাল মিলিয়ে তারিখগুলো নেওয়া হয়েছে; আবেদন ফি প্রদানের সময়সীমা ও পরীক্ষার তারিখ বিজ্ঞপ্তির বিবরণ অনুযায়ী।"
+      }
+    },
+    {
+      "id": "CoU-A-2026-27",
+      "cycleId": "CoU-2026-27",
+      "unitGroup": "A Unit",
+      "application": {
+        "applicationUrl": "https://www.cou.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2026-12-31"
+      },
+      "exam": {
+        "dateOnly": "2027-02-05",
+        "startsAt": "2027-02-05T11:00:00+06:00"
+      },
+      "circularIds": [
+        "COU-EXAM-ANNOUNCEMENT-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CoU-B-2026-27",
+      "cycleId": "CoU-2026-27",
+      "unitGroup": "B Unit",
+      "application": {
+        "applicationUrl": "https://www.cou.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2026-12-31"
+      },
+      "exam": {
+        "dateOnly": "2027-02-06",
+        "startsAt": "2027-02-06T15:00:00+06:00"
+      },
+      "circularIds": [
+        "COU-EXAM-ANNOUNCEMENT-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CoU-C-2026-27",
+      "cycleId": "CoU-2026-27",
+      "unitGroup": "C Unit",
+      "application": {
+        "applicationUrl": "https://www.cou.ac.bd/",
+        "opensOn": "2026-12-10",
+        "closesOn": "2026-12-31"
+      },
+      "exam": {
+        "dateOnly": "2027-02-07",
+        "startsAt": "2027-02-07T11:00:00+06:00"
+      },
+      "circularIds": [
+        "COU-EXAM-ANNOUNCEMENT-2026-27"
+      ],
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RUET-ALL-2026-27",
+      "cycleId": "RUET-2026-27",
+      "unitGroup": "স্নাতক প্রথম বর্ষ",
+      "application": {
+        "applicationUrl": "https://admission.ruet.ac.bd/"
+      },
+      "exam": {
+        "dateOnly": "2027-01-28",
+        "note": "MCQ; centres RUET and BUET."
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ruet-date-bss",
+            "supports": [
+              "Steering Committee decision and test date"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-notices",
+            "supports": [
+              "official university notice portal"
+            ]
+          }
+        ],
+        "changeNote": "RUET Steering Committee-এর সিদ্ধান্ত অনুযায়ী ২৮ জানুয়ারি ২০২৭ পরীক্ষা; আবেদন সূচি প্রকাশিত হলে হালনাগাদ করতে হবে।"
+      }
+    },
+    {
+      "id": "AGRI-ALL-2026-27",
+      "cycleId": "AGRI-2026-27",
+      "unitGroup": "কৃষি গুচ্ছ — ৯টি পাবলিক বিশ্ববিদ্যালয়",
+      "application": {
+        "applicationUrl": "https://acas.edu.bd/",
+        "opensOn": "2026-11-25",
+        "closesOn": "2026-12-15",
+        "feeBDT": 1600
+      },
+      "exam": {
+        "dateOnly": "2027-01-02",
+        "startsAt": "2027-01-02T11:00:00+06:00",
+        "endsAt": "2027-01-02T12:00:00+06:00"
+      },
+      "circularIds": [
+        "AGRI-CIRCULAR-2026-27"
+      ],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice-board circular listing"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "official SAU cluster-test date notice"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "circular text details: application window, fee and exam time"
+            ]
+          }
+        ],
+        "changeNote": "BAU-এর সরকারি নোটিশ বোর্ডে গুচ্ছ সার্কুলার তালিকাভুক্ত; সময়সীমা ও ফি সার্কুলার কপি এবং পরীক্ষার তারিখ সরকারি SAU নোটিশ থেকে নেওয়া হয়েছে।"
+      }
+    },
+    {
+      "id": "BAU-AGRI-2026-27",
+      "cycleId": "BAU-2026-27",
+      "unitGroup": "কৃষি গুচ্ছের মাধ্যমে ভর্তি (AGRI)",
+      "application": {
+        "applicationUrl": "https://acas.edu.bd/",
+        "opensOn": "2026-11-25",
+        "closesOn": "2026-12-15",
+        "feeBDT": 1600
+      },
+      "exam": {
+        "dateOnly": "2027-01-02",
+        "startsAt": "2027-01-02T11:00:00+06:00",
+        "endsAt": "2027-01-02T12:00:00+06:00"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice board lists the nine-university cluster circular"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "cluster circular application/test information"
+            ]
+          }
+        ],
+        "changeNote": "BAU কৃষি গুচ্ছের নয়টি বিশ্ববিদ্যালয়ের একটি; যৌথ আবেদন ও পরীক্ষার সময়সূচি AGRI রুটে একবার দেখানো হয়েছে।"
+      }
+    },
+    {
+      "id": "MBBS-ALL-2026-27",
+      "cycleId": "MBBS-2026-27",
+      "unitGroup": "MBBS ভর্তি পরীক্ষা",
+      "application": {},
+      "exam": {
+        "dateOnly": "2026-12-18"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-latest-star",
+            "supports": [
+              "DGME Director General's 23 November confirmation after Supreme Court order"
+            ]
+          },
+          {
+            "sourceId": "src-medical-dgme",
+            "supports": [
+              "official DGME notice index; circular still awaited"
+            ]
+          }
+        ],
+        "changeNote": "DGME মহাপরিচালকের ২৩ নভেম্বরের বক্তব্য অনুযায়ী আদালতের আদেশের পর ১৮ ডিসেম্বর পরীক্ষা নির্ধারিত; পূর্ণ DGME সার্কুলার প্রকাশিত হলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "BDS-ALL-2026-27",
+      "cycleId": "BDS-2026-27",
+      "unitGroup": "BDS ভর্তি পরীক্ষা",
+      "application": {},
+      "exam": {
+        "dateOnly": "2026-12-18"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-latest-star",
+            "supports": [
+              "DGME Director General's 23 November confirmation after Supreme Court order"
+            ]
+          },
+          {
+            "sourceId": "src-medical-dgme",
+            "supports": [
+              "official DGME notice index; circular still awaited"
+            ]
+          }
+        ],
+        "changeNote": "DGME মহাপরিচালকের ২৩ নভেম্বরের বক্তব্য অনুযায়ী আদালতের আদেশের পর ১৮ ডিসেম্বর পরীক্ষা নির্ধারিত; পূর্ণ DGME সার্কুলার প্রকাশিত হলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CUET-ALL-2026-27",
+      "cycleId": "CUET-2026-27",
+      "unitGroup": "স্নাতক Level-1",
+      "application": {
+        "applicationUrl": "https://cuet.ac.bd/"
+      },
+      "exam": {
+        "dateOnly": "2027-01-23"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "tentative",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cuet-official-date",
+            "supports": [
+              "official CUET academic information page"
+            ]
+          },
+          {
+            "sourceId": "src-cuet-date-dailysun",
+            "supports": [
+              "chairman/PRO confirmation reported by Daily Sun"
+            ]
+          }
+        ],
+        "changeNote": "Official page labels the date as probable; do not treat as final."
+      }
+    },
+    {
+      "id": "MIST-A-2026-27",
+      "cycleId": "MIST-2026-27",
+      "unitGroup": "Unit A — Engineering & URP",
+      "application": {
+        "applicationUrl": "https://admission.mist.ac.bd/",
+        "opensAt": "2027-01-05T10:00:00+06:00",
+        "closesAt": "2027-01-21T23:59:00+06:00"
+      },
+      "exam": {
+        "dateOnly": "2027-02-06",
+        "startsAt": "2027-02-06T09:00:00+06:00",
+        "endsAt": "2027-02-06T12:00:00+06:00"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "MIST পোর্টাল ও MIST-প্রকাশিত বিজ্ঞপ্তির সংরক্ষিত পূর্ণ কপি মিলিয়ে সময়সূচি নেওয়া হয়েছে; সরাসরি পোর্টাল থেকে বিজ্ঞপ্তি পাঠযোগ্য হলে পুনরায় মিলিয়ে নিতে হবে।"
+      }
+    },
+    {
+      "id": "MIST-B-2026-27",
+      "cycleId": "MIST-2026-27",
+      "unitGroup": "Unit B — Architecture",
+      "application": {
+        "applicationUrl": "https://admission.mist.ac.bd/",
+        "opensAt": "2027-01-05T10:00:00+06:00",
+        "closesAt": "2027-01-21T23:59:00+06:00"
+      },
+      "exam": {
+        "dateOnly": "2027-02-06",
+        "startsAt": "2027-02-06T14:00:00+06:00",
+        "endsAt": "2027-02-06T16:00:00+06:00"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "MIST পোর্টাল ও MIST-প্রকাশিত বিজ্ঞপ্তির সংরক্ষিত পূর্ণ কপি মিলিয়ে সময়সূচি নেওয়া হয়েছে; সরাসরি পোর্টাল থেকে বিজ্ঞপ্তি পাঠযোগ্য হলে পুনরায় মিলিয়ে নিতে হবে।"
+      }
+    },
+    {
+      "id": "MIST-C-2026-27",
+      "cycleId": "MIST-2026-27",
+      "unitGroup": "Unit C — Science",
+      "application": {
+        "applicationUrl": "https://admission.mist.ac.bd/",
+        "opensAt": "2027-01-05T10:00:00+06:00",
+        "closesAt": "2027-01-21T23:59:00+06:00"
+      },
+      "exam": {
+        "dateOnly": "2027-02-05",
+        "startsAt": "2027-02-05T10:00:00+06:00",
+        "endsAt": "2027-02-05T11:00:00+06:00"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "MIST পোর্টাল ও MIST-প্রকাশিত বিজ্ঞপ্তির সংরক্ষিত পূর্ণ কপি মিলিয়ে সময়সূচি নেওয়া হয়েছে; সরাসরি পোর্টাল থেকে বিজ্ঞপ্তি পাঠযোগ্য হলে পুনরায় মিলিয়ে নিতে হবে।"
+      }
+    },
+    {
+      "id": "GST-B-2026-27",
+      "cycleId": "GST-2026-27",
+      "unitGroup": "Unit B — Humanities",
+      "application": {},
+      "exam": {
+        "dateOnly": "2027-03-19",
+        "startsAt": "2027-03-19T11:00:00+06:00",
+        "endsAt": "2027-03-19T12:00:00+06:00"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "GST ভর্তি কমিটির সহ-আহ্বায়কের বক্তব্য ও ইউনিটভিত্তিক প্রকাশিত সময়সূচির সংবাদ মিলিয়ে তারিখ নির্ধারণ করা হয়েছে; আবেদন বিজ্ঞপ্তি প্রকাশিত হলে পুনরায় আপডেট হবে।"
+      }
+    },
+    {
+      "id": "GST-C-2026-27",
+      "cycleId": "GST-2026-27",
+      "unitGroup": "Unit C — Business Studies",
+      "application": {},
+      "exam": {
+        "dateOnly": "2027-03-20",
+        "startsAt": "2027-03-20T11:00:00+06:00",
+        "endsAt": "2027-03-20T12:00:00+06:00"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "GST ভর্তি কমিটির সহ-আহ্বায়কের বক্তব্য ও ইউনিটভিত্তিক প্রকাশিত সময়সূচির সংবাদ মিলিয়ে তারিখ নির্ধারণ করা হয়েছে; আবেদন বিজ্ঞপ্তি প্রকাশিত হলে পুনরায় আপডেট হবে।"
+      }
+    },
+    {
+      "id": "GST-D-2026-27",
+      "cycleId": "GST-2026-27",
+      "unitGroup": "Unit D — Architecture",
+      "application": {},
+      "exam": {
+        "dateOnly": "2027-03-20",
+        "startsAt": "2027-03-20T15:00:00+06:00",
+        "endsAt": "2027-03-20T16:00:00+06:00"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "GST ভর্তি কমিটির সহ-আহ্বায়কের বক্তব্য ও ইউনিটভিত্তিক প্রকাশিত সময়সূচির সংবাদ মিলিয়ে তারিখ নির্ধারণ করা হয়েছে; আবেদন বিজ্ঞপ্তি প্রকাশিত হলে পুনরায় আপডেট হবে।"
+      }
+    },
+    {
+      "id": "GST-A-2026-27",
+      "cycleId": "GST-2026-27",
+      "unitGroup": "Unit A — Science",
+      "application": {},
+      "exam": {
+        "dateOnly": "2027-03-27",
+        "startsAt": "2027-03-27T11:00:00+06:00",
+        "endsAt": "2027-03-27T12:00:00+06:00"
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "GST ভর্তি কমিটির সহ-আহ্বায়কের বক্তব্য ও ইউনিটভিত্তিক প্রকাশিত সময়সূচির সংবাদ মিলিয়ে তারিখ নির্ধারণ করা হয়েছে; আবেদন বিজ্ঞপ্তি প্রকাশিত হলে পুনরায় আপডেট হবে।"
+      }
+    },
+    {
+      "id": "PUST-GST-2026-27",
+      "cycleId": "PUST-2026-27",
+      "unitGroup": "GST গুচ্ছের মাধ্যমে ভর্তি (PUST)",
+      "application": {
+        "applicationUrl": "https://gstadmission.ac.bd/"
+      },
+      "exam": {
+        "note": "Unit-wise date/time is shared under the GST route; PUST does not run a separate test in this cluster."
+      },
+      "circularIds": [],
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "GST committee's 2026–27 cluster schedule"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "reported membership list identifies PUST among the GST cluster institutions"
+            ]
+          }
+        ],
+        "changeNote": "PUST GST গুচ্ছের সদস্য; ইউনিটভিত্তিক যৌথ পরীক্ষার তারিখ GST রুটে দেখানো হয়েছে, পৃথক পরীক্ষা ধরে নেওয়া হয়নি।"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "DU-APP-OPEN",
+      "cycleId": "DU-2026-27",
+      "type": "application_open",
+      "title": "অনলাইন আবেদন শুরু",
+      "appliesToAllUnits": true,
+      "startsAt": "2026-11-11T12:00:00+06:00",
+      "dateOnly": "2026-11-11",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-APP-DEADLINE",
+      "cycleId": "DU-2026-27",
+      "type": "application_deadline",
+      "title": "অনলাইন আবেদন ও ফি জমার শেষ সময়",
+      "appliesToAllUnits": true,
+      "startsAt": "2026-11-28T00:00:00+06:00",
+      "dateOnly": "2026-11-28",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-IBA-ADMIT-OPEN",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_open",
+      "title": "IBA Unit প্রবেশপত্র ডাউনলোড শুরু",
+      "admissionDetailId": "DU-IBA-2026-27",
+      "startsAt": "2026-12-02T15:00:00+06:00",
+      "dateOnly": "2026-12-02",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-IBA-ADMIT-DEADLINE",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_deadline",
+      "title": "IBA Unit প্রবেশপত্র ডাউনলোডের শেষ সময়",
+      "admissionDetailId": "DU-IBA-2026-27",
+      "startsAt": "2026-12-05T09:00:00+06:00",
+      "dateOnly": "2026-12-05",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-IBA-EXAM",
+      "cycleId": "DU-2026-27",
+      "type": "admission_test",
+      "title": "IBA Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "DU-IBA-2026-27",
+      "startsAt": "2026-12-05T10:00:00+06:00",
+      "endsAt": "2026-12-05T12:00:00+06:00",
+      "dateOnly": "2026-12-05",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-SCI-ADMIT-OPEN",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_open",
+      "title": "Science Unit প্রবেশপত্র ডাউনলোড শুরু",
+      "admissionDetailId": "DU-SCI-2026-27",
+      "startsAt": "2026-12-02T15:00:00+06:00",
+      "dateOnly": "2026-12-02",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-SCI-ADMIT-DEADLINE",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_deadline",
+      "title": "Science Unit প্রবেশপত্র ডাউনলোডের শেষ সময়",
+      "admissionDetailId": "DU-SCI-2026-27",
+      "startsAt": "2026-12-12T10:00:00+06:00",
+      "dateOnly": "2026-12-12",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-SCI-EXAM",
+      "cycleId": "DU-2026-27",
+      "type": "admission_test",
+      "title": "Science Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "DU-SCI-2026-27",
+      "startsAt": "2026-12-12T11:00:00+06:00",
+      "endsAt": "2026-12-12T12:30:00+06:00",
+      "dateOnly": "2026-12-12",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-ALSS-ADMIT-OPEN",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_open",
+      "title": "Arts, Law and Social Science Unit প্রবেশপত্র ডাউনলোড শুরু",
+      "admissionDetailId": "DU-ALSS-2026-27",
+      "startsAt": "2026-12-07T15:00:00+06:00",
+      "dateOnly": "2026-12-07",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-ALSS-ADMIT-DEADLINE",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_deadline",
+      "title": "Arts, Law and Social Science Unit প্রবেশপত্র ডাউনলোডের শেষ সময়",
+      "admissionDetailId": "DU-ALSS-2026-27",
+      "startsAt": "2026-12-19T10:00:00+06:00",
+      "dateOnly": "2026-12-19",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-ALSS-EXAM",
+      "cycleId": "DU-2026-27",
+      "type": "admission_test",
+      "title": "Arts, Law and Social Science Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "DU-ALSS-2026-27",
+      "startsAt": "2026-12-19T11:00:00+06:00",
+      "endsAt": "2026-12-19T12:30:00+06:00",
+      "dateOnly": "2026-12-19",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-FINE-ADMIT-OPEN",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_open",
+      "title": "Fine Arts Unit প্রবেশপত্র ডাউনলোড শুরু",
+      "admissionDetailId": "DU-FINE-2026-27",
+      "startsAt": "2026-12-07T15:00:00+06:00",
+      "dateOnly": "2026-12-07",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-FINE-ADMIT-DEADLINE",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_deadline",
+      "title": "Fine Arts Unit প্রবেশপত্র ডাউনলোডের শেষ সময়",
+      "admissionDetailId": "DU-FINE-2026-27",
+      "startsAt": "2026-12-22T10:00:00+06:00",
+      "dateOnly": "2026-12-22",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-FINE-EXAM",
+      "cycleId": "DU-2026-27",
+      "type": "admission_test",
+      "title": "Fine Arts Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "DU-FINE-2026-27",
+      "startsAt": "2026-12-22T11:00:00+06:00",
+      "endsAt": "2026-12-22T12:30:00+06:00",
+      "dateOnly": "2026-12-22",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-BUS-ADMIT-OPEN",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_open",
+      "title": "Business Studies Unit প্রবেশপত্র ডাউনলোড শুরু",
+      "admissionDetailId": "DU-BUS-2026-27",
+      "startsAt": "2026-12-07T15:00:00+06:00",
+      "dateOnly": "2026-12-07",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-BUS-ADMIT-DEADLINE",
+      "cycleId": "DU-2026-27",
+      "type": "admit_card_deadline",
+      "title": "Business Studies Unit প্রবেশপত্র ডাউনলোডের শেষ সময়",
+      "admissionDetailId": "DU-BUS-2026-27",
+      "startsAt": "2026-12-26T10:00:00+06:00",
+      "dateOnly": "2026-12-26",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "DU-BUS-EXAM",
+      "cycleId": "DU-2026-27",
+      "type": "admission_test",
+      "title": "Business Studies Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "DU-BUS-2026-27",
+      "startsAt": "2026-12-26T11:00:00+06:00",
+      "endsAt": "2026-12-26T12:30:00+06:00",
+      "dateOnly": "2026-12-26",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-du-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU-APP-OPEN",
+      "cycleId": "RU-2026-27",
+      "type": "application_open",
+      "title": "অনলাইন আবেদন শুরু",
+      "appliesToAllUnits": true,
+      "startsAt": "2026-11-15T12:00:00+06:00",
+      "dateOnly": "2026-11-15",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU-APP-DEADLINE",
+      "cycleId": "RU-2026-27",
+      "type": "application_deadline",
+      "title": "অনলাইন আবেদন ও ফি জমার শেষ সময়",
+      "appliesToAllUnits": true,
+      "startsAt": "2026-11-30T23:59:00+06:00",
+      "dateOnly": "2026-11-30",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU-A-EXAM",
+      "cycleId": "RU-2026-27",
+      "type": "admission_test",
+      "title": "Unit A ভর্তি পরীক্ষা",
+      "admissionDetailId": "RU-A-2026-27",
+      "dateOnly": "2027-02-20",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU-B-EXAM",
+      "cycleId": "RU-2026-27",
+      "type": "admission_test",
+      "title": "Unit B ভর্তি পরীক্ষা",
+      "admissionDetailId": "RU-B-2026-27",
+      "dateOnly": "2027-02-12",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RU-C-EXAM",
+      "cycleId": "RU-2026-27",
+      "type": "admission_test",
+      "title": "Unit C ভর্তি পরীক্ষা",
+      "admissionDetailId": "RU-C-2026-27",
+      "dateOnly": "2027-02-13",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ru-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-APP-OPEN",
+      "cycleId": "JU-2026-27",
+      "type": "application_open",
+      "title": "অনলাইন আবেদন শুরু",
+      "appliesToAllUnits": true,
+      "startsAt": "2026-11-22T10:00:00+06:00",
+      "dateOnly": "2026-11-22",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-APP-DEADLINE",
+      "cycleId": "JU-2026-27",
+      "type": "application_deadline",
+      "title": "অনলাইন আবেদন ও ফি জমার শেষ সময়",
+      "appliesToAllUnits": true,
+      "startsAt": "2026-12-15T23:59:00+06:00",
+      "dateOnly": "2026-12-15",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-ADMIT-OPEN",
+      "cycleId": "JU-2026-27",
+      "type": "admit_card_open",
+      "title": "প্রবেশপত্র ডাউনলোড শুরু",
+      "appliesToAllUnits": true,
+      "dateOnly": "2026-12-25",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JU-EXAM-WINDOW",
+      "cycleId": "JU-2026-27",
+      "type": "admission_test",
+      "title": "ভর্তি পরীক্ষার সম্ভাব্য সময়সীমা",
+      "appliesToAllUnits": true,
+      "dateOnly": "2027-01-10",
+      "dateRange": {
+        "startsOn": "2027-01-10",
+        "endsOn": "2027-01-21"
+      },
+      "verification": {
+        "status": "tentative",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-APP-OPEN",
+      "cycleId": "JnU-2026-27",
+      "type": "application_open",
+      "title": "অনলাইন আবেদন শুরু",
+      "appliesToAllUnits": true,
+      "startsAt": "2026-11-25T12:00:00+06:00",
+      "dateOnly": "2026-11-25",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-APP-DEADLINE",
+      "cycleId": "JnU-2026-27",
+      "type": "application_deadline",
+      "title": "অনলাইন আবেদন ও ফি জমার শেষ সময়",
+      "appliesToAllUnits": true,
+      "startsAt": "2026-12-10T23:59:00+06:00",
+      "dateOnly": "2026-12-10",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-A-EXAM",
+      "cycleId": "JnU-2026-27",
+      "type": "admission_test",
+      "title": "Unit A ভর্তি পরীক্ষা",
+      "admissionDetailId": "JnU-A-2026-27",
+      "startsAt": "2027-01-01T10:00:00+06:00",
+      "endsAt": "2027-01-01T11:00:00+06:00",
+      "dateOnly": "2027-01-01",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-E-EXAM",
+      "cycleId": "JnU-2026-27",
+      "type": "admission_test",
+      "title": "Unit E — Fine Arts ভর্তি পরীক্ষা",
+      "admissionDetailId": "JnU-E-2026-27",
+      "startsAt": "2027-01-08T10:00:00+06:00",
+      "endsAt": "2027-01-08T11:30:00+06:00",
+      "dateOnly": "2027-01-08",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-B-EXAM",
+      "cycleId": "JnU-2026-27",
+      "type": "admission_test",
+      "title": "Unit B ভর্তি পরীক্ষা",
+      "admissionDetailId": "JnU-B-2026-27",
+      "startsAt": "2027-01-15T10:00:00+06:00",
+      "endsAt": "2027-01-15T11:00:00+06:00",
+      "dateOnly": "2027-01-15",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-C-EXAM",
+      "cycleId": "JnU-2026-27",
+      "type": "admission_test",
+      "title": "Unit C ভর্তি পরীক্ষা",
+      "admissionDetailId": "JnU-C-2026-27",
+      "startsAt": "2027-01-22T10:00:00+06:00",
+      "endsAt": "2027-01-22T11:00:00+06:00",
+      "dateOnly": "2027-01-22",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-D-EXAM",
+      "cycleId": "JnU-2026-27",
+      "type": "admission_test",
+      "title": "Unit D ভর্তি পরীক্ষা",
+      "admissionDetailId": "JnU-D-2026-27",
+      "startsAt": "2027-01-23T10:00:00+06:00",
+      "endsAt": "2027-01-23T11:00:00+06:00",
+      "dateOnly": "2027-01-23",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "KUET-APP-DEADLINE",
+      "cycleId": "KUET-2026-27",
+      "type": "application_deadline",
+      "title": "অনলাইন আবেদন ও ফি জমার শেষ দিন",
+      "appliesToAllUnits": true,
+      "dateOnly": "2026-12-10",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-kuet-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "KUET-EXAM",
+      "cycleId": "KUET-2026-27",
+      "type": "admission_test",
+      "title": "KUET ভর্তি পরীক্ষা",
+      "admissionDetailId": "KUET-ALL-2026-27",
+      "dateOnly": "2027-01-08",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-kuet-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "KUET-RESULT",
+      "cycleId": "KUET-2026-27",
+      "type": "result_publication",
+      "title": "KUET ফলাফল ও মেধাতালিকা প্রকাশ",
+      "appliesToAllUnits": true,
+      "dateOnly": "2027-01-21",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T19:45:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-kuet-portal",
+            "supports": [
+              "2026–27 admission information",
+              "published dates and admission process"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX-APP-OPEN",
+      "cycleId": "BUTEX-2026-27",
+      "type": "application_open",
+      "title": "BUTEX অনলাইন আবেদন শুরু",
+      "admissionDetailId": "BUTEX-ALL-2026-27",
+      "startsAt": "2026-12-01T10:00:00+06:00",
+      "dateOnly": "2026-12-01",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "2026–27 admission circular",
+              "published application/exam dates and relevant admission details"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX-APP-DEADLINE",
+      "cycleId": "BUTEX-2026-27",
+      "type": "application_deadline",
+      "title": "BUTEX অনলাইন আবেদনের শেষ সময়",
+      "admissionDetailId": "BUTEX-ALL-2026-27",
+      "startsAt": "2027-01-10T23:59:00+06:00",
+      "dateOnly": "2027-01-10",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "2026–27 admission circular",
+              "published application/exam dates and relevant admission details"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX-SHORTLIST",
+      "cycleId": "BUTEX-2026-27",
+      "type": "other",
+      "title": "BUTEX লিখিত পরীক্ষার যোগ্য প্রার্থীর তালিকা প্রকাশের সম্ভাব্য তারিখ",
+      "admissionDetailId": "BUTEX-ALL-2026-27",
+      "dateOnly": "2027-01-15",
+      "verification": {
+        "status": "tentative",
+        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "2026–27 admission circular",
+              "published application/exam dates and relevant admission details"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX-EXAM",
+      "cycleId": "BUTEX-2026-27",
+      "type": "admission_test",
+      "title": "BUTEX লিখিত ভর্তি পরীক্ষা",
+      "admissionDetailId": "BUTEX-ALL-2026-27",
+      "startsAt": "2027-01-29T10:00:00+06:00",
+      "endsAt": "2027-01-29T12:00:00+06:00",
+      "dateOnly": "2027-01-29",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "2026–27 admission circular",
+              "published application/exam dates and relevant admission details"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX-RESULT",
+      "cycleId": "BUTEX-2026-27",
+      "type": "result_publication",
+      "title": "BUTEX ফলাফল প্রকাশের সম্ভাব্য তারিখ",
+      "admissionDetailId": "BUTEX-ALL-2026-27",
+      "dateOnly": "2027-02-15",
+      "verification": {
+        "status": "tentative",
+        "lastVerifiedAt": "2026-11-23T20:25:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "2026–27 admission circular",
+              "published application/exam dates and relevant admission details"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "COU-APP-OPEN",
+      "cycleId": "CoU-2026-27",
+      "type": "application_open",
+      "title": "কুমিল্লা বিশ্ববিদ্যালয় ২০২৬–২৭ ভর্তি আবেদন শুরু",
+      "appliesToAllUnits": true,
+      "dateOnly": "2026-12-10",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CU-APP-OPEN",
+      "cycleId": "CU-2026-27",
+      "type": "application_open",
+      "title": "CU অনলাইন আবেদন শুরু",
+      "appliesToAllUnits": true,
+      "dateOnly": "2026-12-10",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CU-APP-DEADLINE",
+      "cycleId": "CU-2026-27",
+      "type": "application_deadline",
+      "title": "CU অনলাইন আবেদনের শেষ দিন",
+      "appliesToAllUnits": true,
+      "dateOnly": "2027-01-10",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CU-FEE-DEADLINE",
+      "cycleId": "CU-2026-27",
+      "type": "application_deadline",
+      "title": "CU আবেদন ফি জমার শেষ দিন",
+      "appliesToAllUnits": true,
+      "dateOnly": "2027-01-12",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CU-A-EXAM",
+      "cycleId": "CU-2026-27",
+      "type": "admission_test",
+      "title": "CU A Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CU-A-2026-27",
+      "dateOnly": "2027-01-30",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CU-B-EXAM",
+      "cycleId": "CU-2026-27",
+      "type": "admission_test",
+      "title": "CU B Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CU-B-2026-27",
+      "dateOnly": "2027-02-05",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CU-C-EXAM",
+      "cycleId": "CU-2026-27",
+      "type": "admission_test",
+      "title": "CU C Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CU-C-2026-27",
+      "dateOnly": "2027-01-29",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CU-D-EXAM",
+      "cycleId": "CU-2026-27",
+      "type": "admission_test",
+      "title": "CU D Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CU-D-2026-27",
+      "dateOnly": "2027-02-06",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CU-B1-EXAM",
+      "cycleId": "CU-2026-27",
+      "type": "admission_test",
+      "title": "CU B-1 Sub-unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CU-B1-2026-27",
+      "dateOnly": "2027-02-03",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CU-B2-EXAM",
+      "cycleId": "CU-2026-27",
+      "type": "admission_test",
+      "title": "CU B-2 Sub-unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CU-B2-2026-27",
+      "dateOnly": "2027-02-04",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CU-D1-EXAM",
+      "cycleId": "CU-2026-27",
+      "type": "admission_test",
+      "title": "CU D-1 Sub-unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CU-D1-2026-27",
+      "dateOnly": "2027-02-08",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cu-revised-dates",
+            "supports": [
+              "revised application dates",
+              "unit-wise test dates"
+            ]
+          },
+          {
+            "sourceId": "src-cu-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "KU-A-EXAM",
+      "cycleId": "KU-2026-27",
+      "type": "admission_test",
+      "title": "খুলনা বিশ্ববিদ্যালয় Unit A ভর্তি পরীক্ষা",
+      "admissionDetailId": "KU-A-2026-27",
+      "dateOnly": "2027-02-04",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "KU-B-EXAM",
+      "cycleId": "KU-2026-27",
+      "type": "admission_test",
+      "title": "খুলনা বিশ্ববিদ্যালয় Unit B ভর্তি পরীক্ষা",
+      "admissionDetailId": "KU-B-2026-27",
+      "dateOnly": "2027-02-04",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "KU-C-EXAM",
+      "cycleId": "KU-2026-27",
+      "type": "admission_test",
+      "title": "খুলনা বিশ্ববিদ্যালয় Unit C ভর্তি পরীক্ষা",
+      "admissionDetailId": "KU-C-2026-27",
+      "dateOnly": "2027-02-05",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "KU-D-EXAM",
+      "cycleId": "KU-2026-27",
+      "type": "admission_test",
+      "title": "খুলনা বিশ্ববিদ্যালয় Unit D ভর্তি পরীক্ষা",
+      "admissionDetailId": "KU-D-2026-27",
+      "dateOnly": "2027-02-05",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ku-reschedule-bss",
+            "supports": [
+              "revised exam dates",
+              "A/B and C/D unit grouping"
+            ]
+          },
+          {
+            "sourceId": "src-ku-admission-portal",
+            "supports": [
+              "official 2026–27 admission portal status"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "SUST-EXAM-DAY-1",
+      "cycleId": "SUST-2026-27",
+      "type": "admission_test",
+      "title": "SUST ভর্তি পরীক্ষা — প্রথম দিন",
+      "admissionDetailId": "SUST-ALL-2026-27",
+      "dateOnly": "2027-01-17",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-sust-reschedule",
+            "supports": [
+              "SUST press release dated 1 November 2026"
+            ]
+          },
+          {
+            "sourceId": "src-sust-official",
+            "supports": [
+              "issuing university"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "SUST-EXAM-DAY-2",
+      "cycleId": "SUST-2026-27",
+      "type": "admission_test",
+      "title": "SUST ভর্তি পরীক্ষা — দ্বিতীয় দিন",
+      "admissionDetailId": "SUST-ALL-2026-27",
+      "dateOnly": "2027-01-18",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-sust-reschedule",
+            "supports": [
+              "SUST press release dated 1 November 2026"
+            ]
+          },
+          {
+            "sourceId": "src-sust-official",
+            "supports": [
+              "issuing university"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "BUET-APP-OPEN",
+      "cycleId": "BUET-2026-27",
+      "type": "application_open",
+      "title": "BUET অনলাইন আবেদন শুরু",
+      "appliesToAllUnits": true,
+      "startsAt": "2026-12-01T10:00:00+06:00",
+      "dateOnly": "2026-12-01",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-buet-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-buet-admission-bdnews24",
+            "supports": [
+              "application/test dates and seats"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "BUET-APP-DEADLINE",
+      "cycleId": "BUET-2026-27",
+      "type": "application_deadline",
+      "title": "BUET অনলাইন আবেদনের শেষ দিন",
+      "appliesToAllUnits": true,
+      "dateOnly": "2027-01-07",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-buet-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-buet-admission-bdnews24",
+            "supports": [
+              "application/test dates and seats"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "BUET-FEE-DEADLINE",
+      "cycleId": "BUET-2026-27",
+      "type": "application_deadline",
+      "title": "BUET ভর্তি আবেদন ফি জমার শেষ দিন",
+      "appliesToAllUnits": true,
+      "dateOnly": "2027-01-08",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-buet-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-buet-admission-bdnews24",
+            "supports": [
+              "application/test dates and seats"
+            ]
+          }
+        ],
+        "changeNote": "Payment date reported as 8 January; time was not entered."
+      }
+    },
+    {
+      "id": "BUET-EXAM",
+      "cycleId": "BUET-2026-27",
+      "type": "admission_test",
+      "title": "BUET ভর্তি পরীক্ষা",
+      "admissionDetailId": "BUET-ALL-2026-27",
+      "dateOnly": "2027-02-01",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-buet-admission-portal",
+            "supports": [
+              "official admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-buet-admission-bdnews24",
+            "supports": [
+              "application/test dates and seats"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "COU-A-EXAM",
+      "cycleId": "CoU-2026-27",
+      "type": "admission_test",
+      "title": "কুমিল্লা বিশ্ববিদ্যালয় A Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CoU-A-2026-27",
+      "startsAt": "2027-02-05T11:00:00+06:00",
+      "dateOnly": "2027-02-05",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "COU-B-EXAM",
+      "cycleId": "CoU-2026-27",
+      "type": "admission_test",
+      "title": "কুমিল্লা বিশ্ববিদ্যালয় B Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CoU-B-2026-27",
+      "startsAt": "2027-02-06T15:00:00+06:00",
+      "dateOnly": "2027-02-06",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "COU-C-EXAM",
+      "cycleId": "CoU-2026-27",
+      "type": "admission_test",
+      "title": "কুমিল্লা বিশ্ববিদ্যালয় C Unit ভর্তি পরীক্ষা",
+      "admissionDetailId": "CoU-C-2026-27",
+      "startsAt": "2027-02-07T11:00:00+06:00",
+      "dateOnly": "2027-02-07",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "COU-APP-DEADLINE",
+      "cycleId": "CoU-2026-27",
+      "type": "application_deadline",
+      "title": "কুমিল্লা বিশ্ববিদ্যালয় অনলাইন আবেদনের শেষ দিন",
+      "appliesToAllUnits": true,
+      "dateOnly": "2026-12-31",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official unit-wise exam schedule"
+            ]
+          },
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official application window"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "RUET-EXAM",
+      "cycleId": "RUET-2026-27",
+      "type": "admission_test",
+      "title": "RUET ভর্তি পরীক্ষা (RUET ও BUET কেন্দ্র)",
+      "admissionDetailId": "RUET-ALL-2026-27",
+      "dateOnly": "2027-01-28",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ruet-date-bss",
+            "supports": [
+              "Steering Committee decision and test date"
+            ]
+          },
+          {
+            "sourceId": "src-ruet-notices",
+            "supports": [
+              "official university notice portal"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "AGRI-APP-OPEN",
+      "cycleId": "AGRI-2026-27",
+      "type": "application_open",
+      "title": "কৃষি গুচ্ছ অনলাইন আবেদন শুরু",
+      "appliesToAllUnits": true,
+      "dateOnly": "2026-11-25",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice-board circular listing"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "official SAU cluster-test date notice"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "circular text details: application window, fee and exam time"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "AGRI-APP-DEADLINE",
+      "cycleId": "AGRI-2026-27",
+      "type": "application_deadline",
+      "title": "কৃষি গুচ্ছ অনলাইন আবেদনের শেষ দিন",
+      "appliesToAllUnits": true,
+      "dateOnly": "2026-12-15",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice-board circular listing"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "official SAU cluster-test date notice"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "circular text details: application window, fee and exam time"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "AGRI-EXAM",
+      "cycleId": "AGRI-2026-27",
+      "type": "admission_test",
+      "title": "কৃষি গুচ্ছ ভর্তি পরীক্ষা",
+      "admissionDetailId": "AGRI-ALL-2026-27",
+      "startsAt": "2027-01-02T11:00:00+06:00",
+      "endsAt": "2027-01-02T12:00:00+06:00",
+      "dateOnly": "2027-01-02",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice-board circular listing"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "official SAU cluster-test date notice"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "circular text details: application window, fee and exam time"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "MBBS-EXAM",
+      "cycleId": "MBBS-2026-27",
+      "type": "admission_test",
+      "title": "MBBS ভর্তি পরীক্ষা",
+      "admissionDetailId": "MBBS-ALL-2026-27",
+      "dateOnly": "2026-12-18",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-latest-star",
+            "supports": [
+              "DGME Director General's 23 November confirmation after Supreme Court order"
+            ]
+          },
+          {
+            "sourceId": "src-medical-dgme",
+            "supports": [
+              "official DGME notice index; circular still awaited"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "BDS-EXAM",
+      "cycleId": "BDS-2026-27",
+      "type": "admission_test",
+      "title": "BDS ভর্তি পরীক্ষা",
+      "admissionDetailId": "BDS-ALL-2026-27",
+      "dateOnly": "2026-12-18",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-medical-latest-star",
+            "supports": [
+              "DGME Director General's 23 November confirmation after Supreme Court order"
+            ]
+          },
+          {
+            "sourceId": "src-medical-dgme",
+            "supports": [
+              "official DGME notice index; circular still awaited"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "CUET-EXAM-TENTATIVE",
+      "cycleId": "CUET-2026-27",
+      "type": "admission_test",
+      "title": "CUET ভর্তি পরীক্ষা (সম্ভাব্য তারিখ)",
+      "admissionDetailId": "CUET-ALL-2026-27",
+      "dateOnly": "2027-01-23",
+      "verification": {
+        "status": "tentative",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cuet-official-date",
+            "supports": [
+              "official CUET academic information page"
+            ]
+          },
+          {
+            "sourceId": "src-cuet-date-dailysun",
+            "supports": [
+              "chairman/PRO confirmation reported by Daily Sun"
+            ]
+          }
+        ],
+        "changeNote": "সম্ভাব্য; চূড়ান্ত বিজ্ঞপ্তির অপেক্ষায়।"
+      }
+    },
+    {
+      "id": "MIST-APP-OPEN",
+      "cycleId": "MIST-2026-27",
+      "type": "application_open",
+      "title": "MIST অনলাইন আবেদন শুরু",
+      "appliesToAllUnits": true,
+      "startsAt": "2027-01-05T10:00:00+06:00",
+      "dateOnly": "2027-01-05",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "MIST-APP-DEADLINE",
+      "cycleId": "MIST-2026-27",
+      "type": "application_deadline",
+      "title": "MIST অনলাইন আবেদনের শেষ সময়",
+      "appliesToAllUnits": true,
+      "startsAt": "2027-01-21T23:59:00+06:00",
+      "dateOnly": "2027-01-21",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "MIST-SHORTLIST",
+      "cycleId": "MIST-2026-27",
+      "type": "other",
+      "title": "MIST যোগ্য প্রার্থীর তালিকা প্রকাশ",
+      "appliesToAllUnits": true,
+      "dateOnly": "2027-01-25",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "MIST-C-EXAM",
+      "cycleId": "MIST-2026-27",
+      "type": "admission_test",
+      "title": "MIST Unit C — Science ভর্তি পরীক্ষা",
+      "admissionDetailId": "MIST-C-2026-27",
+      "startsAt": "2027-02-05T10:00:00+06:00",
+      "endsAt": "2027-02-05T11:00:00+06:00",
+      "dateOnly": "2027-02-05",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "MIST-A-EXAM",
+      "cycleId": "MIST-2026-27",
+      "type": "admission_test",
+      "title": "MIST Unit A — Engineering & URP ভর্তি পরীক্ষা",
+      "admissionDetailId": "MIST-A-2026-27",
+      "startsAt": "2027-02-06T09:00:00+06:00",
+      "endsAt": "2027-02-06T12:00:00+06:00",
+      "dateOnly": "2027-02-06",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "MIST-B-EXAM",
+      "cycleId": "MIST-2026-27",
+      "type": "admission_test",
+      "title": "MIST Unit B — Architecture ভর্তি পরীক্ষা",
+      "admissionDetailId": "MIST-B-2026-27",
+      "startsAt": "2027-02-06T14:00:00+06:00",
+      "endsAt": "2027-02-06T16:00:00+06:00",
+      "dateOnly": "2027-02-06",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-mist-admission-portal",
+            "supports": [
+              "official MIST admission portal"
+            ]
+          },
+          {
+            "sourceId": "src-mist-circular-archive",
+            "supports": [
+              "archived full text of MIST-issued 2026–27 circular"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "GST-B-EXAM",
+      "cycleId": "GST-2026-27",
+      "type": "admission_test",
+      "title": "GST Unit B — Humanities ভর্তি পরীক্ষা",
+      "admissionDetailId": "GST-B-2026-27",
+      "dateOnly": "2027-03-19",
+      "startsAt": "2027-03-19T11:00:00+06:00",
+      "endsAt": "2027-03-19T12:00:00+06:00",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "GST-C-EXAM",
+      "cycleId": "GST-2026-27",
+      "type": "admission_test",
+      "title": "GST Unit C — Business Studies ভর্তি পরীক্ষা",
+      "admissionDetailId": "GST-C-2026-27",
+      "dateOnly": "2027-03-20",
+      "startsAt": "2027-03-20T11:00:00+06:00",
+      "endsAt": "2027-03-20T12:00:00+06:00",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "GST-D-EXAM",
+      "cycleId": "GST-2026-27",
+      "type": "admission_test",
+      "title": "GST Unit D — Architecture ভর্তি পরীক্ষা",
+      "admissionDetailId": "GST-D-2026-27",
+      "dateOnly": "2027-03-20",
+      "startsAt": "2027-03-20T15:00:00+06:00",
+      "endsAt": "2027-03-20T16:00:00+06:00",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    },
+    {
+      "id": "GST-A-EXAM",
+      "cycleId": "GST-2026-27",
+      "type": "admission_test",
+      "title": "GST Unit A — Science ভর্তি পরীক্ষা",
+      "admissionDetailId": "GST-A-2026-27",
+      "dateOnly": "2027-03-27",
+      "startsAt": "2027-03-27T11:00:00+06:00",
+      "endsAt": "2027-03-27T12:00:00+06:00",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-gst-dates-observer",
+            "supports": [
+              "21 November committee co-convener confirmation that dates remain unchanged and 23 institutions participate"
+            ]
+          },
+          {
+            "sourceId": "src-gst-unit-times-observer",
+            "supports": [
+              "unit-wise date and time report following the committee meeting"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    }
+  ],
+  "examCenters": [],
+  "circulars": [
+    {
+      "id": "JU-CIRCULAR-2026-27",
+      "cycleId": "JU-2026-27",
+      "title": "Jahangirnagar University 2026–27 undergraduate admission circular",
+      "documentUrl": "https://juniv.edu.bd/discussion/18670/file/18081",
+      "publishedAt": null,
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T20:55:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-ju-circular",
+            "supports": [
+              "official 2026–27 circular/notice document"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "JnU-CIRCULAR-2026-27",
+      "cycleId": "JnU-2026-27",
+      "title": "Jagannath University 2026–27 undergraduate admission circular",
+      "documentUrl": "https://jnu.ac.bd/assets/notice/9ea6d52bc7a947d600093ba06052e3cc.pdf",
+      "publishedAt": "2026-11-11T00:00:00+06:00",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T20:55:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-jnu-circular",
+            "supports": [
+              "official 2026–27 circular/notice document"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "BUTEX-CIRCULAR-2026-27",
+      "cycleId": "BUTEX-2026-27",
+      "title": "BUTEX 2026–27 BSc in Textile Engineering admission circular",
+      "documentUrl": "https://www.butex.edu.bd/wp-content/uploads/2026/11/20261119_%E0%A6%AD%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BF-%E0%A6%AC%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%AA%E0%A7%8D%E0%A6%A4%E0%A6%BF.pdf",
+      "publishedAt": "2026-11-19T00:00:00+06:00",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T20:55:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-butex-circular",
+            "supports": [
+              "official 2026–27 circular/notice document"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "COU-EXAM-ANNOUNCEMENT-2026-27",
+      "cycleId": "CoU-2026-27",
+      "title": "Comilla University 2026–27 unit-wise admission test schedule (24 September 2026)",
+      "documentUrl": "https://www.cou.ac.bd/public/upload/news/20260924_1790270649.pdf",
+      "publishedAt": "2026-09-24T00:00:00+06:00",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-exam-press",
+            "supports": [
+              "official university press release"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "COU-APP-ANNOUNCEMENT-2026-27",
+      "cycleId": "CoU-2026-27",
+      "title": "Comilla University 2026–27 application window press release (11 November 2026)",
+      "documentUrl": "https://cou.ac.bd/public/upload/news/20261111_1794403520.pdf",
+      "publishedAt": "2026-11-11T00:00:00+06:00",
+      "verification": {
+        "status": "officially_confirmed",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-cou-application-press",
+            "supports": [
+              "official university press release"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "AGRI-CIRCULAR-2026-27",
+      "cycleId": "AGRI-2026-27",
+      "title": "Agricultural Cluster 2026–27 undergraduate admission circular (listed by BAU on 22 November)",
+      "documentUrl": "https://bau.edu.bd/notice-board/1484",
+      "publishedAt": "2026-11-22T00:00:00+06:00",
+      "verification": {
+        "status": "authority_announced",
+        "lastVerifiedAt": "2026-11-23T21:23:00+06:00",
+        "sources": [
+          {
+            "sourceId": "src-agri-bau-circular",
+            "supports": [
+              "official BAU notice-board circular listing"
+            ]
+          },
+          {
+            "sourceId": "src-agri-test-date-sau",
+            "supports": [
+              "official SAU cluster-test date notice"
+            ]
+          },
+          {
+            "sourceId": "src-agri-circular-copy",
+            "supports": [
+              "circular text details: application window, fee and exam time"
+            ]
+          }
+        ],
+        "changeNote": "কর্তৃপক্ষের ঘোষণা/বিশ্বস্ত প্রকাশিত সূত্রে পাওয়া তথ্য যোগ করা হয়েছে; পূর্ণ বিজ্ঞপ্তি বা নতুন সংশোধনী এলে পুনরায় যাচাই করতে হবে।"
+      }
+    }
+  ],
+  "notices": [
+    {
+      "id": "DU-DEADLINE-EXTENSION-2026-27",
+      "cycleId": "DU-2026-27",
+      "sourceId": "src-du-portal",
+      "title": "DU online application deadline extended to 28 November 2026",
+      "summary": "Official special notice extends the application deadline by three days; all other unit schedules remain unchanged.",
+      "publishedAt": null,
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "RU-IMPORTANT-DATES-2026-27",
+      "cycleId": "RU-2026-27",
+      "sourceId": "src-ru-portal",
+      "title": "RU 2026–27 application and unit-wise examination dates",
+      "summary": "Official admission portal lists application dates and February 2027 unit-wise examination dates.",
+      "publishedAt": null,
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "KUET-ADMISSION-2026-27",
+      "cycleId": "KUET-2026-27",
+      "sourceId": "src-kuet-portal",
+      "title": "KUET 2026–27 application, test and result schedule",
+      "summary": "Official admission portal lists the 10 December application/payment deadline, 8 January test date and 21 January result date.",
+      "publishedAt": null,
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "COU-APP-ANNOUNCEMENT-2026-27",
+      "cycleId": "CoU-2026-27",
+      "sourceId": "src-cou-home",
+      "title": "Comilla University 2026–27 undergraduate application start announcement",
+      "summary": "Official homepage announces that undergraduate admission applications start on 10 December 2026; deadline and examination date remain unpublished in the retrieved notice.",
+      "publishedAt": null,
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "BUTEX-ADMISSION-CIRCULAR-2026-27",
+      "cycleId": "BUTEX-2026-27",
+      "sourceId": "src-butex-circular",
+      "title": "BUTEX 2026–27 BSc in Textile Engineering admission circular",
+      "summary": "Official circular includes application dates, eligibility, 630 seats, written test and tentative result date.",
+      "publishedAt": "2026-11-19T00:00:00+06:00",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "ADMISSION-CLASH-2027-02-05",
+      "cycleId": "CoU-2026-27",
+      "sourceId": "src-clash-5feb-prothomalo",
+      "title": "৫ ফেব্রুয়ারি ২০২৭: তিন বিশ্ববিদ্যালয়ের ভর্তি পরীক্ষার সম্ভাব্য সূচি-সংঘাত",
+      "summary": "প্রথম আলোর ১৬ নভেম্বরের প্রতিবেদনে CU B Unit, Khulna University C Unit এবং CoU A Unit-এর পরীক্ষা একই দিনে নির্ধারিত বলে জানানো হয়েছে। সংশ্লিষ্ট কর্তৃপক্ষ নতুন সংশোধনী না দিলে বর্তমান ঘোষিত তারিখই বহাল থাকবে; নতুন নোটিশ এলে পুনরায় যাচাই করতে হবে।",
+      "publishedAt": "2026-11-16T00:00:00+06:00",
+      "reviewStatus": "reviewed"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-du-portal",
+      "label": "University of Dhaka official admission portal — 2026–27 important dates and special notice",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.eis.du.ac.bd/en/408b7c8ad06e4d9954fa2d948a01f508/1025155142_1",
+      "retrievedAt": "2026-11-23T19:45:00+06:00",
+      "documentReference": "2026–27 Important Dates; special notice extends application deadline to 28 November 2026."
+    },
+    {
+      "id": "src-ru-portal",
+      "label": "University of Rajshahi official admission portal — 2026–27 important dates",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.ru.ac.bd/index.php",
+      "retrievedAt": "2026-11-23T19:45:00+06:00",
+      "documentReference": "Online application and unit-wise admission test dates."
+    },
+    {
+      "id": "src-ju-circular",
+      "label": "Jahangirnagar University official 2026–27 admission circular",
+      "sourceType": "official_university_notice",
+      "url": "https://juniv.edu.bd/discussion/18670/file/18081",
+      "retrievedAt": "2026-11-23T19:45:00+06:00",
+      "documentReference": "Admission notice: application 22 November–15 December; admit card from 25 December; tentative test window 10–21 January."
+    },
+    {
+      "id": "src-jnu-circular",
+      "label": "Jagannath University official 2026–27 admission circular",
+      "sourceType": "official_university_notice",
+      "url": "https://jnu.ac.bd/assets/notice/9ea6d52bc7a947d600093ba06052e3cc.pdf",
+      "retrievedAt": "2026-11-23T19:45:00+06:00",
+      "documentReference": "Signed admission circular dated 11 November 2026; application dates, fees and unit-wise test schedule."
+    },
+    {
+      "id": "src-kuet-portal",
+      "label": "Khulna University of Engineering & Technology official admission portal — 2026–27",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.kuet.ac.bd/",
+      "retrievedAt": "2026-11-23T19:45:00+06:00",
+      "documentReference": "Application/fee deadline 10 December; admission test 8 January; result 21 January."
+    },
+    {
+      "id": "src-cu-portal",
+      "label": "University of Chittagong official admission portal",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.cu.ac.bd/?page_id=2",
+      "retrievedAt": "2026-11-23T20:05:00+06:00",
+      "documentReference": "Official portal page currently exposes prior-cycle dates; no 2026–27 dates verified."
+    },
+    {
+      "id": "src-ku-portal",
+      "label": "Khulna University official 2026–27 admission portal",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.ku.ac.bd/",
+      "retrievedAt": "2026-11-23T20:05:00+06:00",
+      "documentReference": "Official portal says the 2026–27 undergraduate application portal is launching soon."
+    },
+    {
+      "id": "src-ruet-notices",
+      "label": "RUET official admission notices archive",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.ruet.ac.bd/notices/",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "RUET official notices portal; a new Steering Committee date announcement (28 January 2027) is reported by BSS on 19 November."
+    },
+    {
+      "id": "src-mist-portal",
+      "label": "MIST official admission portal",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.mist.ac.bd/",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Official MIST admission portal referenced by the archived 2026–27 circular; latest portal content is not fully crawl-readable."
+    },
+    {
+      "id": "src-iut-notices",
+      "label": "IUT official admission portal notices",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.iutoic-dhaka.edu/notice",
+      "retrievedAt": "2026-11-23T20:05:00+06:00",
+      "documentReference": "The retrieved portal identifies 2025–26 admission as closed; no 2026–27 cycle verified."
+    },
+    {
+      "id": "src-afmc-site",
+      "label": "AFMC official website",
+      "sourceType": "official_admission_portal",
+      "url": "https://www.afmc.edu.bd/",
+      "retrievedAt": "2026-11-23T20:05:00+06:00",
+      "documentReference": "Official notice index checked; no 2026–27 admission circular verified in the retrieved page."
+    },
+    {
+      "id": "src-butex-portal",
+      "label": "BUTEX official admission portal",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.butex.edu.bd/",
+      "retrievedAt": "2026-11-23T20:05:00+06:00",
+      "documentReference": "The retrieved landing page lists postgraduate programmes; no 2026–27 undergraduate circular verified."
+    },
+    {
+      "id": "src-acas-portal",
+      "label": "Agricultural Cluster Admission System official portal",
+      "sourceType": "official_admission_portal",
+      "url": "https://acas.edu.bd/",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Official application portal for the agricultural cluster; current 2026–27 circular is also listed on BAU's official notice board."
+    },
+    {
+      "id": "src-butex-circular",
+      "label": "BUTEX official 2026–27 undergraduate admission circular (19 November 2026)",
+      "sourceType": "official_university_notice",
+      "url": "https://www.butex.edu.bd/wp-content/uploads/2026/11/20261119_%E0%A6%AD%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BF-%E0%A6%AC%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%AA%E0%A7%8D%E0%A6%A4%E0%A6%BF.pdf",
+      "retrievedAt": "2026-11-23T20:25:00+06:00",
+      "documentReference": "2026–27 BSc in Textile Engineering admission circular; application 1 Dec 2026–10 Jan 2027; written test 29 Jan 2027."
+    },
+    {
+      "id": "src-cou-home",
+      "label": "Comilla University official homepage — undergraduate admission update",
+      "sourceType": "official_university_notice",
+      "url": "https://www.cou.ac.bd/",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Homepage links to the 11 November press release for applications beginning 10 December; the press release specifies the 31 December closing date."
+    },
+    {
+      "id": "src-buet-admission-portal",
+      "label": "BUET official undergraduate admission portal — 2026–27",
+      "sourceType": "official_admission_portal",
+      "url": "https://ugadmission.buet.ac.bd/",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Official application and admission information portal; BUET 2026–27 circular reported published 22 November."
+    },
+    {
+      "id": "src-buet-admission-bdnews24",
+      "label": "bdnews24 — BUET 2026–27 application and test dates (23 November 2026)",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://bdnews24.com/campus/f5xg6xepjd",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Reports BUET announcement: application opens 1 December, closes 7 January, test 1 February; 1,309 seats."
+    },
+    {
+      "id": "src-cu-revised-dates",
+      "label": "The Daily Star — CU revised 2026–27 application and unit test schedule (11 November 2026)",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://www.thedailystar.net/campus/news/cu-admission-applications-open-dec-10-tests-begin-jan-29-4321081",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Pro-Vice-Chancellor confirms applications 10 December–10 January, fee deadline 12 January; unit tests 29 January–8 February."
+    },
+    {
+      "id": "src-cu-admission-portal",
+      "label": "University of Chittagong official admission portal",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.cu.ac.bd/",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Official admission portal; use alongside the university schedule announcement reported by The Daily Star."
+    },
+    {
+      "id": "src-ku-reschedule-bss",
+      "label": "BSS — Khulna University revised 2026–27 admission test dates (10 November 2026)",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://www.bssnews.net/news/444300",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "BSS reports notice signed by KU Acting Registrar: A/B on 4 February; C/D on 5 February 2027."
+    },
+    {
+      "id": "src-ku-admission-portal",
+      "label": "Khulna University official undergraduate admission portal",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.ku.ac.bd/",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Portal identifies 2026–27 undergraduate admission; application portal was still marked launching soon when checked."
+    },
+    {
+      "id": "src-sust-reschedule",
+      "label": "SUST press release dated 1 November 2026 — archived full text",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://students.bd/en/notice/sust-admission-test-date-rescheduled-2026-2027",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Revised SUST test dates 17–18 January 2027, replacing 26–27 January; letterhead and registrar contact reproduced."
+    },
+    {
+      "id": "src-sust-official",
+      "label": "Shahjalal University of Science and Technology official website",
+      "sourceType": "official_university_notice",
+      "url": "https://www.sust.edu/",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Primary university website; date change is documented in the SUST press-release copy."
+    },
+    {
+      "id": "src-cou-exam-press",
+      "label": "Comilla University official press release — unit-wise 2026–27 test dates (24 September 2026)",
+      "sourceType": "official_university_notice",
+      "url": "https://www.cou.ac.bd/public/upload/news/20260924_1790270649.pdf",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Official signed press release: A 5 February 11:00; B 6 February 15:00; C 7 February 11:00."
+    },
+    {
+      "id": "src-cou-application-press",
+      "label": "Comilla University official press release — application period (11 November 2026)",
+      "sourceType": "official_university_notice",
+      "url": "https://cou.ac.bd/public/upload/news/20261111_1794403520.pdf",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Official press release: applications 10–31 December 2026; previously announced test dates remain unchanged."
+    },
+    {
+      "id": "src-ruet-date-bss",
+      "label": "BSS — RUET 2026–27 admission test date (19 November 2026)",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://www.bssnews.net/news/447685",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "BSS reports Steering Committee decision: undergraduate admission test on 28 January 2027 at RUET and BUET centres."
+    },
+    {
+      "id": "src-gst-dates-observer",
+      "label": "The Daily Observer — GST 2026–27 unit dates confirmed unchanged (21 November 2026)",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://observerbd.com/news/607738",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Co-convener GST admission committee confirmed dates remain 19, 20 and 27 March 2027; 23 participating institutions."
+    },
+    {
+      "id": "src-gst-unit-times-observer",
+      "label": "The Daily Observer — GST unit-wise 2026–27 test times (18 September 2026)",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://observerbd.com/news/594050",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Committee meeting report gives Unit B 19 March 11:00–12:00; Unit C 20 March 11:00–12:00; Unit D 20 March 15:00–16:00; Unit A 27 March 11:00–12:00."
+    },
+    {
+      "id": "src-agri-bau-circular",
+      "label": "Bangladesh Agricultural University official notice — Agricultural Cluster 2026–27 circular (22 November 2026)",
+      "sourceType": "official_notice_board",
+      "url": "https://bau.edu.bd/notice-board/1484",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "BAU official notice board lists the 2026–27 admission circular for nine agricultural public universities, dated 22 November."
+    },
+    {
+      "id": "src-agri-circular-copy",
+      "label": "Agricultural Cluster 2026–27 circular — archived document text",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://students.bd/bn/notice/agricultural-cluster-admission-circular-2026-2027",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Archived circular text: applications 25 November–15 December; fee BDT 1,600; test 2 January 2027, 11:00–12:00. Use BAU official notice as issuer validation."
+    },
+    {
+      "id": "src-agri-test-date-sau",
+      "label": "Sher-e-Bangla Agricultural University official notice — 2 January 2027 cluster test",
+      "sourceType": "official_notice_board",
+      "url": "https://sau.edu.bd/public/home/notices",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "SAU official notices archive identifies 2 January 2027 agricultural cluster admission test and coordinating responsibility."
+    },
+    {
+      "id": "src-medical-dgme",
+      "label": "Directorate General of Medical Education official notices",
+      "sourceType": "official_authority_announcement",
+      "url": "https://dgme.gov.bd/pages/notices",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Official DGME notice index; full 2026–27 circular was still awaited on 23 November."
+    },
+    {
+      "id": "src-medical-latest-star",
+      "label": "The Daily Star — MBBS/BDS tests 18 December after Appellate Division order (23 November 2026)",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://www.thedailystar.net/news/news/medical-dental-admission-tests-december-18-after-sc-order-4331041",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "DGME Director General confirms medical and dental tests planned for 18 December; circular expected the following day."
+    },
+    {
+      "id": "src-cuet-official-date",
+      "label": "CUET official academic information — 2026–27 undergraduate admission test date",
+      "sourceType": "official_university_notice",
+      "url": "https://cuet.ac.bd/academic-information",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "CUET page says the probable Level-1 undergraduate admission test date is 23 January 2027."
+    },
+    {
+      "id": "src-cuet-date-dailysun",
+      "label": "The Daily Sun — CUET probable 2026–27 admission test date (20 September 2026)",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://www.daily-sun.com/news/898756",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "CUET admission committee chairman/PRO described 23 January 2027 as the initially selected probable date; final date awaits notice."
+    },
+    {
+      "id": "src-mist-circular-archive",
+      "label": "MIST 2026–27 undergraduate admission circular — archived full text",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://students.bd/en/notice/mist-undergraduate-admission-circular-2026-27",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Reproduces MIST undergraduate circular: applications 5–21 January; shortlist 25 January; Unit C 5 February, Units A/B 6 February 2027."
+    },
+    {
+      "id": "src-mist-admission-portal",
+      "label": "MIST official undergraduate admission portal",
+      "sourceType": "official_admission_portal",
+      "url": "https://admission.mist.ac.bd/",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Official MIST admission portal referenced by the 2026–27 circular archive."
+    },
+    {
+      "id": "src-clash-5feb-prothomalo",
+      "label": "প্রথম আলো — CU, KU and CoU admission tests scheduled on the same day (16 November 2026)",
+      "sourceType": "third_party_discovery_only",
+      "url": "https://www.prothomalo.com/amp/story/education/admission/sopv7g6sp3",
+      "retrievedAt": "2026-11-23T21:23:00+06:00",
+      "documentReference": "Reports possible date clash on 5 February 2027 between CU B Unit, KU C Unit and CoU A Unit; no revision reported in that article."
+    }
+  ]
+}

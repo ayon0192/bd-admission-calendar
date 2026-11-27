@@ -1,0 +1,53 @@
+name: Validate admission data
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "data/**"
+      - "assets/js/admission-core.js"
+      - "scripts/validate-admission-data.cjs"
+      - "scripts/integrate-admission-data.cjs"
+      - "scripts/build.cjs"
+      - ".github/workflows/admission-data-validation.yml"
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+    paths:
+      - "data/**"
+      - "assets/js/admission-core.js"
+      - "scripts/validate-admission-data.cjs"
+      - "scripts/build.cjs"
+      - ".github/workflows/admission-data-validation.yml"
+permissions:
+  contents: read
+
+concurrency:
+  group: admission-data-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - name: Validate 2026–27 admission dataset
+        run: node scripts/validate-admission-data.cjs
+      - name: Syntax-check admission integration adapter
+        run: node --check scripts/integrate-admission-data.cjs
+      - name: Build production site
+        run: node scripts/build.cjs
+      - name: Upload restored production source for integration review
+        uses: actions/upload-artifact@v4
+        with:
+          name: bdac-restored-source-review
+          path: |
+            assets/js/main-shell.js
+            tests/redesign-shell.test.cjs
+            scripts/check-release.cjs
+            scripts/smoke-test.cjs
+          if-no-files-found: error
+          retention-days: 1
