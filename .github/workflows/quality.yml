@@ -1,0 +1,55 @@
+name: Quality checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js from project pin
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/js/main-shell.js
+          node --check assets/js/admission-core.js
+          node --check assets/js/release-updates.js
+          node --check scripts/build.cjs
+          node --check scripts/build-redesigned.cjs
+          node --check scripts/check-release.cjs
+          node --check scripts/smoke-test.cjs
+
+      - name: Run automated tests
+        run: node --test tests/*.test.cjs
+
+      - name: Validate admission data and release policy
+        run: |
+          node scripts/validate-admission-data.cjs
+          node scripts/check-release.cjs
+
+      - name: Build the production site
+        run: node scripts/build.cjs
+
+      - name: Smoke-test the publish directory
+        run: node scripts/smoke-test.cjs

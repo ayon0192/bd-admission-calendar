@@ -1,0 +1,32 @@
+{
+  "schemaVersion":"1.0.0",
+  "universities":[{
+    "id":"test-university","name":"পরীক্ষামূলক বিশ্ববিদ্যালয় (TEST ONLY)","shortName":"TESTU","aliases":["Test University"],
+    "officialWebsite":null,"admissionWebsite":null,
+    "verification":{"status":"awaiting_official_notice","lastVerifiedAt":null,"sources":[]}
+  }],
+  "admissionCycles":[{
+    "id":"test-cycle-2026-27","universityId":"test-university","session":"2026-27",
+    "verification":{"status":"tentative","lastVerifiedAt":null,"sources":[{"sourceId":"test-discovery-source","supports":["fixture-only"]}]}
+  }],
+  "admissionDetails":[{
+    "id":"test-unit-a","cycleId":"test-cycle-2026-27","unitGroup":"A Unit (TEST ONLY)",
+    "application":{"opensAt":null,"closesAt":"2026-11-12T14:00:00+06:00","feeBDT":null,"paymentInstructions":"TEST ONLY — not real admission information.","applicationUrl":null},
+    "eligibility":{"allowedGroups":[],"minimumCombinedGpa":null,"minimumHscGpa":null,"minimumSscGpa":null,"requirementsNote":"TEST ONLY — not a real university requirement."},
+    "exam":{"startsAt":null,"endsAt":null,"format":null,"durationMinutes":null,"admitCard":{"availableFrom":null,"availableUntil":null,"url":null}},
+    "circularIds":[],
+    "verification":{"status":"tentative","lastVerifiedAt":null,"sources":[{"sourceId":"test-discovery-source","supports":["test-fixture-only"]}]}
+  }],
+  "events":[{
+    "id":"test-application-deadline","cycleId":"test-cycle-2026-27","admissionDetailId":"test-unit-a",
+    "type":"application_deadline","title":"Synthetic application deadline — TEST ONLY",
+    "startsAt":"2026-11-12T14:00:00+06:00","endsAt":null,
+    "verification":{"status":"tentative","lastVerifiedAt":null,"sources":[{"sourceId":"test-discovery-source","supports":["test-fixture-only"]}]}
+  }],
+  "examCenters":[],"circulars":[],"notices":[],
+  "sources":[{
+    "id":"test-discovery-source","url":"https://example.invalid/test-fixture-only",
+    "sourceType":"third_party_discovery_only","label":"Synthetic source — TEST ONLY",
+    "retrievedAt":"2026-11-11T00:00:00+06:00","documentReference":"Synthetic test fixture. Never publish as real admission information."
+  }]
+}

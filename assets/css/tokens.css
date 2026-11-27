@@ -1,0 +1,75 @@
+/* Design tokens: the single source of every colour, size and radius.
+ * No component may write a hex colour directly; use these variables.
+ * Light is the default theme; dark applies only when the user presses the theme button. */
+:root {
+  /* জমি ও সারফেস */
+  --bg: #F6F8F4;            /* পেজ ব্যাকগ্রাউন্ড (কাগজ-সবুজ) */
+  --card: #FFFFFF;          /* কার্ড */
+  --soft: #EDF3EB;          /* নরম সারফেস, ইনপুট, চিপ */
+  --border: #D9E3DA;
+  --border-strong: #B3C4B7;
+
+  /* লেখা */
+  --text: #1F2A24;          /* প্রধান লেখা */
+  --text-2: #4D5E54;        /* গৌণ লেখা (জরুরি তথ্যে এর চেয়ে হালকা নয়) */
+
+  /* ব্র্যান্ড (বিশ্বাসযোগ্যতা) */
+  --primary: #2F6B4F;       /* বাটন, সক্রিয় ট্যাব, লিংকের রঙ নয় */
+  --primary-strong: #1F5039;
+  --primary-soft: #E1EFE5;
+  --on-primary: #FFFFFF;
+  --btn-bg: #2F6B4F;
+
+  /* বন্ধুসুলভ ছোঁয়া (শুধু ছোট সাজ: আইকন-ব্যাকগ্রাউন্ড, উৎসাহ বার্তা) */
+  --sun: #F2B84B;
+  --sun-soft: #FFF4DA;
+
+  /* লিংক ও ফোকাস */
+  --link: #1F5F99;
+  --focus: #1F5F99;         /* ২px আউটলাইন, ২px অফসেট */
+
+  /* অবস্থা ব্যাজ (লেখার রঙ / ব্যাকগ্রাউন্ড) — সব জোড়ায় কনট্রাস্ট ≥ ৪.৫:১ */
+  --ok-fg: #256A45;   --ok-bg: #E1F1E6;      /* পাকা / অফিসিয়াল নিশ্চিত */
+  --info-fg: #1F5F99; --info-bg: #E4EFFA;    /* কর্তৃপক্ষ ঘোষিত, তথ্য */
+  --maybe-fg: #55429A; --maybe-bg: #ECE8FA;  /* সম্ভাব্য — সবসময় "সম্ভাব্য" শব্দসহ */
+  --done-fg: #3C5D4A; --done-bg: #E6F0E9;    /* সম্পন্ন */
+
+  /* ডেডলাইনের জরুরি স্তর (দিন কমলে ধাপে ধাপে গাঢ়) */
+  --soon-fg: #7A4A00; --soon-bg: #FFF1D6;    /* ৭ দিনের মধ্যে — হলুদ-কমলা */
+  --near-fg: #8F3A00; --near-bg: #FFE2CC;    /* ৩ দিনের মধ্যে — কমলা */
+  --now-fg:  #A12A2A; --now-bg:  #FDE3E3;    /* ২৪ ঘণ্টার মধ্যে / আজ — লাল (শুধু এটাই লাল) */
+
+  --disabled-bg: #EEF1EE; --disabled-fg: #5C6A61;
+  --shadow-card: 0 1px 2px rgba(31, 42, 36, .06);
+}
+
+[data-theme="dark"] {
+  --bg: #0F1713;   --card: #17221C;   --soft: #1E2B24;
+  --border: #2A3A31;  --border-strong: #42574A;
+  --text: #EAF2EC;   --text-2: #B4C4B9;
+  --primary: #7FC4A0; --primary-strong: #A5DABD; --primary-soft: #1F3328;
+  --on-primary: #FFFFFF; --btn-bg: #2F7A57;
+  --sun: #F2B84B; --sun-soft: #3A2E14;
+  --link: #9CC8F0; --focus: #9CC8F0;
+  --ok-fg: #8FD0A9;   --ok-bg: #1C3326;
+  --info-fg: #9CC8F0; --info-bg: #1B3045;
+  --maybe-fg: #C9BDF2; --maybe-bg: #2D2650;
+  --done-fg: #A9C8B5;  --done-bg: #1F2E26;
+  --soon-fg: #F2C879;  --soon-bg: #3A2E14;
+  --near-fg: #F5B07A;  --near-bg: #3F2812;
+  --now-fg: #F5A8A8;   --now-bg: #442022;
+  --disabled-bg: #223028; --disabled-fg: #93A59A;
+  --shadow-card: none;
+}
+
+/* Shape, spacing and type tokens */
+:root {
+  --font-sans: "Hind Siliguri", "Noto Sans Bengali", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r-card: 16px; --r-btn: 12px; --r-pill: 999px;
+  --tap: 48px; --gutter: 16px;
+  --topbar-h: 56px; --bottom-nav-h: 64px; --sidebar-w: 240px;
+  --on-primary-a: rgba(255, 255, 255, .16);   /* translucent white on the solid-green hero */
+  --scrim: rgba(15, 23, 19, .54);             /* modal backdrop */
+}
+@media (min-width: 701px) { :root { --gutter: 24px; } }
+@media (min-width: 1100px) { :root { --gutter: 32px; } }

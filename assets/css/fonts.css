@@ -1,0 +1,6 @@
+/* Hind Siliguri (SIL Open Font License; see assets/fonts/OFL.txt), self-hosted, Bengali + basic Latin subset.
+ * Only two weights are loaded: 400 (normal) and 600 (emphasis). */
+@font-face { font-family: "Hind Siliguri"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/hind-siliguri-400.woff2") format("woff2"); }
+@font-face { font-family: "Hind Siliguri"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("../fonts/hind-siliguri-600.woff2") format("woff2"); }
