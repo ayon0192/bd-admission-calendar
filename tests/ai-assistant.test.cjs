@@ -261,7 +261,10 @@ test("frontend sends bounded history and renders responses plus HTTPS source lin
   assert.equal(endpointUrl.pathname, "/api/chat");
   assert.match(js, /JSON\.stringify\(\{\s*question\s*,\s*page\s*,\s*history\s*\}\)/);
   assert.match(js, /conversationHistory\.slice\(-8\)/);
-  assert.match(js, /textContent\s*=/);\n  assert.match(js, /document\.createElement\("a"\)/);\n  assert.match(js, /link\.rel = "noopener noreferrer"/);\n  assert.match(js, /parsed\.protocol !== "https:"/);
+  assert.match(js, /textContent\s*=/);
+  assert.match(js, /document\.createElement\("a"\)/);
+  assert.match(js, /link\.rel = "noopener noreferrer"/);
+  assert.match(js, /parsed\.protocol !== "https:"/);
   assert.doesNotMatch(js, /innerHTML\s*=\s*(?:answer|response|payload|message)\b/i);
   assert.match(html, /assets\/css\/ai-assistant\.css/);
   assert.match(html, /assets\/js\/ai-assistant\.js/);
