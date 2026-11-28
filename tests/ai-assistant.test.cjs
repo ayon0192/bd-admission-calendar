@@ -79,7 +79,7 @@ test("frontend sends only question/page and renders model responses as text", ()
   assert.ok(endpoint, "assistant API endpoint must be configured");
   const endpointUrl = new URL(endpoint[1]);
   assert.equal(endpointUrl.protocol, "https:");
-  assert.match(endpointUrl.hostname, /^(?:[a-z0-9-]+\.)+workers\.dev$/);
+  assert.equal(endpointUrl.hostname, "bdac.ayonpabnabd7216.workers.dev");
   assert.equal(endpointUrl.pathname, "/api/chat");
   assert.match(js, /JSON\.stringify\(\{\s*question\s*,\s*page\s*\}\)/);
   assert.match(js, /textContent\s*=/);
