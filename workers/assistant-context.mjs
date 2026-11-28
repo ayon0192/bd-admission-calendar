@@ -16,6 +16,8 @@ const GENERIC = new Set([
   "কবে", "কী", "কি", "কেন", "কোথায়", "কোথায়", "কিভাবে", "কীভাবে", "বল", "বলো", "জানাও", "জানতে", "দাও", "আছে", "হবে", "হয়", "হয়", "আমার", "এই", "সেই", "কোন", "কোনটি", "কোনটা", "এর", "ও", "আর", "তে", "র", "জন্য", "ভর্তি", "পরীক্ষা", "পরীক্ষার", "ইউনিট", "unit", "বিশ্ববিদ্যালয়", "বিশ্ববিদ্যাল", "তথ্য", "please", "what", "when", "where", "which", "how", "is", "the", "for", "about", "tell", "me"
 ]);
 const ALIASES = Object.freeze({
+  "ru": ["রাজশাহী", "বিশ্ববিদ্যালয়", "রাবি"],
+  "rabi": ["রাজশাহী", "বিশ্ববিদ্যালয়", "RU"],
   "ঢাবি": ["ঢাকা", "বিশ্ববিদ্যালয়", "DU"],
   "রাবি": ["রাজশাহী", "বিশ্ববিদ্যালয়", "RU"],
   "চবি": ["চট্টগ্রাম", "বিশ্ববিদ্যালয়", "CU"],
@@ -119,7 +121,7 @@ function compactRecord(record) {
   for (const [key, value] of Object.entries(record)) {
     if (OMIT_KEYS.test(key)) continue;
     if (!(key in FIELD_LABELS) && !["admissionDetailId", "cycleId", "dateRange", "verification", "exam", "application", "official", "probable", "minimumCombinedGpa", "minimumHscGpa", "minimumSscGpa", "unitGroup", "session", "programmes", "documentReference", "totalSeats", "group"].includes(key)) continue;
-    const compact = compactValue(value);
+    const compact = compactValue(value, 0, key);
     if (compact !== undefined) out[FIELD_LABELS[key] || key] = compact;
     if (Object.keys(out).length >= 18) break;
   }
