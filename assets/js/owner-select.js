@@ -235,6 +235,7 @@
       "",
       "Repository: ayon0192/bd-admission-calendar",
       "Base branch: main",
+      "Suggested working branch: owner-select/<short-change-slug> (প্রয়োজনে সংঘর্ষ এড়িয়ে নতুন নাম দেবে)।",
       "কাজের আগে main-এর সর্বশেষ অবস্থা নাও এবং নতুন আলাদা feature branch তৈরি করো।",
       "",
       "নির্বাচিত উপাদান",
