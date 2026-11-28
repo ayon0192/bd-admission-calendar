@@ -19,7 +19,7 @@ test("desktop sidebar and five mobile tabs navigate to the requested pages",()=>
  assert.ok(mobile);
  const destinations=Array.from(mobile[0].matchAll(/data-page="([^"]+)"/g),m=>m[1]);
  assert.deepEqual(destinations,["dashboard","calendar","universities","notices","profile"]);
- assert.match(html,/<nav class="nav-list" aria-label="প্রধান নেভিগেশন">/);
+ assert.match(html,/<nav class="nav-list" aria-label="প্রধান নেভিগেশন"[^>]*>/);
  assert.match(mobile[0],/aria-label="প্রধান নেভিগেশন"/);
  assert.doesNotMatch(html,/profileShortcut/);
 });
