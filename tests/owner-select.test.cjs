@@ -53,9 +53,9 @@ test("outer and inner traversal, browser-first explanation, optional AI and brow
 
 test("browser explanations and prompts normalize whitespace and contain real line breaks", () => {
   const js = read("assets/js/owner-select.js");
-  assert.ok(js.includes('.replace(/\s+/g, " ")'));
-  assert.ok(js.includes('return lines.join("\n");'));
-  assert.ok(js.includes('].join("\n");'));
+  assert.ok(js.includes('.replace(/\\s+/g, " ")'));
+  assert.ok(js.includes('return lines.join("\\n");'));
+  assert.ok(js.includes('].join("\\n");'));
   assert.match(js, /Cloudflare/);
   assert.match(js, /response\.status === 429/);
   assert.doesNotMatch(js, /fetch\([^)]*prompt/i);
