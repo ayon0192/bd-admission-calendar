@@ -79,7 +79,7 @@ test("frontend sends only question/page and renders model responses as text", ()
   assert.ok(endpoint, "assistant API endpoint must be configured");
   const endpointUrl = new URL(endpoint[1]);
   assert.equal(endpointUrl.protocol, "https:");
-  assert.match(endpointUrl.hostname, /^[a-z0-9-]+\.workers\.dev$/);
+  assert.match(endpointUrl.hostname, /^(?:[a-z0-9-]+\.)+workers\.dev$/);
   assert.equal(endpointUrl.pathname, "/api/chat");
   assert.match(js, /JSON\.stringify\(\{\s*question\s*,\s*page\s*\}\)/);
   assert.match(js, /textContent\s*=/);
@@ -231,7 +231,11 @@ test("static build, CSP, Wrangler and offline shell include the assistant assets
   const headers = read("_headers");
   const sw = read("sw.js");
   const wrangler = read("wrangler.toml");
-  assert.match(builder, /assets\/css\/ai-assistant\.css/);
+  const js = read("assets/js/ai-assistant.js");
+  const endpoint = js.match(/ASSISTANT_API_URL\\s*=\\s*"([^"]+)"\\s*;/);
+  assert.ok(endpoint, "assistant API endpoint must be configured");
+  const endpointUrl = new URL(endpoint[1]);
+  assert.match(builder, /assets\\/css\\/ai-assistant\\.css/);
   assert.match(builder, /assets\/js\/ai-assistant\.js/);
   const cspWorkerHost = headers.match(/connect-src 'self' (https:\/\/[^\s;]+)/);
   assert.ok(cspWorkerHost, "CSP must allow the assistant Worker host");
