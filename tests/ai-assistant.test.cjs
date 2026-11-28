@@ -7,6 +7,96 @@ const root = path.resolve(__dirname, "..");
 
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
 
+
+test("assistant handles greetings without requiring calendar records", async () => {
+  const { resolveSmallTalkAnswer } = await import("../workers/assistant-context.mjs");
+  assert.match(resolveSmallTalkAnswer("Hi"), /ভর্তি/);
+  assert.match(resolveSmallTalkAnswer("ধন্যবাদ"), /স্বাগতম/);
+});
+
+test("assistant recognizes confirmation and source follow-ups against the last substantive topic", async () => {
+  const { resolveFollowUpAnswer } = await import("../workers/assistant-context.mjs");
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU", cycleLabel: "২০২৬–২০২৭ শিক্ষাবর্ষ", verification: { status: "officially_confirmed", sources: [{ sourceId: "src-ru-portal" }] } }],
+    admissionDetails: [],
+    events: [{
+      id: "RU-APP-DEADLINE", cycleId: "RU-2026-27", title: "অনলাইন আবেদন ও ফি জমার শেষ সময়",
+      type: "application_deadline", dateOnly: "2026-11-30", startsAt: "2026-11-30T23:59:00+06:00",
+      verification: { status: "officially_confirmed", sources: [{ sourceId: "src-ru-portal" }] }
+    }],
+    examCenters: [], circulars: [], notices: [],
+    sources: [{ id: "src-ru-portal", label: "রাজশাহী বিশ্ববিদ্যালয়ের অফিসিয়াল ভর্তি পোর্টাল", url: "https://admission.ru.ac.bd/index.php", sourceType: "official_admission_portal" }]
+  };
+  const history = [
+    { role: "user", content: "Ru er abedon er last date kobe?" },
+    { role: "assistant", content: "৩০ নভেম্বর ২০২৬, রাত ১১:৫৯।" },
+    { role: "user", content: "Sure?" },
+    { role: "assistant", content: "হ্যাঁ, নিশ্চিত।" }
+  ];
+  const verified = resolveFollowUpAnswer(data, "Sure?", history);
+  assert.match(verified, /অফিসিয়াল|সরকারি/);
+  assert.match(verified, /৩০ নভেম্বর/);
+  const source = resolveFollowUpAnswer(data, "Source deo", [...history, { role: "user", content: "Source deo" }]);
+  assert.match(source, /https:\/\/admission\.ru\.ac\.bd\/index\.php/);
+  assert.match(source, /অফিসিয়াল ভর্তি পোর্টাল/);
+});
+
+test("follow-up topic selection skips repeated confirmation and source requests", async () => {
+  const { resolveFollowUpAnswer } = await import("../workers/assistant-context.mjs");
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU" }],
+    admissionDetails: [],
+    events: [{ id: "RU-APP-DEADLINE", cycleId: "RU-2026-27", title: "অনলাইন আবেদন শেষ", type: "application_deadline", startsAt: "2026-11-30T23:59:00+06:00", verification: { status: "officially_confirmed", sources: [{ sourceId: "src-ru" }] } }],
+    examCenters: [], circulars: [], notices: [],
+    sources: [{ id: "src-ru", label: "RU official portal", url: "https://admission.ru.ac.bd" }]
+  };
+  const history = [
+    { role: "user", content: "RU er abedon er last date kobe?" },
+    { role: "assistant", content: "৩০ নভেম্বর।" },
+    { role: "user", content: "Sure?" },
+    { role: "assistant", content: "হ্যাঁ।" },
+    { role: "user", content: "Source deo" }
+  ];
+  assert.match(resolveFollowUpAnswer(data, "আরও নিশ্চিত?", history), /৩০ নভেম্বর/);
+});
+
+test("Worker answers greetings, confirms previous facts and returns source links", async () => {
+  const { default: worker } = await import("../workers/assistant.mjs");
+  let aiCalls = 0;
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU" }],
+    admissionDetails: [],
+    events: [{
+      id: "RU-APP-DEADLINE", cycleId: "RU-2026-27", title: "অনলাইন আবেদন ও ফি জমার শেষ সময়",
+      type: "application_deadline", dateOnly: "2026-11-30", startsAt: "2026-11-30T23:59:00+06:00",
+      verification: { status: "officially_confirmed", sources: [{ sourceId: "src-ru-portal" }] }
+    }],
+    examCenters: [], circulars: [], notices: [],
+    sources: [{ id: "src-ru-portal", label: "রাজশাহী বিশ্ববিদ্যালয়ের অফিসিয়াল ভর্তি পোর্টাল", url: "https://admission.ru.ac.bd/index.php" }]
+  };
+  const env = {
+    ASSETS: { fetch: async () => new Response(JSON.stringify(data)) },
+    AI: { run: async () => { aiCalls++; throw new Error("should not call model for greetings or grounded follow-ups"); } }
+  };
+  const ask = async (question, history = []) => {
+    const response = await worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
+      method: "POST", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json" },
+      body: JSON.stringify({ question, page: "calendar", history })
+    }), env);
+    return (await response.json()).answer;
+  };
+  assert.match(await ask("Hi"), /ভর্তি/);
+  const first = await ask("RU er abedon er last date kobe");
+  const history = [{ role: "user", content: "RU er abedon er last date kobe" }, { role: "assistant", content: first }];
+  assert.match(await ask("Sure?", history), /অফিসিয়াল|সরকারি/);
+  const sourceHistory = [...history, { role: "user", content: "Sure?" }, { role: "assistant", content: "হ্যাঁ, অফিসিয়াল রেকর্ডে আছে।" }];
+  assert.match(await ask("Source deo", sourceHistory), /https:\/\/admission\.ru\.ac\.bd\/index\.php/);
+  assert.equal(aiCalls, 0);
+});
+
 test("context builder sends only a small number of relevant records", async () => {
   const { buildRelevantContext } = await import("../workers/assistant-context.mjs");
   const data = {
@@ -67,6 +157,20 @@ test("context builder resolves a romanized follow-up using the prior user questi
   ]);
   assert.match(context, /RU-APP-DEADLINE/);
   assert.match(context, /2026-11-30/);
+});
+
+
+test("context builder retrieves admission-detail facts for romanized university questions", async () => {
+  const { buildRelevantContext } = await import("../workers/assistant-context.mjs");
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU" }],
+    admissionDetails: [{ id: "RU-B-2026-27", cycleId: "RU-2026-27", unitGroup: "Unit B", application: { applicationUrl: "https://admission.ru.ac.bd", closesAt: "2026-11-30T23:59:00+06:00" }, verification: { status: "officially_confirmed" } }],
+    events: [], examCenters: [], circulars: [], notices: [], sources: []
+  };
+  const context = buildRelevantContext(data, "RU er application date kobe?");
+  assert.match(context, /RU-B-2026-27/);
+  assert.match(context, /৩০ নভেম্বর|2026-11-30/);
 });
 
 test("context builder refuses to dump the dataset for unrelated questions", async () => {
@@ -146,7 +250,7 @@ test("Worker security, model constant and all quota ceilings are explicit", () =
   assert.doesNotMatch(worker, /sha256\(\`\$\{day\}:\$\{ip\}\`\)/);
 });
 
-test("frontend sends only question/page and renders model responses as text", () => {
+test("frontend sends bounded history and renders responses plus HTTPS source links safely", () => {
   const js = read("assets/js/ai-assistant.js");
   const html = read("index.html");
   const endpoint = js.match(/ASSISTANT_API_URL\s*=\s*"([^"]+)"\s*;/);
@@ -158,6 +262,9 @@ test("frontend sends only question/page and renders model responses as text", ()
   assert.match(js, /JSON\.stringify\(\{\s*question\s*,\s*page\s*,\s*history\s*\}\)/);
   assert.match(js, /conversationHistory\.slice\(-8\)/);
   assert.match(js, /textContent\s*=/);
+  assert.match(js, /document\.createElement\("a"\)/);
+  assert.match(js, /link\.rel = "noopener noreferrer"/);
+  assert.match(js, /parsed\.protocol !== "https:"/);
   assert.doesNotMatch(js, /innerHTML\s*=\s*(?:answer|response|payload|message)\b/i);
   assert.match(html, /assets\/css\/ai-assistant\.css/);
   assert.match(html, /assets\/js\/ai-assistant\.js/);

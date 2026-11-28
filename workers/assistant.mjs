@@ -1,5 +1,5 @@
 import { AI_MODEL } from "./ai-config.mjs";
-import { buildRelevantContext, resolveDeterministicCalendarAnswer } from "./assistant-context.mjs";
+import { buildRelevantContext, resolveDeterministicCalendarAnswer, resolveFollowUpAnswer, resolveSmallTalkAnswer } from "./assistant-context.mjs";
 
 const ALLOWED_ORIGINS = new Set([
   "https://bd-admission-calendar.pages.dev",
@@ -155,10 +155,14 @@ async function handleChat(request, env) {
     .map((turn) => ({ role: turn.role, content: turn.content.slice(0, MAX_HISTORY_CHARS) })) : [];
   if (!question) return respond(400, { message: "আগে একটি প্রশ্ন লিখুন।" });
   if (question.length > MAX_QUESTION_CHARS) return respond(413, { message: "প্রশ্ন সর্বোচ্চ ৫০০ অক্ষরের মধ্যে লিখুন।" });
+  const smallTalkAnswer = resolveSmallTalkAnswer(question);
+  if (smallTalkAnswer) return respond(200, { answer: smallTalkAnswer });
 
   let context;
   try {
     const data = await loadAdmissionData(env, request);
+    const followUpAnswer = resolveFollowUpAnswer(data, question, history);
+    if (followUpAnswer) return respond(200, { answer: followUpAnswer });
     const groundedAnswer = resolveDeterministicCalendarAnswer(data, question, history);
     if (groundedAnswer) return respond(200, { answer: groundedAnswer });
     context = buildRelevantContext(data, question, page, history);

@@ -46,7 +46,30 @@
   function addMessage(text, role) {
     const item = document.createElement("div");
     item.className = `bdac-ai__message bdac-ai__message--${role}`;
-    item.textContent = text;
+    const value = String(text);
+    const urlPattern = /https:\/\/[^\s|]+/g;
+    let cursor = 0;
+    for (const match of value.matchAll(urlPattern)) {
+      const rawUrl = match[0];
+      const cleanUrl = rawUrl.replace(/[),.;।]+$/u, "");
+      const start = match.index;
+      item.appendChild(document.createTextNode(value.slice(cursor, start)));
+      try {
+        const parsed = new URL(cleanUrl);
+        if (parsed.protocol !== "https:") throw new Error("unsupported link protocol");
+        const link = document.createElement("a");
+        link.href = parsed.href;
+        link.textContent = cleanUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        item.appendChild(link);
+        item.appendChild(document.createTextNode(rawUrl.slice(cleanUrl.length)));
+      } catch (_) {
+        item.appendChild(document.createTextNode(rawUrl));
+      }
+      cursor = start + rawUrl.length;
+    }
+    item.appendChild(document.createTextNode(value.slice(cursor)));
     messages.appendChild(item);
     messages.scrollTop = messages.scrollHeight;
     return item;

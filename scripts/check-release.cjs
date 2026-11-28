@@ -48,7 +48,7 @@ function check(root = path.resolve(__dirname, "..")) {
   require(app.includes('navigator.serviceWorker.register("sw.js"'), "Offline app-shell registration is missing.");
   require(!/themeSelect|themeProfile|paletteProfile|demo-ribbon|demo-tools|DEMO_EVENTS|ev-buet-exam/i.test(app), "Prototype controls or fake records remain in the application script.");
   require(css.includes(".sidebar") && css.includes(".mobile-nav") && css.includes(".theme-toggle"), "Responsive sidebar, mobile navigation or theme icon styles are missing.");
-  require(assistant.includes("textContent = text") && assistant.includes("JSON.stringify({ question, page, history })") && assistant.includes("conversationHistory.slice(-8)"), "AI responses must render as text and send only the question/page plus bounded in-memory conversation history.");
+  require(assistant.includes("document.createTextNode(value.slice(cursor, start))") && assistant.includes("JSON.stringify({ question, page, history })") && assistant.includes("conversationHistory.slice(-8)") && assistant.includes("parsed.protocol !== \"https:\""), "AI responses must use text nodes, render only HTTPS source links, and send bounded in-memory conversation history.");
   require(/script-src 'self'/.test(headers) && /style-src 'self'/.test(headers), "Strict self-only script/style CSP is required.");
   require(headers.includes("X-Content-Type-Options") && headers.includes("X-Frame-Options") && headers.includes("Referrer-Policy") && headers.includes("Content-Security-Policy"), "Required security response headers are incomplete.");
   require(sw.includes('addEventListener("push"') && sw.includes('addEventListener("notificationclick"'), "Push event handling must be preserved in the service worker.");
