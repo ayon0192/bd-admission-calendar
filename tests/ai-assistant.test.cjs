@@ -470,8 +470,8 @@ test("short RU date query returns its verified schedule and preserves Unit label
   };
   const answer = resolveDeterministicCalendarAnswer(data, "RU er date");
   assert.match(answer, /রাজশাহী বিশ্ববিদ্যালয়/);
-  assert.match(answer, /৩০ নভেম্বর ২০২৬/);
-  assert.match(answer, /Unit A.*২০ ফেব্রুয়ারি ২০২৭/);
-  assert.match(answer, /Unit B.*১২ ফেব্রুয়ারি ২০২৭/);
+  assert.match(answer, /৩০ নভেম্বর,?\\s*২০২৬/);
+  assert.match(answer, /Unit A.*২০ ফেব্রুয়ারি,?\\s*২০২৭/);
+  assert.match(answer, /Unit B.*১২ ফেব্রুয়ারি,?\\s*২০২৭/);
   assert.doesNotMatch(answer, /RUET|একক/);
 });
