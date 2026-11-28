@@ -134,7 +134,8 @@
         cache: "no-store",
         redirect: "error",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, page, history }),\n        signal: controller.signal
+        body: JSON.stringify({ question, page, history }),
+        signal: controller.signal
       });
       let payload = null;
       try { payload = await response.json(); } catch (_) { /* handled below */ }
@@ -152,8 +153,14 @@
       }
     } catch (_) {
       waiting.remove();
-      addMessage("এআই সেবার সঙ্গে সংযোগ হচ্ছে না। ইন্টারনেট সংযোগ দেখে পরে আবার চেষ্টা করুন।", "assistant");
+      if (controller.signal.aborted) {
+        addMessage("উত্তর তৈরি করতে ৩০ সেকেন্ডের বেশি লাগছে। পরে আবার চেষ্টা করুন।", "assistant");
+      } else {
+        addMessage("এআই সেবার সঙ্গে সংযোগ হচ্ছে না। ইন্টারনেট সংযোগ দেখে পরে আবার চেষ্টা করুন।", "assistant");
+      }
     } finally {
+      window.clearTimeout(slowNoticeTimer);
+      window.clearTimeout(timeoutTimer);
       pending = false;
       sendButton.disabled = false;
       input.disabled = false;
