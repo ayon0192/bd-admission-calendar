@@ -83,7 +83,7 @@ test("Worker answers greetings, confirms previous facts and returns source links
   };
   const ask = async (question, history = []) => {
     const response = await worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
-      method: "POST", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json" },
+      method: "POST", headers: { Origin: "https://bdac.ayon0192.workers.dev", "Content-Type": "application/json" },
       body: JSON.stringify({ question, page: "calendar", history })
     }), env);
     return (await response.json()).answer;
@@ -209,11 +209,11 @@ test("Worker answers verified RU deadline directly from calendar data and resolv
   const env = {
     ASSETS: { fetch: async () => new Response(JSON.stringify(data)) },
     RATE_LIMITER: { idFromName: () => "global", get: () => ({ fetch: async () => { limiterCalls++; return Response.json({ allowed: true }); } }) },
-    AI: { run: async () => { aiCalls++; throw new Error("deterministic deadline must not call the model"); } }
+    AI: { run: async () => { aiCalls++; throw Object.assign(new Error("Workers AI 429: quota exceeded"), { status: 429 }); } }
   };
   const ask = (question, history = []) => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
     method: "POST",
-    headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json" },
+    headers: { Origin: "https://bdac.ayon0192.workers.dev", "Content-Type": "application/json" },
     body: JSON.stringify({ question, page: "calendar", history })
   }), env);
   const first = await ask("Ru er last date kobe");
@@ -234,8 +234,8 @@ test("Worker keeps Cloudflare protections but has no application-defined usage q
   const worker = read("workers/assistant.mjs");
   const config = read("workers/ai-config.mjs");
   assert.ok(config.includes("@cf/google/gemma-4-26b-a4b-it"));
-  assert.ok(worker.includes("https://bd-admission-calendar.pages.dev"));
   assert.ok(worker.includes("https://bdac.ayon0192.workers.dev"));
+  assert.doesNotMatch(worker, /https:\/\/bd-admission-calendar\.pages\.dev/);
   assert.doesNotMatch(worker, /Access-Control-Allow-Origin[^\n]*\*/i);
   assert.match(worker, /MAX_QUESTION_CHARS\s*=\s*500/);
   assert.match(worker, /MAX_REQUEST_BYTES\s*=\s*16000/);
@@ -268,30 +268,36 @@ test("frontend sends bounded history and renders responses plus HTTPS source lin
 });
 
 
-test("Worker accepts only the exact Pages and production Worker origins and returns matching CORS headers", async () => {
+test("Worker accepts only the current production Worker origin and rejects the retired Pages origin", async () => {
   const { default: worker } = await import("../workers/assistant.mjs");
   let assetReads = 0;
   const env = { ASSETS: { fetch: async () => { assetReads++; return new Response("{}"); } } };
-  const blocked = await worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
-    method: "POST", headers: { Origin: "https://another.pages.dev", "Content-Type": "application/json" }, body: JSON.stringify({ question: "test" })
-  }), env);
-  assert.equal(blocked.status, 403);
+  const send = (origin, method = "OPTIONS") => {
+    const headers = { Origin: origin };
+    const init = { method, headers };
+    if (method === "OPTIONS") headers["Access-Control-Request-Method"] = "POST";
+    else {
+      headers["Content-Type"] = "application/json";
+      init.body = JSON.stringify({ question: "test" });
+    }
+    return worker.fetch(new Request("https://bdac.ayon0192.workers.dev/api/chat", init), env);
+  };
+
+  const retired = await send("https://bd-admission-calendar.pages.dev");
+  assert.equal(retired.status, 403);
+  assert.equal(retired.headers.get("Access-Control-Allow-Origin"), null);
+
+  const unrelated = await send("https://another.pages.dev");
+  assert.equal(unrelated.status, 403);
   assert.equal(assetReads, 0);
-  const allowed = await worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
-    method: "OPTIONS", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Access-Control-Request-Method": "POST" }
-  }), env);
-  assert.equal(allowed.status, 204);
-  assert.equal(allowed.headers.get("Access-Control-Allow-Origin"), "https://bd-admission-calendar.pages.dev");
-  const allowedWorker = await worker.fetch(new Request("https://bdac.ayon0192.workers.dev/api/chat", {
-    method: "OPTIONS", headers: { Origin: "https://bdac.ayon0192.workers.dev", "Access-Control-Request-Method": "POST" }
-  }), env);
-  assert.equal(allowedWorker.status, 204);
-  assert.equal(allowedWorker.headers.get("Access-Control-Allow-Origin"), "https://bdac.ayon0192.workers.dev");
-  const workerPost = await worker.fetch(new Request("https://bdac.ayon0192.workers.dev/api/chat", {
-    method: "POST", headers: { Origin: "https://bdac.ayon0192.workers.dev", "Content-Type": "application/json" }, body: JSON.stringify({ question: "test" })
-  }), env);
-  assert.equal(workerPost.status, 503);
-  assert.equal(workerPost.headers.get("Access-Control-Allow-Origin"), "https://bdac.ayon0192.workers.dev");
+
+  const preflight = await send("https://bdac.ayon0192.workers.dev");
+  assert.equal(preflight.status, 204);
+  assert.equal(preflight.headers.get("Access-Control-Allow-Origin"), "https://bdac.ayon0192.workers.dev");
+
+  const post = await send("https://bdac.ayon0192.workers.dev", "POST");
+  assert.equal(post.status, 503);
+  assert.equal(post.headers.get("Access-Control-Allow-Origin"), "https://bdac.ayon0192.workers.dev");
 });
 
 test("Worker returns the fixed unknown answer without spending AI quota", async () => {
@@ -304,7 +310,7 @@ test("Worker returns the fixed unknown answer without spending AI quota", async 
     AI: { run: async () => { aiCalls++; return { response: "ভুল উত্তর" }; } }
   };
   const response = await worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
-    method: "POST", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.10" },
+    method: "POST", headers: { Origin: "https://bdac.ayon0192.workers.dev", "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.10" },
     body: JSON.stringify({ question: "আমার ব্যক্তিগত পাসওয়ার্ড কী?", page: "profile" })
   }), env);
   assert.equal(response.status, 200);
@@ -313,7 +319,7 @@ test("Worker returns the fixed unknown answer without spending AI quota", async 
   assert.equal(aiCalls, 0);
 });
 
-test("Worker serves repeated AI requests without per-IP or site quotas and reports Cloudflare quota exhaustion", async () => {
+test("Worker serves requests beyond previous IP, minute and site quota thresholds", async () => {
   const { default: worker } = await import("../workers/assistant.mjs");
   const { AI_MODEL } = await import("../workers/ai-config.mjs");
   let aiCalls = 0;
@@ -336,15 +342,15 @@ test("Worker serves repeated AI requests without per-IP or site quotas and repor
   };
   const ask = () => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
     method: "POST",
-    headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.11" },
+    headers: { Origin: "https://bdac.ayon0192.workers.dev", "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.11" },
     body: JSON.stringify({ question: "RU er eligibility ki?", page: "calendar" })
   }), env);
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 40; i++) {
     const response = await ask();
     assert.equal(response.status, 200);
     assert.match((await response.json()).answer, /প্রদত্ত তথ্য/);
   }
-  assert.equal(aiCalls, 12);
+  assert.equal(aiCalls, 40);
 
   env.AI.run = async () => { throw Object.assign(new Error("Workers AI 429: quota exceeded"), { status: 429 }); };
   const exhausted = await ask();
@@ -352,7 +358,7 @@ test("Worker serves repeated AI requests without per-IP or site quotas and repor
   assert.match((await exhausted.json()).message, /Cloudflare/);
 });
 
-test("Owner element explanation is optional, reuses the configured model and has no owner-specific quota", async () => {
+test("Owner element explanation remains optional and serves repeated calls beyond previous owner quota thresholds", async () => {
   const { default: worker } = await import("../workers/assistant.mjs");
   const { AI_MODEL } = await import("../workers/ai-config.mjs");
   let aiCalls = 0, assetReads = 0;
@@ -370,19 +376,19 @@ test("Owner element explanation is optional, reuses the configured model and has
   };
   const ask = () => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
     method: "POST",
-    headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json" },
+    headers: { Origin: "https://bdac.ayon0192.workers.dev", "Content-Type": "application/json" },
     body: JSON.stringify({
       mode: "owner-explain",
       question: "এই নির্বাচিত উপাদানটি কী কাজ করে?",
       element: { tag: "button", id: "saveButton", classes: ["primary"], selector: "main > button#saveButton", text: "সংরক্ষণ", dimensions: { width: 90, height: 42 }, styles: { color: "rgb(0, 0, 0)", background: "rgb(255, 255, 255)", fontSize: "16px", padding: "8px", margin: "0px", border: "1px solid", borderRadius: "8px" }, source: "assets/js/main-shell.js#renderProfile" }
     })
   }), env);
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 40; i++) {
     const response = await ask();
     assert.equal(response.status, 200);
     assert.match((await response.json()).answer, /বোতাম/);
   }
-  assert.equal(aiCalls, 8);
+  assert.equal(aiCalls, 40);
   assert.equal(assetReads, 0);
   env.AI.run = async () => { throw Object.assign(new Error("Workers AI quota exceeded"), { status: 429 }); };
   const exhausted = await ask();
@@ -403,7 +409,7 @@ test("AI service failures return clear Bengali fallback messages for both assist
     AI: { run: async () => { throw new Error("Workers AI temporarily unavailable"); } }
   };
   const ask = (body) => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
-    method: "POST", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json" },
+    method: "POST", headers: { Origin: "https://bdac.ayon0192.workers.dev", "Content-Type": "application/json" },
     body: JSON.stringify(body)
   }), env);
   const normal = await ask({ question: "RU er Unit B eligibility ki?", page: "calendar" });
@@ -428,7 +434,7 @@ test("legacy Durable Object binding stays deployment-compatible but never counts
   }
 });
 
-test("static build, CSP, Wrangler and offline shell include the assistant assets safely", () => {
+test("static build, CSP, Wrangler identity and offline shell include assistant assets safely", () => {
   const builder = read("scripts/build-redesigned.cjs");
   const headers = read("_headers");
   const sw = read("sw.js");
@@ -452,6 +458,7 @@ test("static build, CSP, Wrangler and offline shell include the assistant assets
   assert.match(sw, /owner-select\.js/);
   assert.match(sw, /admission-calendar-v26/);
   assert.match(wrangler, /main\s*=\s*"\.\/workers\/assistant\.mjs"/);
+  assert.match(wrangler, /name\s*=\s*"bdac"/);
   assert.match(wrangler, /binding\s*=\s*"AI"/);
   assert.match(wrangler, /name\s*=\s*"RATE_LIMITER"/);
   assert.match(wrangler, /run_worker_first\s*=\s*\["\/api\/\*"\]/);

@@ -2,7 +2,6 @@ import { AI_MODEL } from "./ai-config.mjs";
 import { buildRelevantContext, resolveDeterministicCalendarAnswer, resolveFollowUpAnswer, resolveSmallTalkAnswer } from "./assistant-context.mjs";
 
 const ALLOWED_ORIGINS = new Set([
-  "https://bd-admission-calendar.pages.dev",
   "https://bdac.ayon0192.workers.dev"
 ]);
 const isAllowedOrigin = (origin) => ALLOWED_ORIGINS.has(origin);
