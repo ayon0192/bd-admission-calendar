@@ -172,7 +172,8 @@ test("context builder retrieves admission-detail facts for romanized university 
   assert.match(context, /RU-B-2026-27/);
   assert.match(context, /৩০ নভেম্বর|2026-11-30/);
 });
-\ntest("context builder refuses to dump the dataset for unrelated questions", async () => {
+
+test("context builder refuses to dump the dataset for unrelated questions", async () => {
   const { buildRelevantContext } = await import("../workers/assistant-context.mjs");
   const data = {
     universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়" }],
