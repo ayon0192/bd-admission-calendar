@@ -40,6 +40,9 @@ test("outer and inner traversal, browser-first explanation, optional AI and brow
   assert.match(js, /এটা কী\?/);
   assert.match(js, /AI দিয়ে ব্যাখ্যা/);
   assert.match(js, /30000/);
+  assert.ok(js.includes('const ASSISTANT_API_URL = "https://bdac.ayon0192.workers.dev/api/chat";'));
+  assert.ok(js.includes('action === "explain" && selectedInfo) setOutput(explainLocally(selectedInfo))'));
+  assert.ok(js.includes('else if (action === "ai") explainWithAI();'));
   assert.match(js, /buildChatGptPrompt/);
   assert.match(js, /ayon0192\/bd-admission-calendar/);
   assert.match(js, /Base branch: main/);
