@@ -1,10 +1,12 @@
 "use strict";
-const CACHE_NAME = "admission-calendar-v24";
+const CACHE_NAME = "admission-calendar-v25";
 const DATA_CACHE = "admission-data-v1";
 const APP_SHELL = [
   "./", "./index.html",
   "./assets/css/main-shell.css?v=20261127-final-1",
   "./assets/js/main-shell.js?v=20261127-final-1",
+  "./assets/css/ai-assistant.css?v=20261128-ai-1",
+  "./assets/js/ai-assistant.js?v=20261128-ai-1",
   "./assets/css/release-updates.css?v=20261128-polling-1",
   "./assets/js/release-updates.js?v=20261128-polling-1",
   "./assets/js/theme-init.js",

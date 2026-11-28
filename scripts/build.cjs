@@ -52,7 +52,7 @@ function buildSite() {
   const workerPath = path.join(DIST, "sw.js");
   if (fs.existsSync(workerPath)) {
     const worker = fs.readFileSync(workerPath, "utf8")
-      .replace(/CACHE_NAME\s*=\s*["\'][^"\']+["\']/, 'CACHE_NAME = "admission-calendar-v24"')
+      .replace(/CACHE_NAME\s*=\s*["\'][^"\']+["\']/, 'CACHE_NAME = "admission-calendar-v25"')
       .replace(/assets\/js\/main-shell\.js\?v=[^"\']+/g, "assets/js/main-shell.js?v=" + assetVersion)
       .replace(/assets\/css\/main-shell\.css\?v=[^"\']+/g, "assets/css/main-shell.css?v=" + assetVersion);
     fs.writeFileSync(workerPath, worker, "utf8");
@@ -61,7 +61,7 @@ function buildSite() {
   const shellCss = path.join(DIST, "assets", "css", "main-shell.css");
   fs.writeFileSync(shellCss, fs.readFileSync(shellCss, "utf8").replace(/@import\s+url\(["']([^"')]+)["']\);?\s*/g, (m, rel) => fs.readFileSync(path.join(ROOT, "assets", "css", rel), "utf8") + "\n"), "utf8");
   // Self-hosted fonts and their licence.
-  const fontsOut = path.join(DIST, "assets", "fonts");
+  const fontsOut = path.join(ROOT, "assets", "fonts");
   fs.mkdirSync(fontsOut, { recursive: true });
   for (const name of fs.readdirSync(path.join(ROOT, "assets", "fonts"))) fs.copyFileSync(path.join(ROOT, "assets", "fonts", name), path.join(fontsOut, name));
   return files;

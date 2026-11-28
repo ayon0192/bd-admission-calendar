@@ -7,7 +7,8 @@ const OUTPUT = path.join(ROOT, "dist");
 const RELEASE_META = '<meta name="calendar-release" content="__CALENDAR_RELEASE_ID__">';
 const FILES = [
   "index.html", "_headers", "robots.txt", "sw.js",
-  "assets/css/main-shell.css", "assets/js/main-shell.js", "assets/favicon.svg"
+  "assets/css/main-shell.css", "assets/js/main-shell.js", "assets/favicon.svg",
+  "assets/css/ai-assistant.css", "assets/js/ai-assistant.js"
 ];
 function buildSite() {
   if (OUTPUT === ROOT || !OUTPUT.startsWith(ROOT + path.sep)) throw new Error("Refusing to write outside the project dist directory.");
