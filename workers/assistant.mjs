@@ -1,7 +1,11 @@
 import { AI_MODEL } from "./ai-config.mjs";
 import { buildRelevantContext } from "./assistant-context.mjs";
 
-const ALLOWED_ORIGIN = "https://bd-admission-calendar.pages.dev";
+const ALLOWED_ORIGINS = new Set([
+  "https://bd-admission-calendar.pages.dev",
+  "https://bdac.ayon0192.workers.dev"
+]);
+const isAllowedOrigin = (origin) => ALLOWED_ORIGINS.has(origin);
 const SITE_DAILY_LIMIT = 30;
 const IP_DAILY_LIMIT = 8;
 const IP_MINUTE_LIMIT = 2;
@@ -19,15 +23,15 @@ const SYSTEM_PROMPT = [
   "উত্তর সহজ, স্বাভাবিক বাংলায় সর্বোচ্চ দুইটি ছোট বাক্যে দেবে। অপ্রয়োজনীয় ভূমিকা, তালিকা বা অতিরিক্ত ব্যাখ্যা দেবে না।"
 ].join("\n");
 
-function jsonResponse(status, payload, origin = ALLOWED_ORIGIN) {
+function jsonResponse(status, payload, origin = null) {
   const headers = new Headers({
     "Content-Type": "application/json; charset=utf-8",
     "Cache-Control": "no-store",
     "Vary": "Origin",
     "X-Content-Type-Options": "nosniff"
   });
-  if (origin === ALLOWED_ORIGIN) {
-    headers.set("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
+  if (isAllowedOrigin(origin)) {
+    headers.set("Access-Control-Allow-Origin", origin);
     headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
     headers.set("Access-Control-Allow-Headers", "Content-Type");
     headers.set("Access-Control-Max-Age", "86400");
@@ -37,11 +41,11 @@ function jsonResponse(status, payload, origin = ALLOWED_ORIGIN) {
 
 function corsPreflight(request) {
   const origin = request.headers.get("Origin");
-  if (origin !== ALLOWED_ORIGIN) return new Response(null, { status: 403, headers: { "Cache-Control": "no-store", Vary: "Origin" } });
+  if (!isAllowedOrigin(origin)) return new Response(null, { status: 403, headers: { "Cache-Control": "no-store", Vary: "Origin" } });
   return new Response(null, {
     status: 204,
     headers: {
-      "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+      "Access-Control-Allow-Origin": origin,
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       "Access-Control-Max-Age": "86400",
@@ -125,32 +129,33 @@ async function readBoundedJson(request, maxBytes = 6000) {
 
 async function handleChat(request, env) {
   const origin = request.headers.get("Origin");
-  if (origin !== ALLOWED_ORIGIN) return jsonResponse(403, { message: "এই ঠিকানা থেকে এআই ব্যবহার করা যাবে না।" }, null);
+  if (!isAllowedOrigin(origin)) return jsonResponse(403, { message: "এই ঠিকানা থেকে এআই ব্যবহার করা যাবে না।" }, null);
   if (request.method === "OPTIONS") return corsPreflight(request);
-  if (request.method !== "POST") return jsonResponse(405, { message: "এই অনুরোধটি গ্রহণ করা যাচ্ছে না।" });
+  const respond = (status, payload) => jsonResponse(status, payload, origin);
+  if (request.method !== "POST") return respond(405, { message: "এই অনুরোধটি গ্রহণ করা যাচ্ছে না।" });
   if (!(request.headers.get("Content-Type") || "").toLowerCase().includes("application/json")) {
-    return jsonResponse(415, { message: "প্রশ্ন পাঠাতে JSON অনুরোধ প্রয়োজন।" });
+    return respond(415, { message: "প্রশ্ন পাঠাতে JSON অনুরোধ প্রয়োজন।" });
   }
   const declaredLength = Number(request.headers.get("Content-Length") || 0);
-  if (declaredLength > 6000) return jsonResponse(413, { message: "প্রশ্নটি অনেক বড় হয়েছে। ছোট করে লিখুন।" });
+  if (declaredLength > 6000) return respond(413, { message: "প্রশ্নটি অনেক বড় হয়েছে। ছোট করে লিখুন।" });
 
   const parsedBody = await readBoundedJson(request);
-  if (parsedBody.tooLarge) return jsonResponse(413, { message: "প্রশ্নটি অনেক বড় হয়েছে। ছোট করে লিখুন।" });
+  if (parsedBody.tooLarge) return respond(413, { message: "প্রশ্নটি অনেক বড় হয়েছে। ছোট করে লিখুন।" });
   const body = parsedBody.value;
-  if (!body || typeof body !== "object" || Array.isArray(body)) return jsonResponse(400, { message: "প্রশ্নটি পড়া যায়নি। আবার লিখে পাঠান।" });
+  if (!body || typeof body !== "object" || Array.isArray(body)) return respond(400, { message: "প্রশ্নটি পড়া যায়নি। আবার লিখে পাঠান।" });
   const question = typeof body.question === "string" ? body.question.trim() : "";
   const page = typeof body?.page === "string" && PAGE_IDS.has(body.page) ? body.page : "";
-  if (!question) return jsonResponse(400, { message: "আগে একটি প্রশ্ন লিখুন।" });
-  if (question.length > MAX_QUESTION_CHARS) return jsonResponse(413, { message: "প্রশ্ন সর্বোচ্চ ৫০০ অক্ষরের মধ্যে লিখুন।" });
+  if (!question) return respond(400, { message: "আগে একটি প্রশ্ন লিখুন।" });
+  if (question.length > MAX_QUESTION_CHARS) return respond(413, { message: "প্রশ্ন সর্বোচ্চ ৫০০ অক্ষরের মধ্যে লিখুন।" });
 
   let context;
   try {
     const data = await loadAdmissionData(env, request);
     context = buildRelevantContext(data, question, page);
   } catch {
-    return jsonResponse(503, { message: "এখন সাইটের ভর্তি তথ্য পড়া যাচ্ছে না। একটু পরে আবার চেষ্টা করুন।" });
+    return respond(503, { message: "এখন সাইটের ভর্তি তথ্য পড়া যাচ্ছে না। একটু পরে আবার চেষ্টা করুন।" });
   }
-  if (!context) return jsonResponse(200, { answer: FALLBACK_ANSWER });
+  if (!context) return respond(200, { answer: FALLBACK_ANSWER });
   context = context.slice(0, MAX_CONTEXT_CHARS);
 
   const ip = request.headers.get("CF-Connecting-IP") || "unknown";
@@ -163,9 +168,9 @@ async function handleChat(request, env) {
       limits: { siteDaily: SITE_DAILY_LIMIT, ipDaily: IP_DAILY_LIMIT, ipMinute: IP_MINUTE_LIMIT }
     });
   } catch {
-    return jsonResponse(503, { message: "এআই সেবার সীমা যাচাই করা যাচ্ছে না। একটু পরে আবার চেষ্টা করুন।" });
+    return respond(503, { message: "এআই সেবার সীমা যাচাই করা যাচ্ছে না। একটু পরে আবার চেষ্টা করুন।" });
   }
-  if (!reservation.allowed) return jsonResponse(429, { message: reservation.message || "আজকের এআই সীমা শেষ, কাল আবার চেষ্টা করুন।" });
+  if (!reservation.allowed) return respond(429, { message: reservation.message || "আজকের এআই সীমা শেষ, কাল আবার চেষ্টা করুন।" });
 
   try {
     if (!env.AI || typeof env.AI.run !== "function") throw new Error("Workers AI binding unavailable");
@@ -181,10 +186,10 @@ async function handleChat(request, env) {
       top_p: 0.8
     });
     const answer = safeModelAnswer(extractModelText(result), context);
-    return jsonResponse(200, { answer });
+    return respond(200, { answer });
   } catch {
     try { await askRateLimiter(env, { action: "release", ip, day, minute }); } catch { /* do not expose limiter internals */ }
-    return jsonResponse(503, { message: "এই মুহূর্তে এআই উত্তর দিতে পারছে না। একটু পরে আবার চেষ্টা করুন।" });
+    return respond(503, { message: "এই মুহূর্তে এআই উত্তর দিতে পারছে না। একটু পরে আবার চেষ্টা করুন।" });
   }
 }
 

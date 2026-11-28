@@ -58,6 +58,7 @@ test("Worker security, model constant and all quota ceilings are explicit", () =
   const config = read("workers/ai-config.mjs");
   assert.match(config, /export const AI_MODEL = "@cf\/zai-org\/glm-4\.7-flash"/);
   assert.match(worker, /https:\/\/bd-admission-calendar\.pages\.dev/);
+  assert.match(worker, /https:\/\/bdac\.ayon0192\.workers\.dev/);
   assert.doesNotMatch(worker, /https:\/\/\*\.pages\.dev|\*\.pages\.dev|Access-Control-Allow-Origin['"]?\s*:\s*['"]\*['"]/i);
   assert.match(worker, /SITE_DAILY_LIMIT\s*=\s*30/);
   assert.match(worker, /IP_DAILY_LIMIT\s*=\s*8/);
@@ -89,7 +90,7 @@ test("frontend sends only question/page and renders model responses as text", ()
 });
 
 
-test("Worker accepts only the exact Pages origin and returns a preflight policy", async () => {
+test("Worker accepts only the exact Pages and production Worker origins and returns matching CORS headers", async () => {
   const { default: worker } = await import("../workers/assistant.mjs");
   let assetReads = 0;
   const env = { ASSETS: { fetch: async () => { assetReads++; return new Response("{}"); } } };
@@ -103,6 +104,16 @@ test("Worker accepts only the exact Pages origin and returns a preflight policy"
   }), env);
   assert.equal(allowed.status, 204);
   assert.equal(allowed.headers.get("Access-Control-Allow-Origin"), "https://bd-admission-calendar.pages.dev");
+  const allowedWorker = await worker.fetch(new Request("https://bdac.ayon0192.workers.dev/api/chat", {
+    method: "OPTIONS", headers: { Origin: "https://bdac.ayon0192.workers.dev", "Access-Control-Request-Method": "POST" }
+  }), env);
+  assert.equal(allowedWorker.status, 204);
+  assert.equal(allowedWorker.headers.get("Access-Control-Allow-Origin"), "https://bdac.ayon0192.workers.dev");
+  const workerPost = await worker.fetch(new Request("https://bdac.ayon0192.workers.dev/api/chat", {
+    method: "POST", headers: { Origin: "https://bdac.ayon0192.workers.dev", "Content-Type": "application/json" }, body: JSON.stringify({ question: "test" })
+  }), env);
+  assert.equal(workerPost.status, 503);
+  assert.equal(workerPost.headers.get("Access-Control-Allow-Origin"), "https://bdac.ayon0192.workers.dev");
 });
 
 test("Worker returns the fixed unknown answer without spending AI quota", async () => {
