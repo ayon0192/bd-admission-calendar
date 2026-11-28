@@ -24,7 +24,7 @@ test("selected elements expose safe DOM and computed-style metadata without read
   for (const field of ["tag", "id", "classes", "selector", "text", "dimensions", "color", "background", "fontSize", "padding", "margin", "border", "borderRadius", "source"]) {
     assert.match(js, new RegExp(field));
   }
-  assert.match(js, /PRIVATE_TEXT_SELECTOR\\s*=\\s*"input,\\s*textarea,\\s*select/);
+  assert.match(js, /PRIVATE_TEXT_SELECTOR\s*=\s*"input,\s*textarea,\s*select/);
   assert.match(js, /contenteditable/);
   assert.match(js, /data-private/);
   assert.match(js, /\.note/);
