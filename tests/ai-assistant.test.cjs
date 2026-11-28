@@ -53,6 +53,22 @@ test("context builder recognizes romanized RU and retrieves its exact applicatio
   assert.match(context, /৩০ নভেম্বর,?\s*২০২৬/);
 });
 
+test("context builder resolves a romanized follow-up using the prior user question", async () => {
+  const { buildRelevantContext } = await import("../workers/assistant-context.mjs");
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU", cycleLabel: "২০২৬–২০২৭ শিক্ষাবর্ষ" }],
+    admissionDetails: [],
+    events: [{ id: "RU-APP-DEADLINE", cycleId: "RU-2026-27", title: "অনলাইন আবেদন ও ফি জমার শেষ সময়", type: "application_deadline", dateOnly: "2026-11-30", startsAt: "2026-11-30T23:59:00+06:00" }],
+    examCenters: [], circulars: [], notices: [], sources: []
+  };
+  const context = buildRelevantContext(data, "Valo kore calendar theke dekho", "calendar", [
+    { role: "user", content: "RU er last date kobe?" }
+  ]);
+  assert.match(context, /RU-APP-DEADLINE/);
+  assert.match(context, /2026-11-30/);
+});
+
 test("context builder refuses to dump the dataset for unrelated questions", async () => {
   const { buildRelevantContext } = await import("../workers/assistant-context.mjs");
   const data = {
@@ -68,6 +84,46 @@ test("context builder includes a short explanation for a known site section", as
   const context = buildRelevantContext({ universities: [], admissionCycles: [], admissionDetails: [], events: [], examCenters: [], circulars: [], notices: [], sources: [] }, "এই পেজে কী দেখা যায়?", "calendar");
   assert.match(context, /ক্যালেন্ডার/);
   assert.ok(context.length < 1000);
+});
+
+
+test("Worker answers verified RU deadline directly from calendar data and resolves a follow-up", async () => {
+  const { default: worker } = await import("../workers/assistant.mjs");
+  let aiCalls = 0, limiterCalls = 0;
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU", cycleLabel: "২০২৬–২০২৭ শিক্ষাবর্ষ" }],
+    admissionDetails: [],
+    events: [{
+      id: "RU-APP-DEADLINE", cycleId: "RU-2026-27",
+      title: "অনলাইন আবেদন ও ফি জমার শেষ সময়", type: "application_deadline",
+      dateOnly: "2026-11-30", startsAt: "2026-11-30T23:59:00+06:00",
+      verification: { status: "officially_confirmed" }
+    }],
+    examCenters: [], circulars: [], notices: [], sources: []
+  };
+  const env = {
+    ASSETS: { fetch: async () => new Response(JSON.stringify(data)) },
+    RATE_LIMITER: { idFromName: () => "global", get: () => ({ fetch: async () => { limiterCalls++; return Response.json({ allowed: true }); } }) },
+    AI: { run: async () => { aiCalls++; throw new Error("deterministic deadline must not call the model"); } }
+  };
+  const ask = (question, history = []) => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
+    method: "POST",
+    headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json" },
+    body: JSON.stringify({ question, page: "calendar", history })
+  }), env);
+  const first = await ask("Ru er last date kobe");
+  const firstAnswer = (await first.json()).answer;
+  assert.match(firstAnswer, /৩০ নভেম্বর, ২০২৬/);
+  assert.match(firstAnswer, /১১:৫৯/);
+  const followUp = await ask("Valo kore calendar theke dekho", [
+    { role: "user", content: "Ru er last date kobe" },
+    { role: "assistant", content: firstAnswer }
+  ]);
+  const followUpAnswer = (await followUp.json()).answer;
+  assert.match(followUpAnswer, /৩০ নভেম্বর, ২০২৬/);
+  assert.equal(aiCalls, 0);
+  assert.equal(limiterCalls, 0);
 });
 
 test("Worker security, model constant and all quota ceilings are explicit", () => {
@@ -99,7 +155,8 @@ test("frontend sends only question/page and renders model responses as text", ()
   assert.equal(endpointUrl.protocol, "https:");
   assert.equal(endpointUrl.hostname, "bdac.ayon0192.workers.dev");
   assert.equal(endpointUrl.pathname, "/api/chat");
-  assert.match(js, /JSON\.stringify\(\{\s*question\s*,\s*page\s*\}\)/);
+  assert.match(js, /JSON\.stringify\(\{\s*question\s*,\s*page\s*,\s*history\s*\}\)/);
+  assert.match(js, /conversationHistory\.slice\(-8\)/);
   assert.match(js, /textContent\s*=/);
   assert.doesNotMatch(js, /innerHTML\s*=\s*(?:answer|response|payload|message)\b/i);
   assert.match(html, /assets\/css\/ai-assistant\.css/);

@@ -184,8 +184,70 @@ function addWithRelations(selected, record, data, terms) {
   }
 }
 
-export function buildRelevantContext(data, question, page = "") {
+function latestUserQuestion(history) {
+  if (!Array.isArray(history)) return "";
+  for (let index = history.length - 1; index >= 0; index--) {
+    const turn = history[index];
+    if (turn && turn.role === "user" && typeof turn.content === "string") return safeString(turn.content, 500);
+  }
+  return "";
+}
+
+function isFollowUp(question) {
+  return /ভালো করে|ভাল করে|আবার|দেখে বল|দেখো|যাচাই কর|আগের|ওটা|সেটা|তাহলে|আরও|valo kore|bhalo kore|abar|dekhe bolo|dekho|check kore|verify kore|eta abar/i.test(question);
+}
+
+function questionWithHistory(question, history) {
+  const previous = latestUserQuestion(history);
+  return previous && isFollowUp(question) ? `${previous} ${question}` : question;
+}
+
+export function resolveDeterministicCalendarAnswer(data, question, history = []) {
+  if (!data || typeof data !== "object" || typeof question !== "string") return null;
+  const effectiveQuestion = questionWithHistory(question, history);
+  const asksDeadline = /(last\s*date|deadline|abedon|application|আবেদন|শেষ\s*সময়|শেষ\s*তারিখ|জমার\s*শেষ)/iu.test(effectiveQuestion);
+  if (!asksDeadline) return null;
+
+  const terms = termsFor(effectiveQuestion);
+  const universities = Array.isArray(data.universities) ? data.universities : [];
+  const cycles = Array.isArray(data.admissionCycles) ? data.admissionCycles : [];
+  const events = Array.isArray(data.events) ? data.events : [];
+  const matches = [];
+  for (const event of events) {
+    if (event.type !== "application_deadline") continue;
+    const cycle = cycles.find((item) => item.id === event.cycleId);
+    const university = universities.find((item) => item.id === (event.universityId || cycle?.universityId));
+    if (!university) continue;
+    const universityText = normalize(JSON.stringify([university.id, university.name, university.shortName]));
+    const entityTerms = terms.filter((term) => universityText.includes(term));
+    if (!entityTerms.length) continue;
+    const status = event.verification?.status;
+    if (status && !["officially_confirmed", "authority_announced"].includes(status)) continue;
+    const rawDate = event.startsAt || event.dateOnly;
+    if (!rawDate) continue;
+    const parsed = /^\\d{4}-\\d{2}-\\d{2}$/.test(rawDate) ? new Date(`${rawDate}T00:00:00Z`) : new Date(rawDate);
+    if (Number.isNaN(parsed.getTime())) continue;
+    const score = entityTerms.reduce((total, term) => total + (term.length >= 5 ? 3 : 1), 0);
+    matches.push({ event, university, parsed, score });
+  }
+  matches.sort((a, b) => b.score - a.score);
+  if (!matches.length || (matches.length > 1 && matches[0].score === matches[1].score &&
+      matches[0].university.id !== matches[1].university.id)) return null;
+
+  const match = matches[0];
+  const date = new Intl.DateTimeFormat("bn-BD", {
+    day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Dhaka"
+  }).format(match.parsed);
+  const time = match.event.startsAt ? new Intl.DateTimeFormat("bn-BD", {
+    hour: "numeric", minute: "2-digit", hour12: true, timeZone: "Asia/Dhaka"
+  }).format(match.parsed) : "";
+  const deadline = time ? `${date}, ${time}` : date;
+  return `${match.university.name}-এর অনলাইন আবেদনের শেষ সময় ${deadline}।`;
+}
+
+export function buildRelevantContext(data, question, page = "", history = []) {
   if (!data || typeof data !== "object" || typeof question !== "string") return "";
+  question = questionWithHistory(question, history);
   const terms = termsFor(question);
   const scored = [];
   for (const collection of COLLECTIONS) {

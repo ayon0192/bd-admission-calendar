@@ -41,6 +41,7 @@
   const input = root.querySelector("#bdacAiQuestion");
   const sendButton = root.querySelector(".bdac-ai__send");
   let pending = false;
+  const conversationHistory = [];
 
   function addMessage(text, role) {
     const item = document.createElement("div");
@@ -96,6 +97,7 @@
     input.disabled = true;
     const waiting = addMessage("সাইটের তথ্য মিলিয়ে দেখছি…", "assistant bdac-ai__message--waiting");
     const page = currentPage();
+    const history = conversationHistory.slice(-8);
     try {
       const response = await fetch(ASSISTANT_API_URL, {
         method: "POST",
@@ -104,13 +106,15 @@
         cache: "no-store",
         redirect: "error",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, page })
+        body: JSON.stringify({ question, page, history })
       });
       let payload = null;
       try { payload = await response.json(); } catch (_) { /* handled below */ }
       waiting.remove();
       if (payload && typeof payload.answer === "string") {
         addMessage(payload.answer, "assistant");
+        conversationHistory.push({ role: "user", content: question }, { role: "assistant", content: payload.answer });
+        if (conversationHistory.length > 8) conversationHistory.splice(0, conversationHistory.length - 8);
       } else if (payload && typeof payload.message === "string") {
         addMessage(payload.message, "assistant");
       } else if (response.status === 429) {
