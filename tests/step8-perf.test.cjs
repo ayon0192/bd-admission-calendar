@@ -16,7 +16,7 @@ test("index.html preloads only 400 font, provides skeleton and noscript fallback
  assert.match(html, /id="page-calendar"[^>]*inert/);
 });
 
-test("service worker caches the redesigned shell, AI and release assets, and network-first caches admission data", () => {
+test("service worker caches the redesigned shell, AI, owner-select and release assets, and network-first caches admission data", () => {
  assert.match(sw, /DATA_CACHE/);
  assert.match(sw, /admission-records\.json/);
  assert.match(sw, /event\.waitUntil\(networkPromise\)/);
