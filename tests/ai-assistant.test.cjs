@@ -51,6 +51,10 @@ test("context builder recognizes romanized RU and retrieves its exact applicatio
   assert.match(context, /RU-APP-DEADLINE/);
   assert.match(context, /2026-11-30/);
   assert.match(context, /৩০ নভেম্বর,?\s*২০২৬/);
+
+  const conciseRomanizedContext = buildRelevantContext(data, "Ru er last date kobe");
+  assert.match(conciseRomanizedContext, /RU-APP-DEADLINE/);
+  assert.match(conciseRomanizedContext, /2026-11-30/);
 });
 
 test("context builder refuses to dump the dataset for unrelated questions", async () => {
