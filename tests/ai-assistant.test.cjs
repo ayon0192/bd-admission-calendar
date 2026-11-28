@@ -201,6 +201,35 @@ test("Worker reserves quota before calling AI and returns Bengali quota messages
 });
 
 
+test("Worker rejects a model date that conflicts with the calendar deadline", async () => {
+  const { default: worker } = await import("../workers/assistant.mjs");
+  let modelAnswer = "২৯ নভেম্বর, ২০২৬ রাত ১১:৫৯ মিনিট।";
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU", cycleLabel: "২০২৬–২০২৭" }],
+    admissionDetails: [],
+    events: [{ id: "RU-APP-DEADLINE", cycleId: "RU-2026-27", title: "অনলাইন আবেদন ও ফি জমার শেষ সময়", type: "application_deadline", dateOnly: "2026-11-30", startsAt: "2026-11-30T23:59:00+06:00" }],
+    examCenters: [], circulars: [], notices: [], sources: []
+  };
+  const env = {
+    ASSETS: { fetch: async () => new Response(JSON.stringify(data)) },
+    RATE_LIMITER: { idFromName: () => "global", get: () => ({ fetch: async () => Response.json({ allowed: true }) }) },
+    AI: { run: async () => ({ response: modelAnswer }) }
+  };
+  const request = () => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
+    method: "POST",
+    headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json" },
+    body: JSON.stringify({ question: "Ru er last date kobe" })
+  }), env);
+
+  const incorrect = await request();
+  assert.equal((await incorrect.json()).answer, "এই তথ্য আমার কাছে নেই");
+
+  modelAnswer = "৩০ নভেম্বর, ২০২৬ রাত ১১:৫৯ মিনিট।";
+  const correct = await request();
+  assert.equal((await correct.json()).answer, "৩০ নভেম্বর, ২০২৬ রাত ১১:৫৯ মিনিট।");
+});
+
 test("SQLite limiter enforces per-IP minute, per-IP day and global site-day ceilings", async () => {
   const { AssistantRateLimiter } = await import("../workers/assistant.mjs");
   function makeLimiter() {
