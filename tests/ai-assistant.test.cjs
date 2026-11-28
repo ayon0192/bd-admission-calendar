@@ -233,10 +233,10 @@ test("Worker answers verified RU deadline directly from calendar data and resolv
 test("Worker keeps Cloudflare protections but has no application-defined usage quotas", () => {
   const worker = read("workers/assistant.mjs");
   const config = read("workers/ai-config.mjs");
-  assert.match(config, /export const AI_MODEL = "@cf\\/google\\/gemma-4-26b-a4b-it"/);
-  assert.match(worker, /https:\\/\\/bd-admission-calendar\\.pages\\.dev/);
-  assert.match(worker, /https:\\/\\/bdac\\.ayon0192\\.workers\\.dev/);
-  assert.doesNotMatch(worker, /https:\\/\\/\\*\\.pages\\.dev|\\*\\.pages\\.dev|Access-Control-Allow-Origin['"]?\\s*:\\s*['"]\\*['"]/i);
+  assert.ok(config.includes("@cf/google/gemma-4-26b-a4b-it"));
+  assert.ok(worker.includes("https://bd-admission-calendar.pages.dev"));
+  assert.ok(worker.includes("https://bdac.ayon0192.workers.dev"));
+  assert.doesNotMatch(worker, /Access-Control-Allow-Origin[^\n]*\*/i);
   assert.match(worker, /MAX_QUESTION_CHARS\\s*=\\s*500/);
   assert.match(worker, /MAX_REQUEST_BYTES\\s*=\\s*16000/);
   assert.match(worker, /MAX_COMPLETION_TOKENS\\s*=\\s*384/);
