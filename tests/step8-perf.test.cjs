@@ -25,7 +25,9 @@ test("service worker caches the redesigned shell, AI, owner-select and release a
  assert.match(sw, /release-updates\.js\?v=20261128-polling-1/);
  assert.match(sw, /ai-assistant\.css\?v=20261128-ai-1/);
  assert.match(sw, /ai-assistant\.js\?v=20261128-ai-1/);
- assert.match(sw, /admission-calendar-v25/);
+ assert.match(sw, /admission-calendar-v26/);
+  assert.match(sw, /owner-select\.css/);
+  assert.match(sw, /owner-select\.js/);
 });
 
 test("release-updates uses five-minute foreground polling without a Worker WebSocket", () => {
