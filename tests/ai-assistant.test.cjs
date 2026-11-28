@@ -36,6 +36,23 @@ test("context builder sends only a small number of relevant records", async () =
   assert.ok(context.length < 3800);
 });
 
+test("context builder recognizes romanized RU and retrieves its exact application deadline", async () => {
+  const { buildRelevantContext } = await import("../workers/assistant-context.mjs");
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU", cycleLabel: "২০২৬–২০২৭ শিক্ষাবর্ষ" }],
+    admissionDetails: [],
+    events: [
+      { id: "RU-APP-DEADLINE", cycleId: "RU-2026-27", title: "অনলাইন আবেদন ও ফি জমার শেষ সময়", type: "application_deadline", dateOnly: "2026-11-30", startsAt: "2026-11-30T23:59:00+06:00" }
+    ],
+    examCenters: [], circulars: [], notices: [], sources: []
+  };
+  const context = buildRelevantContext(data, "RU er abedon er last date kobe?");
+  assert.match(context, /RU-APP-DEADLINE/);
+  assert.match(context, /2026-11-30/);
+  assert.match(context, /৩০ নভেম্বর ২০২৬/);
+});
+
 test("context builder refuses to dump the dataset for unrelated questions", async () => {
   const { buildRelevantContext } = await import("../workers/assistant-context.mjs");
   const data = {
