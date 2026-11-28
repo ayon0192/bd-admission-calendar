@@ -97,7 +97,7 @@ function extractModelText(result) {
 function calendarDateKeys(value) {
   const text = String(value ?? "").replace(/[০-৯]/g, (digit) => String("০১২৩৪৫৬৭৮৯".indexOf(digit)));
   const keys = new Set();
-  for (const match of text.matchAll(/\\b(\\d{4})-(\\d{2})-(\\d{2})\\b/g)) keys.add(`${match[1]}-${match[2]}-${match[3]}`);
+  for (const match of text.matchAll(/\b(\d{4})-(\d{2})-(\d{2})\b/g)) keys.add(`${match[1]}-${match[2]}-${match[3]}`);
   const months = {
     "জানুয়ারি": "01", "জানুয়ারি": "01", "ফেব্রুয়ারি": "02", "ফেব্রুয়ারি": "02",
     "মার্চ": "03", "এপ্রিল": "04", "মে": "05", "জুন": "06", "জুলাই": "07",
@@ -106,7 +106,7 @@ function calendarDateKeys(value) {
     "june": "06", "july": "07", "august": "08", "september": "09", "october": "10",
     "november": "11", "december": "12"
   };
-  for (const match of text.matchAll(/(?:^|\\b)(\\d{1,2})\\s*(জানুয়ারি|জানুয়ারি|ফেব্রুয়ারি|ফেব্রুয়ারি|মার্চ|এপ্রিল|মে|জুন|জুলাই|আগস্ট|সেপ্টেম্বর|অক্টোবর|নভেম্বর|ডিসেম্বর|january|february|march|april|may|june|july|august|september|october|november|december)\\s*,?\\s*(\\d{4})(?:\\b|$)/giu)) {
+  for (const match of text.matchAll(/(?:^|\b)(\d{1,2})\s*(জানুয়ারি|জানুয়ারি|ফেব্রুয়ারি|ফেব্রুয়ারি|মার্চ|এপ্রিল|মে|জুন|জুলাই|আগস্ট|সেপ্টেম্বর|অক্টোবর|নভেম্বর|ডিসেম্বর|january|february|march|april|may|june|july|august|september|october|november|december)\s*,?\s*(\d{4})(?:\b|$)/giu)) {
     const month = months[match[2].toLocaleLowerCase("bn-BD")];
     if (month) keys.add(`${match[3]}-${month}-${match[1].padStart(2, "0")}`);
   }
