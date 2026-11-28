@@ -121,7 +121,7 @@ function compactRecord(record) {
   for (const [key, value] of Object.entries(record)) {
     if (OMIT_KEYS.test(key)) continue;
     if (!(key in FIELD_LABELS) && !["admissionDetailId", "cycleId", "dateRange", "verification", "exam", "application", "official", "probable", "minimumCombinedGpa", "minimumHscGpa", "minimumSscGpa", "unitGroup", "session", "programmes", "documentReference", "totalSeats", "group"].includes(key)) continue;
-    const compact = compactValue(value);
+    const compact = compactValue(value, 0, key);
     if (compact !== undefined) out[FIELD_LABELS[key] || key] = compact;
     if (Object.keys(out).length >= 18) break;
   }
