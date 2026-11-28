@@ -13,18 +13,20 @@
 <link rel="preload" href="assets/fonts/hind-siliguri-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main-shell.css?v=20261127-final-1">
 <link rel="stylesheet" href="assets/css/ai-assistant.css?v=20261128-ai-1">
+<link rel="stylesheet" href="assets/css/owner-select.css?v=20261128-owner-1">
 <script src="assets/js/main-shell.js?v=20261127-final-1" defer></script>
 <script src="assets/js/ai-assistant.js?v=20261128-ai-1" defer></script>
+<script src="assets/js/owner-select.js?v=20261128-owner-1" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#mainContent">মূল কনটেন্টে যাও</a>
 <div class="app-shell">
-  <aside class="sidebar">
-    <div class="brand sidebar-brand">
-      <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9.5 12 4l9 5.5-9 5.5-9-5.5Z"/><path d="M6.5 12v4.5c3.5 2.4 7.5 2.4 11 0V12M21 10v6"/></svg></div>
+  <aside class="sidebar" data-source="index.html#sidebar; assets/css/main-shell.css#sidebar">
+    <div class="brand sidebar-brand" data-source="index.html#sidebar-brand; assets/css/main-shell.css#brand">
+      <div class="brand-mark" data-owner-select-trigger data-source="index.html#brand-mark; assets/css/main-shell.css#brand-mark" role="button" tabindex="0" aria-label="ভর্তি সহায়িকা"><svg viewBox="0 0 24 24"><path d="M3 9.5 12 4l9 5.5-9 5.5-9-5.5Z"/><path d="M6.5 12v4.5c3.5 2.4 7.5 2.4 11 0V12M21 10v6"/></svg></div>
       <div><strong>ভর্তি সহায়িকা</strong><small>বাংলাদেশ · ২০২৬–২৭</small></div>
     </div>
-    <nav class="nav-list" aria-label="প্রধান নেভিগেশন">
+    <nav class="nav-list" aria-label="প্রধান নেভিগেশন" data-source="index.html#sidebar-navigation; assets/css/main-shell.css#nav-list">
       <button class="nav-button" type="button" data-page="dashboard"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10h-6v-7H9v7H3z"/></svg>আজ</button>
       <button class="nav-button" type="button" data-page="calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>ক্যালেন্ডার</button>
       <button class="nav-button" type="button" data-page="universities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 9 10-6 10 6-10 6L2 9Z"/><path d="M6 12v5c4 3 8 3 12 0v-5"/></svg>ভার্সিটি</button>
@@ -36,8 +38,8 @@
       <button class="nav-button theme-toggle" id="themeToggleSide" type="button" data-label="1" aria-pressed="false" aria-label="গাঢ় মোডে যাও"></button>
     </div>
   </aside>
-  <div class="content-shell">
-    <header class="topbar">
+  <div class="content-shell" data-source="index.html#content-shell; assets/css/main-shell.css#content-shell">
+    <header class="topbar" data-source="index.html#topbar; assets/css/main-shell.css#topbar">
       <div id="topTitle" class="topbar-title">আজ</div>
       <div class="topbar-actions">
         <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="গাঢ় মোডে যাও" title="গাঢ় মোডে যাও">
@@ -46,21 +48,21 @@
       </div>
     </header>
 
-    <main class="main" id="mainContent" tabindex="-1">
+    <main class="main" id="mainContent" tabindex="-1" data-source="index.html#mainContent; assets/css/main-shell.css#main">
       <noscript><div class="callout warning">ভর্তি সহায়িকা ব্যবহার করতে ব্রাউজারে JavaScript চালু করুন। সরাসরি অফিসিয়াল ওয়েবসাইট থেকেও পরীক্ষার তারিখ যাচাই করতে পারবেন।</div></noscript>
       <div id="stateBanner"></div>
-      <section id="page-dashboard" class="page stack"><div class="state-panel" aria-busy="true"><div class="skeleton sk-line short"></div><div class="skeleton sk-block"></div><div class="skeleton sk-block"></div></div></section>
-      <section id="page-calendar" class="page stack" hidden inert></section>
-      <section id="page-universities" class="page stack" hidden inert></section>
-      <section id="page-info" class="page stack" hidden inert></section>
-      <section id="page-notices" class="page stack" hidden inert></section>
-      <section id="page-profile" class="page stack" hidden inert></section>
+      <section id="page-dashboard" class="page stack" data-source="assets/js/main-shell.js#renderDashboard; assets/css/main-shell.css"><div class="state-panel" aria-busy="true"><div class="skeleton sk-line short"></div><div class="skeleton sk-block"></div><div class="skeleton sk-block"></div></div></section>
+      <section id="page-calendar" class="page stack" hidden inert data-source="assets/js/main-shell.js#renderCalendar; assets/css/main-shell.css"></section>
+      <section id="page-universities" class="page stack" hidden inert data-source="assets/js/main-shell.js#renderUniversities; assets/css/main-shell.css"></section>
+      <section id="page-info" class="page stack" hidden inert data-source="assets/js/main-shell.js#renderInfo; assets/css/main-shell.css"></section>
+      <section id="page-notices" class="page stack" hidden inert data-source="assets/js/main-shell.js#renderNotices; assets/css/main-shell.css"></section>
+      <section id="page-profile" class="page stack" hidden inert data-source="assets/js/main-shell.js#renderProfile; assets/css/main-shell.css"></section>
       <footer class="footer">© ২০২৬ ভর্তি সহায়িকা · বাংলাদেশ ভর্তি ক্যালেন্ডার</footer>
     </main>
   </div>
 </div>
 
-<nav class="mobile-nav" aria-label="প্রধান নেভিগেশন">
+<nav class="mobile-nav" aria-label="প্রধান নেভিগেশন" data-source="index.html#mobile-nav; assets/css/main-shell.css#mobile-nav">
   <button type="button" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 10 9-7 9 7v10h-6v-7H9v7H3z"/></svg><span>আজ</span></button>
   <button type="button" data-page="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>ক্যালেন্ডার</span></button>
   <button type="button" data-page="universities"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m2 9 10-6 10 6-10 6L2 9Z"/><path d="M6 12v5c4 3 8 3 12 0v-5"/></svg><span>ভার্সিটি</span></button>
