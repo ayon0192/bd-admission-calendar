@@ -31,7 +31,7 @@
 - দৃশ্যমান ট্যাব প্রতি ৫ মিনিটে একই-সাইটের `/release.json` পরীক্ষা করে; পেজে ব্যবহারকারীর কাজ চললে স্বয়ংক্রিয় রিলোড অপেক্ষা করে।
 - AI সহকারী পৃথক Cloudflare Worker-এর `/api/chat` endpoint ব্যবহার করে। Wrangler-এ Workers AI binding `AI`, SQLite Durable Object binding `RATE_LIMITER` এবং Static Assets binding `ASSETS` আছে। `run_worker_first` শুধু `/api/*`-এর জন্য; অন্য অনুরোধ Static Assets থেকেই আসে।
 - মডেল `workers/ai-config.mjs`-এর `AI_MODEL` ধ্রুবকে এক লাইনে বদলানো যায়। কোনো API key দরকার নেই; Workers AI binding দিয়ে মডেল চালানো হয়।
-- সীমা: প্রতি সাইটে দিনে ৩০টি AI অনুরোধ; প্রতি IP-তে দিনে ৮টি এবং মিনিটে ২টি। প্রশ্ন সর্বোচ্চ ৫০০ অক্ষর, প্রাসঙ্গিক context সর্বোচ্চ ৩,৮০০ অক্ষর এবং উত্তর সর্বোচ্চ ১২৮ টোকেন। সীমা UTC দিন অনুযায়ী রিসেট হয়। এগুলো এই সহকারীর সীমা; একই Cloudflare account-এর অন্য Workers AI ব্যবহার আলাদা করে shared free allocation ব্যবহার করতে পারে।
+- সীমা: প্রতি সাইটে দিনে ৩০টি AI অনুরোধ; প্রতি IP-তে দিনে ৮টি এবং মিনিটে ২টি। প্রশ্ন সর্বোচ্চ ৫০০ অক্ষর, প্রাসঙ্গিক context সর্বোচ্চ ৩,৮০০ অক্ষর এবং উত্তর সর্বোচ্চ ২৫৬ টোকেন। GLM-4.7-Flash-এর thinking mode স্পষ্টভাবে বন্ধ রাখা হয়েছে। সীমা UTC দিন অনুযায়ী রিসেট হয়। এগুলো এই সহকারীর সীমা; একই Cloudflare account-এর অন্য Workers AI ব্যবহার আলাদা করে shared free allocation ব্যবহার করতে পারে।
 - Worker code-এ `ALLOWED_ORIGIN` শুধু Pages hostname। `assets/js/ai-assistant.js`-এর `ASSISTANT_API_URL` এবং `_headers`-এর `connect-src`-এ Worker deploy-এর পর পাওয়া একই নির্দিষ্ট `workers.dev` hostname বসাতে হবে; wildcard ব্যবহার করা যাবে না।
 - Durable Object-এ IP address নয়, দৈনিক salt-যুক্ত hash ব্যবহার করে quota count রাখা হয়। প্রশ্ন ও AI উত্তর সংরক্ষণ করা হয় না।
 - ব্লুপ্রিন্টের ধাপ ১০ (Web Push) ঐচ্ছিক ও অসম্পন্ন। এখনকার `.ics` রিমাইন্ডার AI সহকারী থেকে স্বাধীনভাবে কাজ করে।
