@@ -12,6 +12,8 @@ const EXPECTED = [
   "assets/css/release-updates.css",
   "assets/js/ai-assistant.js",
   "assets/css/ai-assistant.css",
+  "assets/css/owner-select.css",
+  "assets/js/owner-select.js",
   "data/admission-records.json",
   "assets/js/theme-init.js",
   "_headers", "assets/css/main-shell.css", "assets/favicon.svg", "assets/js/main-shell.js",
@@ -45,6 +47,8 @@ function smokeTest() {
   const sw = fs.readFileSync(path.join(DIST, "sw.js"), "utf8");
   if (!html.includes("assets/js/release-updates.js") || !html.includes("assets/css/release-updates.css")) throw new Error("Release update assets are not linked from the production page.");
   if (!html.includes("assets/js/ai-assistant.js") || !html.includes("assets/css/ai-assistant.css") || !ai.includes("ASSISTANT_API_URL")) throw new Error("AI assistant assets are not linked or built.");
+  const ownerSelect = fs.readFileSync(path.join(DIST, "assets/js/owner-select.js"), "utf8");
+  if (!html.includes("assets/js/owner-select.js") || !html.includes("assets/css/owner-select.css") || !ownerSelect.includes("function explainLocally") || !ownerSelect.includes("function buildChatGptPrompt")) throw new Error("Owner select assets are not linked or built.");
   const releaseClient = fs.readFileSync(path.join(DIST, "assets/js/release-updates.js"), "utf8");
   if (!releaseClient.includes("/release.json") || !releaseClient.includes('cache: "no-store"') || !releaseClient.includes("const CHECK_INTERVAL_MS = 300_000") || !releaseClient.includes("window.setInterval(checkReleaseManifest, CHECK_INTERVAL_MS)") || !releaseClient.includes("window.location.reload()") || /WebSocket|connectRealtime|scheduleReconnect/.test(releaseClient)) throw new Error("Five-minute foreground-only release polling is missing or a backend socket remains enabled.");
   const requiredPages = ["page-dashboard", "page-calendar", "page-universities", "page-info", "page-notices", "page-profile"];
@@ -58,6 +62,7 @@ function smokeTest() {
   if (!sw.includes('addEventListener("push"') || !sw.includes('addEventListener("notificationclick"')) throw new Error("Service worker push/notification-click handling is missing.");
   if (!sw.includes("admission-records.json") || !sw.includes("DATA_CACHE")) throw new Error("Service worker must support network-first caching for admission-records.json.");
   if (!sw.includes("assets/css/ai-assistant.css?v=20261128-ai-1") || !sw.includes("assets/js/ai-assistant.js?v=20261128-ai-1")) throw new Error("Service worker must precache the assistant assets.");
+  if (!sw.includes("assets/css/owner-select.css?v=20261128-owner-1") || !sw.includes("assets/js/owner-select.js?v=20261128-owner-1")) throw new Error("Service worker must precache the owner-select assets.");
   if (!sw.includes("assets/css/release-updates.css?v=20261128-polling-1") || !sw.includes("assets/js/release-updates.js?v=20261128-polling-1")) throw new Error("Service worker must precache the release update assets.");
   if (!css.includes(".sidebar{display:none}") || !css.includes(".mobile-nav")) throw new Error("Responsive navigation styles are missing.");
   const ids = Array.from(html.matchAll(/\bid=["']([^"']+)["']/g), match => match[1]);

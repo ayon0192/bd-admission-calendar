@@ -147,7 +147,7 @@
       } else if (payload && typeof payload.message === "string") {
         addMessage(payload.message, "assistant");
       } else if (response.status === 429) {
-        addMessage("আজকের এআই সীমা শেষ, কাল আবার চেষ্টা করুন।", "assistant");
+        addMessage("Cloudflare-এর এআই বরাদ্দ আপাতত শেষ হয়েছে। পরে আবার চেষ্টা করুন। ক্যালেন্ডারের প্রকাশিত তারিখগুলো এআই ছাড়াই জানা যাবে।", "assistant");
       } else {
         addMessage("এখন উত্তর দেওয়া যাচ্ছে না। একটু পরে আবার চেষ্টা করুন।", "assistant");
       }

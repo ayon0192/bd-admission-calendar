@@ -112,7 +112,7 @@
     if (clone.querySelectorAll) {
       clone.querySelectorAll(PRIVATE_TEXT_SELECTOR + ', [data-owner-select-ui]').forEach((node) => node.remove());
     }
-    return String(clone.innerText || clone.textContent || "").replace(/\\s+/g, " ").trim().slice(0, 320);
+    return String(clone.innerText || clone.textContent || "").replace(/\s+/g, " ").trim().slice(0, 320);
   }
 
   function sourceHint(element) {
@@ -213,7 +213,7 @@
       "Selector: " + info.selector,
       "সম্ভাব্য কোড: " + info.source
     ].filter(Boolean);
-    return lines.join("\\n");
+    return lines.join("\n");
   }
 
   function probableFiles(info) {
@@ -261,7 +261,7 @@
       "- diff পরীক্ষা করবে এবং কোনো test/build ব্যর্থ হলে সেটি ঠিক না করে সফল বলবে না।",
       "",
       "উপাদানের তথ্যটি কেবল নির্বাচনের সময়কার পর্যবেক্ষণ; DOM বদলে থাকতে পারে, তাই বর্তমান কোড যাচাই করে তারপর পরিবর্তন করবে।"
-    ].join("\\n");
+    ].join("\n");
   }
 
   function goOuter() {
@@ -333,7 +333,8 @@
       try { payload = await response.json(); } catch (_) {}
       if (payload && typeof payload.answer === "string") setOutput(payload.answer);
       else if (payload && typeof payload.message === "string") setOutput(payload.message);
-      else setOutput("এআই থেকে উত্তর পাওয়া যায়নি। আবার চেষ্টা করো।");
+      else if (response.status === 429) setOutput("Cloudflare-এর এআই বরাদ্দ আপাতত শেষ হয়েছে। পরে আবার চেষ্টা করো। ক্যালেন্ডারের প্রকাশিত তারিখগুলো এআই ছাড়াই জানা যাবে।");
+      else setOutput("এই মুহূর্তে এআই উত্তর দিতে পারছে না। একটু পরে আবার চেষ্টা করো।");
     } catch (error) {
       setOutput(error && error.name === "AbortError"
         ? "৩০ সেকেন্ডেও উত্তর আসেনি। পরে আবার চেষ্টা করো।"

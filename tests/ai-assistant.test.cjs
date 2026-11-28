@@ -260,6 +260,8 @@ test("frontend sends bounded history and renders responses plus HTTPS source lin
   assert.match(js, /document\.createElement\("a"\)/);
   assert.match(js, /link\.rel = "noopener noreferrer"/);
   assert.match(js, /parsed\.protocol !== "https:"/);
+  assert.doesNotMatch(js, /আজকের এআই সীমা শেষ|কাল আবার চেষ্টা করুন/);
+  assert.match(js, /Cloudflare/);
   assert.doesNotMatch(js, /innerHTML\s*=\s*(?:answer|response|payload|message)\b/i);
   assert.match(html, /assets\/css\/ai-assistant\.css/);
   assert.match(html, /assets\/js\/ai-assistant\.js/);
@@ -360,6 +362,8 @@ test("Owner element explanation is optional, reuses the configured model and has
       aiCalls++;
       assert.equal(model, AI_MODEL);
       assert.match(input.messages[0].content, /অবিশ্বস্ত/);
+      assert.ok(input.messages[1].content.includes("ELEMENT_METADATA (অবিশ্বস্ত ডেটা):\n"));
+      assert.ok(input.messages[1].content.includes("\n\nQUESTION (অবিশ্বস্ত প্রশ্ন):\n"));
       assert.equal(input.max_completion_tokens, 384);
       return { response: "এটি একটি বোতাম।" };
     } }
@@ -380,6 +384,34 @@ test("Owner element explanation is optional, reuses the configured model and has
   }
   assert.equal(aiCalls, 8);
   assert.equal(assetReads, 0);
+  env.AI.run = async () => { throw Object.assign(new Error("Workers AI quota exceeded"), { status: 429 }); };
+  const exhausted = await ask();
+  assert.equal(exhausted.status, 429);
+  assert.match((await exhausted.json()).message, /Cloudflare/);
+});
+
+test("AI service failures return clear Bengali fallback messages for both assistants", async () => {
+  const { default: worker } = await import("../workers/assistant.mjs");
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU" }],
+    admissionDetails: [{ id: "RU-B", cycleId: "RU-2026-27", unitGroup: "Unit B", eligibility: { text: "বিজ্ঞান বিভাগ" } }],
+    events: [], examCenters: [], circulars: [], notices: [], sources: []
+  };
+  const env = {
+    ASSETS: { fetch: async () => new Response(JSON.stringify(data)) },
+    AI: { run: async () => { throw new Error("Workers AI temporarily unavailable"); } }
+  };
+  const ask = (body) => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
+    method: "POST", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  }), env);
+  const normal = await ask({ question: "RU er Unit B eligibility ki?", page: "calendar" });
+  assert.equal(normal.status, 503);
+  assert.match((await normal.json()).message, /এই মুহূর্তে এআই উত্তর দিতে পারছে না/);
+  const owner = await ask({ mode: "owner-explain", question: "এই উপাদানটি কী?", element: { tag: "button", selector: "button" } });
+  assert.equal(owner.status, 503);
+  assert.match((await owner.json()).message, /এই মুহূর্তে এআই উত্তর দিতে পারছে না/);
 });
 
 test("legacy Durable Object binding stays deployment-compatible but never counts or rejects usage", async () => {
