@@ -10,6 +10,7 @@ const SITE_DAILY_LIMIT = 30;
 const IP_DAILY_LIMIT = 8;
 const IP_MINUTE_LIMIT = 2;
 const MAX_QUESTION_CHARS = 500;
+const MAX_REQUEST_BYTES = 16000;
 const MAX_CONTEXT_CHARS = 3800;
 const MAX_HISTORY_TURNS = 8;
 const MAX_HISTORY_CHARS = 500;
@@ -140,9 +141,9 @@ async function handleChat(request, env) {
     return respond(415, { message: "প্রশ্ন পাঠাতে JSON অনুরোধ প্রয়োজন।" });
   }
   const declaredLength = Number(request.headers.get("Content-Length") || 0);
-  if (declaredLength > 6000) return respond(413, { message: "প্রশ্নটি অনেক বড় হয়েছে। ছোট করে লিখুন।" });
+  if (declaredLength > MAX_REQUEST_BYTES) return respond(413, { message: "প্রশ্নটি অনেক বড় হয়েছে। ছোট করে লিখুন।" });
 
-  const parsedBody = await readBoundedJson(request);
+  const parsedBody = await readBoundedJson(request, MAX_REQUEST_BYTES);
   if (parsedBody.tooLarge) return respond(413, { message: "প্রশ্নটি অনেক বড় হয়েছে। ছোট করে লিখুন।" });
   const body = parsedBody.value;
   if (!body || typeof body !== "object" || Array.isArray(body)) return respond(400, { message: "প্রশ্নটি পড়া যায়নি। আবার লিখে পাঠান।" });
