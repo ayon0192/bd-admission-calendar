@@ -39,7 +39,6 @@ const ALIASES = Object.freeze({
   "apply": ["আবেদন", "application"],
   "porikkha": ["পরীক্ষা", "exam"],
   "exam": ["পরীক্ষা", "admission_test"],
-  "joggotA": ["যোগ্যতা", "eligibility"],
   "joggota": ["যোগ্যতা", "eligibility"],
   "fee": ["ফি", "applicationFee"],
   "seat": ["আসন", "seats"],
