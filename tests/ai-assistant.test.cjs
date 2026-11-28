@@ -230,24 +230,19 @@ test("Worker answers verified RU deadline directly from calendar data and resolv
   assert.equal(limiterCalls, 0);
 });
 
-test("Worker security, model constant and all quota ceilings are explicit", () => {
+test("Worker keeps Cloudflare protections but has no application-defined usage quotas", () => {
   const worker = read("workers/assistant.mjs");
   const config = read("workers/ai-config.mjs");
-  assert.match(config, /export const AI_MODEL = "@cf\/google\/gemma-4-26b-a4b-it"/);
-  assert.match(worker, /https:\/\/bd-admission-calendar\.pages\.dev/);
-  assert.match(worker, /https:\/\/bdac\.ayon0192\.workers\.dev/);
-  assert.doesNotMatch(worker, /https:\/\/\*\.pages\.dev|\*\.pages\.dev|Access-Control-Allow-Origin['"]?\s*:\s*['"]\*['"]/i);
-  assert.match(worker, /SITE_DAILY_LIMIT\s*=\s*30/);
-  assert.match(worker, /IP_DAILY_LIMIT\s*=\s*8/);
-  assert.match(worker, /IP_MINUTE_LIMIT\s*=\s*2/);
-  assert.match(worker, /MAX_QUESTION_CHARS\s*=\s*500/);
-  assert.match(worker, /MAX_COMPLETION_TOKENS\s*=\s*384/);
+  assert.match(config, /export const AI_MODEL = "@cf\\/google\\/gemma-4-26b-a4b-it"/);
+  assert.match(worker, /https:\\/\\/bd-admission-calendar\\.pages\\.dev/);
+  assert.match(worker, /https:\\/\\/bdac\\.ayon0192\\.workers\\.dev/);
+  assert.doesNotMatch(worker, /https:\\/\\/\\*\\.pages\\.dev|\\*\\.pages\\.dev|Access-Control-Allow-Origin['"]?\\s*:\\s*['"]\\*['"]/i);
+  assert.match(worker, /MAX_QUESTION_CHARS\\s*=\\s*500/);
+  assert.match(worker, /MAX_REQUEST_BYTES\\s*=\\s*16000/);
+  assert.match(worker, /MAX_COMPLETION_TOKENS\\s*=\\s*384/);
+  assert.match(worker, /৩০০০০|30000/);
   assert.match(worker, /এই তথ্য আমার কাছে নেই/);
-  assert.match(worker, /Ignore|উপেক্ষা/);
-  assert.match(worker, /CF-Connecting-IP/);
-  assert.match(worker, /HMAC/);
-  assert.match(worker, /ipHashSecret/);
-  assert.doesNotMatch(worker, /sha256\(\`\$\{day\}:\$\{ip\}\`\)/);
+  assert.doesNotMatch(worker, /SITE_DAILY_LIMIT|IP_DAILY_LIMIT|IP_MINUTE_LIMIT|askRateLimiter|CF-Connecting-IP|ipHashSecret|HMAC/);
 });
 
 test("frontend sends bounded history and renders responses plus HTTPS source links safely", () => {
@@ -316,106 +311,89 @@ test("Worker returns the fixed unknown answer without spending AI quota", async 
   assert.equal(aiCalls, 0);
 });
 
-test("Worker reserves quota before calling AI and returns Bengali quota messages", async () => {
+test("Worker serves repeated AI requests without per-IP or site quotas and reports Cloudflare quota exhaustion", async () => {
   const { default: worker } = await import("../workers/assistant.mjs");
-  let aiCalls = 0, reserved;
+  const { AI_MODEL } = await import("../workers/ai-config.mjs");
+  let aiCalls = 0;
   const data = {
     universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", admissionWebsite: "https://admission.ru.ac.bd" }],
     admissionCycles: [{ id: "RU-2026-27", universityId: "RU", cycleLabel: "২০২৬–২০২৭" }],
-    admissionDetails: [{ id: "RU-B", cycleId: "RU-2026-27", unitGroup: "Unit B" }],
+    admissionDetails: [{ id: "RU-B", cycleId: "RU-2026-27", unitGroup: "Unit B", eligibility: { text: "বিজ্ঞান বিভাগ" } }],
     events: [{ id: "RU-B-TEST", cycleId: "RU-2026-27", admissionDetailId: "RU-B", title: "Unit B ভর্তি পরীক্ষা", type: "admission_test", dateOnly: "2027-02-12", verification: { status: "officially_confirmed" } }],
     examCenters: [], circulars: [], notices: [], sources: []
   };
   const env = {
     ASSETS: { fetch: async () => new Response(JSON.stringify(data)) },
-    RATE_LIMITER: { idFromName: () => "global", get: () => ({ fetch: async (_url, init) => { reserved = JSON.parse(init.body); return Response.json({ allowed: true }); } }) },
-    AI: { run: async (_model, input) => {
+    AI: { run: async (model, input) => {
       aiCalls++;
-      assert.match(input.messages[0].content, /QUESTION/);
-      assert.equal(input.reasoning_effort, null);
-      assert.deepEqual(input.chat_template_kwargs, { enable_thinking: false, clear_thinking: true });
+      assert.equal(model, AI_MODEL);
+      assert.equal(model, "@cf/google/gemma-4-26b-a4b-it");
       assert.equal(input.max_completion_tokens, 384);
-      assert.equal(Object.hasOwn(input, "max_tokens"), false);
-      return { response: "১২ ফেব্রুয়ারি ২০২৭।" };
+      return { response: "প্রদত্ত তথ্য অনুযায়ী উত্তর।" };
     } }
   };
-  const request = () => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
-    method: "POST", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.11" },
-    body: JSON.stringify({ question: "RU er Unit B eligibility ki?", page: "calendar" })
+  const ask = () => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
+    method: "POST",
+    headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.11" },
+    body: JSON.stringify({ question: "RU er eligibility ki?", page: "calendar" })
   }), env);
-  const response = await request();
-  assert.equal(response.status, 200);
-  assert.equal((await response.json()).answer, "১২ ফেব্রুয়ারি ২০২৭।");
-  assert.equal(aiCalls, 1);
-  assert.equal(reserved.limits.siteDaily, 30);
-  assert.equal(reserved.limits.ipDaily, 8);
-  assert.equal(reserved.limits.ipMinute, 2);
-  assert.equal(reserved.ip, "192.0.2.11");
-  assert.equal(Object.hasOwn(reserved, "ipKey"), false);
+  for (let i = 0; i < 12; i++) {
+    const response = await ask();
+    assert.equal(response.status, 200);
+    assert.match((await response.json()).answer, /প্রদত্ত তথ্য/);
+  }
+  assert.equal(aiCalls, 12);
 
-  env.RATE_LIMITER.get = () => ({ fetch: async () => Response.json({ allowed: false, message: "আজকের এআই সীমা শেষ, কাল আবার চেষ্টা করুন।" }) });
-  const limited = await request();
-  assert.equal(limited.status, 429);
-  assert.match((await limited.json()).message, /আজকের এআই সীমা শেষ/);
-  assert.equal(aiCalls, 1);
+  env.AI.run = async () => { throw Object.assign(new Error("Workers AI 429: quota exceeded"), { status: 429 }); };
+  const exhausted = await ask();
+  assert.equal(exhausted.status, 429);
+  assert.match((await exhausted.json()).message, /Cloudflare/);
 });
 
+test("Owner element explanation is optional, reuses the configured model and has no owner-specific quota", async () => {
+  const { default: worker } = await import("../workers/assistant.mjs");
+  const { AI_MODEL } = await import("../workers/ai-config.mjs");
+  let aiCalls = 0, assetReads = 0;
+  const env = {
+    ASSETS: { fetch: async () => { assetReads++; return new Response("{}"); } },
+    AI: { run: async (model, input) => {
+      aiCalls++;
+      assert.equal(model, AI_MODEL);
+      assert.match(input.messages[0].content, /অবিশ্বস্ত/);
+      assert.equal(input.max_completion_tokens, 384);
+      return { response: "এটি একটি বোতাম।" };
+    } }
+  };
+  const ask = () => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
+    method: "POST",
+    headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json" },
+    body: JSON.stringify({
+      mode: "owner-explain",
+      question: "এই নির্বাচিত উপাদানটি কী কাজ করে?",
+      element: { tag: "button", id: "saveButton", classes: ["primary"], selector: "main > button#saveButton", text: "সংরক্ষণ", dimensions: { width: 90, height: 42 }, styles: { color: "rgb(0, 0, 0)", background: "rgb(255, 255, 255)", fontSize: "16px", padding: "8px", margin: "0px", border: "1px solid", borderRadius: "8px" }, source: "assets/js/main-shell.js#renderProfile" }
+    })
+  }), env);
+  for (let i = 0; i < 8; i++) {
+    const response = await ask();
+    assert.equal(response.status, 200);
+    assert.match((await response.json()).answer, /বোতাম/);
+  }
+  assert.equal(aiCalls, 8);
+  assert.equal(assetReads, 0);
+});
 
-test("SQLite limiter enforces per-IP minute, per-IP day and global site-day ceilings", async () => {
+test("legacy Durable Object binding stays deployment-compatible but never counts or rejects usage", async () => {
   const { AssistantRateLimiter } = await import("../workers/assistant.mjs");
-  function makeLimiter() {
-    const rows = new Map();
-    const stored = new Map();
-    const sql = {
-      exec(statement, ...params) {
-        if (statement.startsWith("SELECT count")) {
-          const key = params.join("|");
-          return { toArray: () => rows.has(key) ? [{ count: rows.get(key) }] : [] };
-        }
-        if (statement.startsWith("INSERT INTO assistant_usage")) {
-          const key = params.join("|");
-          rows.set(key, (rows.get(key) || 0) + 1);
-          return { toArray: () => [] };
-        }
-        if (statement.startsWith("UPDATE assistant_usage")) {
-          const key = params.join("|");
-          rows.set(key, Math.max(0, (rows.get(key) || 0) - 1));
-          return { toArray: () => [] };
-        }
-        if (statement.startsWith("DELETE FROM assistant_usage")) {
-          const [minute, day] = params;
-          for (const key of rows.keys()) {
-            const [scope, subject, window, period] = key.split("|");
-            if ((window === "m" && period < minute) || (window === "d" && period < day)) rows.delete(key);
-          }
-          return { toArray: () => [] };
-        }
-        return { toArray: () => [] };
-      }
-    };
-    const ctx = { storage: { sql, get: async (key) => stored.get(key), put: async (key, value) => stored.set(key, value), transactionSync: (callback) => callback() } };
-    return new AssistantRateLimiter(ctx);
-  }
-  async function call(limiter, ip, minute, limits) {
+  const limiter = new AssistantRateLimiter({});
+  for (let i = 0; i < 100; i++) {
     const response = await limiter.fetch(new Request("https://limiter.internal/reserve", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: "reserve", ip, day: "20261128", minute, limits })
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "reserve", ip: "192.0.2.9", day: "20261128", minute: "202611280001", limits: { siteDaily: 1, ipDaily: 1, ipMinute: 1 } })
     }));
-    return response.json();
+    assert.equal(response.status, 200);
+    assert.equal((await response.json()).allowed, true);
   }
-  const globalLimiter = makeLimiter();
-  const globalLimits = { siteDaily: 3, ipDaily: 8, ipMinute: 2 };
-  assert.equal((await call(globalLimiter, "192.0.2.1", "202611281500", globalLimits)).allowed, true);
-  assert.equal((await call(globalLimiter, "192.0.2.1", "202611281500", globalLimits)).allowed, true);
-  assert.equal((await call(globalLimiter, "192.0.2.1", "202611281500", globalLimits)).reason, "ip_minute");
-  assert.equal((await call(globalLimiter, "192.0.2.2", "202611281500", globalLimits)).allowed, true);
-  assert.equal((await call(globalLimiter, "192.0.2.3", "202611281500", globalLimits)).reason, "site_daily");
-
-  const dailyLimiter = makeLimiter();
-  const dailyLimits = { siteDaily: 10, ipDaily: 2, ipMinute: 2 };
-  assert.equal((await call(dailyLimiter, "192.0.2.4", "202611281500", dailyLimits)).allowed, true);
-  assert.equal((await call(dailyLimiter, "192.0.2.4", "202611281501", dailyLimits)).allowed, true);
-  assert.equal((await call(dailyLimiter, "192.0.2.4", "202611281502", dailyLimits)).reason, "ip_daily");
 });
 
 test("static build, CSP, Wrangler and offline shell include the assistant assets safely", () => {
