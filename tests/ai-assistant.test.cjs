@@ -232,10 +232,10 @@ test("static build, CSP, Wrangler and offline shell include the assistant assets
   const sw = read("sw.js");
   const wrangler = read("wrangler.toml");
   const js = read("assets/js/ai-assistant.js");
-  const endpoint = js.match(/ASSISTANT_API_URL\\s*=\\s*"([^"]+)"\\s*;/);
+  const endpoint = js.match(/ASSISTANT_API_URL\s*=\s*"([^"]+)"\s*;/);
   assert.ok(endpoint, "assistant API endpoint must be configured");
   const endpointUrl = new URL(endpoint[1]);
-  assert.match(builder, /assets\\/css\\/ai-assistant\\.css/);
+  assert.match(builder, /assets\/css\/ai-assistant\.css/);
   assert.match(builder, /assets\/js\/ai-assistant\.js/);
   const cspWorkerHost = headers.match(/connect-src 'self' (https:\/\/[^\s;]+)/);
   assert.ok(cspWorkerHost, "CSP must allow the assistant Worker host");
