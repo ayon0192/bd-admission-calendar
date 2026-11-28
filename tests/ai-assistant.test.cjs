@@ -63,7 +63,7 @@ test("Worker security, model constant and all quota ceilings are explicit", () =
   assert.match(worker, /IP_DAILY_LIMIT\s*=\s*8/);
   assert.match(worker, /IP_MINUTE_LIMIT\s*=\s*2/);
   assert.match(worker, /MAX_QUESTION_CHARS\s*=\s*500/);
-  assert.match(worker, /MAX_COMPLETION_TOKENS\\s*=\\s*256/);
+  assert.match(worker, /MAX_COMPLETION_TOKENS\s*=\s*256/);
   assert.match(worker, /এই তথ্য আমার কাছে নেই/);
   assert.match(worker, /Ignore|উপেক্ষা/);
   assert.match(worker, /CF-Connecting-IP/);
