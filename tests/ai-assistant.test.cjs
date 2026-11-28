@@ -334,14 +334,14 @@ test("Worker reserves quota before calling AI and returns Bengali quota messages
       assert.match(input.messages[0].content, /QUESTION/);
       assert.equal(input.reasoning_effort, null);
       assert.deepEqual(input.chat_template_kwargs, { enable_thinking: false, clear_thinking: true });
-      assert.equal(input.max_completion_tokens, 256);
+      assert.equal(input.max_completion_tokens, 384);
       assert.equal(Object.hasOwn(input, "max_tokens"), false);
       return { response: "১২ ফেব্রুয়ারি ২০২৭।" };
     } }
   };
   const request = () => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
     method: "POST", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.11" },
-    body: JSON.stringify({ question: "রাজশাহী বিশ্ববিদ্যালয়ের Unit B ভর্তি পরীক্ষা কবে?", page: "calendar" })
+    body: JSON.stringify({ question: "RU er Unit B eligibility ki?", page: "calendar" })
   }), env);
   const response = await request();
   assert.equal(response.status, 200);
