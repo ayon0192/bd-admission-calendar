@@ -52,7 +52,7 @@ function buildSite() {
   const workerPath = path.join(DIST, "sw.js");
   if (fs.existsSync(workerPath)) {
     const worker = fs.readFileSync(workerPath, "utf8")
-      .replace(/CACHE_NAME\s*=\s*["\'][^"\']+["\']/, 'CACHE_NAME = "admission-calendar-v24"')
+      .replace(/CACHE_NAME\s*=\s*["\'][^"\']+["\']/, 'CACHE_NAME = "admission-calendar-v25"')
       .replace(/assets\/js\/main-shell\.js\?v=[^"\']+/g, "assets/js/main-shell.js?v=" + assetVersion)
       .replace(/assets\/css\/main-shell\.css\?v=[^"\']+/g, "assets/css/main-shell.css?v=" + assetVersion);
     fs.writeFileSync(workerPath, worker, "utf8");

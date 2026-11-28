@@ -6,10 +6,15 @@ const fs = require("node:fs");
 
 const rootWrangler = fs.readFileSync("wrangler.toml", "utf8");
 const releaseClient = fs.readFileSync("assets/js/release-updates.js", "utf8");
+const worker = fs.readFileSync("workers/assistant.mjs", "utf8");
 const workflowDirectory = ".github/workflows";
 
-test("Pages configuration has no binding to the removed UpdateHub Durable Object", () => {
-  assert.doesNotMatch(rootWrangler, /durable_objects|UPDATE_HUB|script_name/);
+test("only the admission assistant Durable Object is configured; the removed UpdateHub stays absent", () => {
+  assert.match(rootWrangler, /name\s*=\s*"RATE_LIMITER"/);
+  assert.match(rootWrangler, /class_name\s*=\s*"AssistantRateLimiter"/);
+  assert.match(rootWrangler, /new_sqlite_classes\s*=\s*\["AssistantRateLimiter"\]/);
+  assert.doesNotMatch(rootWrangler, /UPDATE_HUB|script_name/);
+  assert.doesNotMatch(worker, /UpdateHub|WebSocket|\/api\/updates\/socket/);
 });
 
 test("Web Push and realtime Worker deployment are deferred rather than auto-deployed", () => {

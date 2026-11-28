@@ -10,6 +10,8 @@ const EXPECTED = [
   "assets/fonts/hind-siliguri-600.woff2",
   "assets/js/release-updates.js",
   "assets/css/release-updates.css",
+  "assets/js/ai-assistant.js",
+  "assets/css/ai-assistant.css",
   "data/admission-records.json",
   "assets/js/theme-init.js",
   "_headers", "assets/css/main-shell.css", "assets/favicon.svg", "assets/js/main-shell.js",
@@ -37,10 +39,12 @@ function smokeTest() {
   if (typeof release.id !== "string" || !release.id) throw new Error("Published release manifest has no release ID.");
   if (!html.includes('<meta name="calendar-release" content="' + release.id + '">') || html.includes("__CALENDAR_RELEASE_ID__")) throw new Error("Published HTML release ID is not exact.");
   const app = fs.readFileSync(path.join(DIST, "assets/js/main-shell.js"), "utf8");
+  const ai = fs.readFileSync(path.join(DIST, "assets/js/ai-assistant.js"), "utf8");
   const data = JSON.parse(fs.readFileSync(publishedDataPath, "utf8"));
   const css = fs.readFileSync(path.join(DIST, "assets/css/main-shell.css"), "utf8");
   const sw = fs.readFileSync(path.join(DIST, "sw.js"), "utf8");
   if (!html.includes("assets/js/release-updates.js") || !html.includes("assets/css/release-updates.css")) throw new Error("Release update assets are not linked from the production page.");
+  if (!html.includes("assets/js/ai-assistant.js") || !html.includes("assets/css/ai-assistant.css") || !ai.includes("ASSISTANT_API_URL")) throw new Error("AI assistant assets are not linked or built.");
   const releaseClient = fs.readFileSync(path.join(DIST, "assets/js/release-updates.js"), "utf8");
   if (!releaseClient.includes("/release.json") || !releaseClient.includes('cache: "no-store"') || !releaseClient.includes("const CHECK_INTERVAL_MS = 300_000") || !releaseClient.includes("window.setInterval(checkReleaseManifest, CHECK_INTERVAL_MS)") || !releaseClient.includes("window.location.reload()") || /WebSocket|connectRealtime|scheduleReconnect/.test(releaseClient)) throw new Error("Five-minute foreground-only release polling is missing or a backend socket remains enabled.");
   const requiredPages = ["page-dashboard", "page-calendar", "page-universities", "page-info", "page-notices", "page-profile"];
@@ -53,6 +57,7 @@ function smokeTest() {
   if (/WebSocket|connectRealtime|scheduleRealtimeReconnect|\/api\/updates\/socket/.test(app)) throw new Error("An unavailable realtime backend must not be referenced by the application shell.");
   if (!sw.includes('addEventListener("push"') || !sw.includes('addEventListener("notificationclick"')) throw new Error("Service worker push/notification-click handling is missing.");
   if (!sw.includes("admission-records.json") || !sw.includes("DATA_CACHE")) throw new Error("Service worker must support network-first caching for admission-records.json.");
+  if (!sw.includes("assets/css/ai-assistant.css?v=20261128-ai-1") || !sw.includes("assets/js/ai-assistant.js?v=20261128-ai-1")) throw new Error("Service worker must precache the assistant assets.");
   if (!sw.includes("assets/css/release-updates.css?v=20261128-polling-1") || !sw.includes("assets/js/release-updates.js?v=20261128-polling-1")) throw new Error("Service worker must precache the release update assets.");
   if (!css.includes(".sidebar{display:none}") || !css.includes(".mobile-nav")) throw new Error("Responsive navigation styles are missing.");
   const ids = Array.from(html.matchAll(/\bid=["']([^"']+)["']/g), match => match[1]);

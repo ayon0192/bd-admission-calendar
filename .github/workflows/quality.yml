@@ -35,6 +35,10 @@ jobs:
           node --check assets/js/main-shell.js
           node --check assets/js/admission-core.js
           node --check assets/js/release-updates.js
+          node --check assets/js/ai-assistant.js
+          node --check workers/assistant.mjs
+          node --check workers/assistant-context.mjs
+          node --check workers/ai-config.mjs
           node --check scripts/build.cjs
           node --check scripts/build-redesigned.cjs
           node --check scripts/check-release.cjs
