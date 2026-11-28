@@ -240,7 +240,6 @@ test("Worker keeps Cloudflare protections but has no application-defined usage q
   assert.match(worker, /MAX_QUESTION_CHARS\\s*=\\s*500/);
   assert.match(worker, /MAX_REQUEST_BYTES\\s*=\\s*16000/);
   assert.match(worker, /MAX_COMPLETION_TOKENS\\s*=\\s*384/);
-  assert.match(worker, /৩০০০০|30000/);
   assert.match(worker, /এই তথ্য আমার কাছে নেই/);
   assert.doesNotMatch(worker, /SITE_DAILY_LIMIT|IP_DAILY_LIMIT|IP_MINUTE_LIMIT|askRateLimiter|CF-Connecting-IP|ipHashSecret|HMAC/);
 });
@@ -256,6 +255,7 @@ test("frontend sends bounded history and renders responses plus HTTPS source lin
   assert.equal(endpointUrl.pathname, "/api/chat");
   assert.match(js, /JSON\.stringify\(\{\s*question\s*,\s*page\s*,\s*history\s*\}\)/);
   assert.match(js, /conversationHistory\.slice\(-8\)/);
+  assert.match(js, /controller\.abort\(\), 30000/);
   assert.match(js, /textContent\s*=/);
   assert.match(js, /document\.createElement\("a"\)/);
   assert.match(js, /link\.rel = "noopener noreferrer"/);
@@ -407,12 +407,16 @@ test("static build, CSP, Wrangler and offline shell include the assistant assets
   const endpointUrl = new URL(endpoint[1]);
   assert.match(builder, /assets\/css\/ai-assistant\.css/);
   assert.match(builder, /assets\/js\/ai-assistant\.js/);
+  assert.match(builder, /assets\/css\/owner-select\.css/);
+  assert.match(builder, /assets\/js\/owner-select\.js/);
   const cspWorkerHost = headers.match(/connect-src 'self' (https:\/\/[^\s;]+)/);
   assert.ok(cspWorkerHost, "CSP must allow the assistant Worker host");
   assert.equal(new URL(cspWorkerHost[1]).hostname, endpointUrl.hostname);
   assert.match(sw, /ai-assistant\.css/);
   assert.match(sw, /ai-assistant\.js/);
-  assert.match(sw, /admission-calendar-v25/);
+  assert.match(sw, /owner-select\.css/);
+  assert.match(sw, /owner-select\.js/);
+  assert.match(sw, /admission-calendar-v26/);
   assert.match(wrangler, /main\s*=\s*"\.\/workers\/assistant\.mjs"/);
   assert.match(wrangler, /binding\s*=\s*"AI"/);
   assert.match(wrangler, /name\s*=\s*"RATE_LIMITER"/);
