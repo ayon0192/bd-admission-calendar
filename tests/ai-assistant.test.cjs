@@ -446,3 +446,32 @@ test("production font assets are copied into dist without writing into source fi
   const build = read("scripts/build.cjs");
   assert.ok(build.includes('const fontsOut = path.join(DIST, "assets", "fonts");'));
 });
+
+
+test("short RU date query returns its verified schedule and preserves Unit labels", async () => {
+  const { resolveDeterministicCalendarAnswer } = await import("../workers/assistant-context.mjs");
+  const data = {
+    universities: [
+      { id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" },
+      { id: "RUET", name: "রাজশাহী প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়", shortName: "Rajshahi University of Engineering & Technology" }
+    ],
+    admissionCycles: [
+      { id: "RU-2026-27", universityId: "RU" },
+      { id: "RUET-2026-27", universityId: "RUET" }
+    ],
+    admissionDetails: [],
+    events: [
+      { id: "RU-APP-DEADLINE", cycleId: "RU-2026-27", title: "অনলাইন আবেদন ও ফি জমার শেষ সময়", type: "application_deadline", dateOnly: "2026-11-30", verification: { status: "officially_confirmed" } },
+      { id: "RU-A-EXAM", cycleId: "RU-2026-27", title: "Unit A ভর্তি পরীক্ষা", type: "admission_test", dateOnly: "2027-02-20", verification: { status: "officially_confirmed" } },
+      { id: "RU-B-EXAM", cycleId: "RU-2026-27", title: "Unit B ভর্তি পরীক্ষা", type: "admission_test", dateOnly: "2027-02-12", verification: { status: "officially_confirmed" } },
+      { id: "RUET-EXAM", cycleId: "RUET-2026-27", title: "RUET ভর্তি পরীক্ষা", type: "admission_test", dateOnly: "2027-01-28", verification: { status: "authority_announced" } }
+    ],
+    examCenters: [], circulars: [], notices: [], sources: []
+  };
+  const answer = resolveDeterministicCalendarAnswer(data, "RU er date");
+  assert.match(answer, /রাজশাহী বিশ্ববিদ্যালয়/);
+  assert.match(answer, /৩০ নভেম্বর ২০২৬/);
+  assert.match(answer, /Unit A.*২০ ফেব্রুয়ারি ২০২৭/);
+  assert.match(answer, /Unit B.*১২ ফেব্রুয়ারি ২০২৭/);
+  assert.doesNotMatch(answer, /RUET|একক/);
+});
