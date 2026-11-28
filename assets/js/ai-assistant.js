@@ -2,7 +2,7 @@
   "use strict";
 
   // Worker URL: deploy the Worker first, then replace only this hostname.
-  const ASSISTANT_API_URL = "https://bd-admission-calendar.ayonpabnabd7216.workers.dev/api/chat";
+  const ASSISTANT_API_URL = "https://bdac.ayonpabnabd7216.workers.dev/api/chat";
   const MAX_QUESTION_CHARS = 500;
   const INITIAL_MESSAGE = "ভর্তি ক্যালেন্ডারের তথ্য নিয়ে প্রশ্ন করো। আমি শুধু এই সাইটের তথ্য থেকেই উত্তর দেব।";
 
