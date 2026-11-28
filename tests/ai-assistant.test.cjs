@@ -409,6 +409,8 @@ test("static build, CSP, Wrangler and offline shell include the assistant assets
   assert.match(builder, /assets\/js\/ai-assistant\.js/);
   assert.match(builder, /assets\/css\/owner-select\.css/);
   assert.match(builder, /assets\/js\/owner-select\.js/);
+  assert.match(headers, /script-src 'self'; style-src 'self'/);
+  assert.doesNotMatch(headers, /script-src[^\n]*(?:unsafe-inline|unsafe-eval)|style-src[^\n]*unsafe-inline/);
   const cspWorkerHost = headers.match(/connect-src 'self' (https:\/\/[^\s;]+)/);
   assert.ok(cspWorkerHost, "CSP must allow the assistant Worker host");
   assert.equal(new URL(cspWorkerHost[1]).hostname, endpointUrl.hostname);
