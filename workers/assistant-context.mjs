@@ -205,7 +205,7 @@ function questionWithHistory(question, history) {
 export function resolveDeterministicCalendarAnswer(data, question, history = []) {
   if (!data || typeof data !== "object" || typeof question !== "string") return null;
   const effectiveQuestion = questionWithHistory(question, history);
-  const asksDeadline = /(last\\s*date|deadline|abedon|application|আবেদন|শেষ\\s*সময়|শেষ\\s*তারিখ|জমার\\s*শেষ)/iu.test(effectiveQuestion);
+  const asksDeadline = /(last\s*date|deadline|abedon|application|আবেদন|শেষ\s*সময়|শেষ\s*তারিখ|জমার\s*শেষ)/iu.test(effectiveQuestion);
   if (!asksDeadline) return null;
 
   const terms = termsFor(effectiveQuestion);
