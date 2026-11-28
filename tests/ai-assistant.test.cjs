@@ -63,7 +63,7 @@ test("Worker security, model constant and all quota ceilings are explicit", () =
   assert.match(worker, /IP_DAILY_LIMIT\s*=\s*8/);
   assert.match(worker, /IP_MINUTE_LIMIT\s*=\s*2/);
   assert.match(worker, /MAX_QUESTION_CHARS\s*=\s*500/);
-  assert.match(worker, /MAX_COMPLETION_TOKENS\s*=\s*128/);
+  assert.match(worker, /MAX_COMPLETION_TOKENS\s*=\s*256/);
   assert.match(worker, /এই তথ্য আমার কাছে নেই/);
   assert.match(worker, /Ignore|উপেক্ষা/);
   assert.match(worker, /CF-Connecting-IP/);
@@ -132,7 +132,15 @@ test("Worker reserves quota before calling AI and returns Bengali quota messages
   const env = {
     ASSETS: { fetch: async () => new Response(JSON.stringify(data)) },
     RATE_LIMITER: { idFromName: () => "global", get: () => ({ fetch: async (_url, init) => { reserved = JSON.parse(init.body); return Response.json({ allowed: true }); } }) },
-    AI: { run: async (_model, input) => { aiCalls++; assert.match(input.messages[0].content, /QUESTION/); return { response: "১২ ফেব্রুয়ারি ২০২৭।" }; } }
+    AI: { run: async (_model, input) => {
+      aiCalls++;
+      assert.match(input.messages[0].content, /QUESTION/);
+      assert.equal(input.reasoning_effort, null);
+      assert.deepEqual(input.chat_template_kwargs, { enable_thinking: false, clear_thinking: true });
+      assert.equal(input.max_completion_tokens, 256);
+      assert.equal(Object.hasOwn(input, "max_tokens"), false);
+      return { response: "১২ ফেব্রুয়ারি ২০২৭।" };
+    } }
   };
   const request = () => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
     method: "POST", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.11" },
