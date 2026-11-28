@@ -61,7 +61,7 @@ function buildSite() {
   const shellCss = path.join(DIST, "assets", "css", "main-shell.css");
   fs.writeFileSync(shellCss, fs.readFileSync(shellCss, "utf8").replace(/@import\s+url\(["']([^"')]+)["']\);?\s*/g, (m, rel) => fs.readFileSync(path.join(ROOT, "assets", "css", rel), "utf8") + "\n"), "utf8");
   // Self-hosted fonts and their licence.
-  const fontsOut = path.join(ROOT, "assets", "fonts");
+  const fontsOut = path.join(DIST, "assets", "fonts");
   fs.mkdirSync(fontsOut, { recursive: true });
   for (const name of fs.readdirSync(path.join(ROOT, "assets", "fonts"))) fs.copyFileSync(path.join(ROOT, "assets", "fonts", name), path.join(fontsOut, name));
   return files;

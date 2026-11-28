@@ -229,3 +229,9 @@ test("static build, CSP, Wrangler and offline shell include the assistant assets
   assert.match(wrangler, /name\s*=\s*"RATE_LIMITER"/);
   assert.match(wrangler, /run_worker_first\s*=\s*\["\/api\/\*"\]/);
 });
+
+
+test("production font assets are copied into dist without writing into source files", () => {
+  const build = read("scripts/build.cjs");
+  assert.match(build, /const fontsOut = path\\.join\\(DIST, \"assets\", \"fonts\"\\)/);
+});
