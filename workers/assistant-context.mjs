@@ -340,7 +340,8 @@ export function resolveDeterministicCalendarAnswer(data, question, history = [])
     const id = normalize(university.id);
     const shortTokens = normalize(university.shortName || "").split(/[^\p{L}\p{M}\p{N}]+/u);
     const name = normalize(university.name || "");
-    const exactCode = exactCodes.includes(id) || rawTokens.some((token) =>
+    const fullNameMatch = Boolean(name && normalize(effectiveQuestion).includes(name));
+    const exactCode = fullNameMatch || exactCodes.includes(id) || rawTokens.some((token) =>
       token.length <= 5 && (id === token || shortTokens.includes(token))
     );
     const matchedTerms = terms.filter((term) => {
@@ -384,7 +385,7 @@ export function resolveDeterministicCalendarAnswer(data, question, history = [])
   const lines = matchedEvents.slice(0, 8).map(({ event, parsed }) =>
     `${safeString(event.title, 100) || "ভর্তি কার্যক্রম"} — ${dateFormat.format(parsed)}`
   );
-  return `${university.name}-এর ২০২৬–২০২৭ শিক্ষাবর্ষের প্রকাশিত তারিখ:\n${lines.join("; ")}।`;
+  return `${university.name}-এর প্রকাশিত তারিখ:\n${lines.join("; ")}।`;
 }
 
 export function buildRelevantContext(data, question, page = "", history = []) {
