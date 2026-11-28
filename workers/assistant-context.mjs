@@ -184,22 +184,113 @@ function addWithRelations(selected, record, data, terms) {
   }
 }
 
-function latestUserQuestion(history) {
+const FOLLOW_UP_PATTERN = /ভালো করে|ভাল করে|আবার|দেখে বল|দেখো|যাচাই কর|যাচাই|আগের|ওটা|সেটা|তাহলে|আরও|নিশ্চিত|সত্যি|ঠিক তো|sure|source|সূত্র|প্রমাণ|লিংক|link|cite|citation|valo kore|bhalo kore|abar|dekhe bolo|dekho|check kore|verify kore|eta abar/i;
+const SMALL_TALK_PATTERN = /^(?:hi|hello|hey|হাই|হ্যালো|আসসালামু আলাইকুম|সালাম|ধন্যবাদ|thanks|thank you|bye|goodbye|আচ্ছা|ঠিক আছে)[!.?\s]*$/i;
+const SOURCE_REQUEST_PATTERN = /source|সূত্র|প্রমাণ|লিংক|link|cite|citation|reference/i;
+const VERIFY_REQUEST_PATTERN = /sure|নিশ্চিত|সত্যি|ঠিক তো|ঠিক আছে তো|ভুল বলছ|বিশ্বাস করব/i;
+
+function latestTopicQuestion(history) {
   if (!Array.isArray(history)) return "";
   for (let index = history.length - 1; index >= 0; index--) {
     const turn = history[index];
-    if (turn && turn.role === "user" && typeof turn.content === "string") return safeString(turn.content, 500);
+    if (!turn || turn.role !== "user" || typeof turn.content !== "string") continue;
+    const content = safeString(turn.content, 500);
+    if (!content || FOLLOW_UP_PATTERN.test(content) || SMALL_TALK_PATTERN.test(content)) continue;
+    return content;
   }
   return "";
 }
 
-function isFollowUp(question) {
-  return /ভালো করে|ভাল করে|আবার|দেখে বল|দেখো|যাচাই কর|আগের|ওটা|সেটা|তাহলে|আরও|valo kore|bhalo kore|abar|dekhe bolo|dekho|check kore|verify kore|eta abar/i.test(question);
+function questionWithHistory(question, history) {
+  const previous = latestTopicQuestion(history);
+  return previous && FOLLOW_UP_PATTERN.test(question) ? `${previous} ${question}` : question;
 }
 
-function questionWithHistory(question, history) {
-  const previous = latestUserQuestion(history);
-  return previous && isFollowUp(question) ? `${previous} ${question}` : question;
+function matchingRecords(data, question) {
+  const terms = termsFor(question);
+  const matches = [];
+  for (const collection of COLLECTIONS) {
+    const records = Array.isArray(data[collection]) ? data[collection] : [];
+    for (const record of records) {
+      const related = relatedRecords(record, data, terms);
+      const score = scoreRecord(record, terms, related);
+      if (score >= 3) matches.push({ record, related, score });
+    }
+  }
+  return matches.sort((a, b) => b.score - a.score).slice(0, 5);
+}
+
+function sourceIdsFrom(record) {
+  return [
+    record?.sourceId,
+    ...(Array.isArray(record?.verification?.sources) ? record.verification.sources.map((item) => item?.sourceId) : [])
+  ].filter((id) => typeof id === "string");
+}
+
+function sourcesForMatches(data, matches) {
+  const ids = new Set();
+  for (const match of matches) {
+    for (const record of [match.record, ...(match.related || [])]) {
+      for (const id of sourceIdsFrom(record)) ids.add(id);
+    }
+  }
+  const sources = Array.isArray(data.sources) ? data.sources : [];
+  return [...ids].map((id) => sources.find((source) => source.id === id)).filter((source) =>
+    source && typeof source.url === "string" && /^https:\/\//i.test(source.url)
+  ).slice(0, 2);
+}
+
+function verificationLabel(status) {
+  if (status === "officially_confirmed" || status === "authority_announced") return "অফিসিয়াল সূত্রে নিশ্চিত";
+  if (status === "trusted_secondary" || status === "secondary_source") return "বিশ্বস্ত গৌণ সূত্রে পাওয়া";
+  if (status === "pending" || status === "needs_review") return "এখনো পুরোপুরি যাচাই হয়নি";
+  return "";
+}
+
+function formatRecordDate(record) {
+  const raw = record?.startsAt || record?.dateOnly || record?.exam?.startsAt || record?.application?.closesAt;
+  if (typeof raw !== "string") return "";
+  const parsed = /^\d{4}-\d{2}-\d{2}$/.test(raw) ? new Date(`${raw}T00:00:00Z`) : new Date(raw);
+  if (Number.isNaN(parsed.getTime())) return "";
+  return DATE_TIME_FORMAT.format(parsed);
+}
+
+export function resolveSmallTalkAnswer(question) {
+  if (typeof question !== "string") return null;
+  const clean = question.trim();
+  if (/^(?:hi|hello|hey|হাই|হ্যালো|আসসালামু আলাইকুম|সালাম)[!.?\s]*$/i.test(clean)) {
+    return "হ্যালো! ভর্তি ক্যালেন্ডারের বিশ্ববিদ্যালয়, আবেদন, যোগ্যতা, পরীক্ষা, তারিখ ও সূত্র নিয়ে প্রশ্ন করতে পারো।";
+  }
+  if (/^(?:ধন্যবাদ|thanks|thank you)[!.?\s]*$/i.test(clean)) return "স্বাগতম। ভর্তি-সংক্রান্ত আর কোনো তথ্য জানতে চাইলে প্রশ্ন করো।";
+  if (/^(?:bye|goodbye)[!.?\s]*$/i.test(clean)) return "আবার কথা হবে।";
+  if (/আমি কী কী জানতে পারি|তুমি কী করতে পার|what can you do|help me/i.test(clean)) {
+    return "বিশ্ববিদ্যালয়ভিত্তিক আবেদন, যোগ্যতা, ফি, ইউনিট, ভর্তি পরীক্ষা, আসন, সিলেবাস, নোটিশ ও তথ্যসূত্র সম্পর্কে ক্যালেন্ডারের রেকর্ড থেকে উত্তর দিতে পারি।";
+  }
+  return null;
+}
+
+export function resolveFollowUpAnswer(data, question, history = []) {
+  if (!data || typeof data !== "object" || typeof question !== "string") return null;
+  const sourceRequest = SOURCE_REQUEST_PATTERN.test(question);
+  const verifyRequest = VERIFY_REQUEST_PATTERN.test(question);
+  if (!sourceRequest && !verifyRequest) return null;
+  const topic = latestTopicQuestion(history);
+  if (!topic) return null;
+  const matches = matchingRecords(data, topic);
+  if (!matches.length) return null;
+  const sources = sourcesForMatches(data, matches);
+  if (sourceRequest) {
+    if (!sources.length) return null;
+    return `তথ্যসূত্র: ${sources.map((source) => `${safeString(source.label || source.id, 180)} — ${source.url}`).join(" | ")}`;
+  }
+  const best = matches[0].record;
+  const related = matches[0].related || [];
+  const status = verificationLabel(best.verification?.status) ||
+    verificationLabel(related.find((item) => item?.verification?.status)?.verification?.status);
+  const date = formatRecordDate(best) || related.map(formatRecordDate).find(Boolean) || "";
+  if (!status) return "ক্যালেন্ডারের রেকর্ডে তথ্যটি আছে, তবে এর যাচাইয়ের অবস্থা নিশ্চিত নয়।";
+  const sourceText = sources[0]?.label ? ` সূত্র: ${safeString(sources[0].label, 140)}.` : "";
+  return `${status}${date ? `। সংশ্লিষ্ট তারিখ: ${date}` : ""}।${sourceText}`;
 }
 
 export function resolveDeterministicCalendarAnswer(data, question, history = []) {
