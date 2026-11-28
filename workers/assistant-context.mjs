@@ -326,43 +326,66 @@ export function resolveDeterministicCalendarAnswer(data, question, history = [])
   if (!data || typeof data !== "object" || typeof question !== "string") return null;
   const effectiveQuestion = questionWithHistory(question, history);
   const asksDeadline = /(last\s*date|deadline|abedon|application|আবেদন|শেষ\s*সময়|শেষ\s*তারিখ|জমার\s*শেষ)/iu.test(effectiveQuestion);
-  if (!asksDeadline) return null;
+  const asksDate = asksDeadline || /\bdate\b|tarikh|তারিখ|কবে|schedule|routine/iu.test(effectiveQuestion);
+  if (!asksDate) return null;
 
-  const terms = termsFor(effectiveQuestion);
   const universities = Array.isArray(data.universities) ? data.universities : [];
   const cycles = Array.isArray(data.admissionCycles) ? data.admissionCycles : [];
   const events = Array.isArray(data.events) ? data.events : [];
-  const matches = [];
-  for (const event of events) {
-    if (event.type !== "application_deadline") continue;
-    const cycle = cycles.find((item) => item.id === event.cycleId);
-    const university = universities.find((item) => item.id === (event.universityId || cycle?.universityId));
-    if (!university) continue;
-    const universityText = normalize(JSON.stringify([university.id, university.name, university.shortName]));
-    const entityTerms = terms.filter((term) => universityText.includes(term));
-    if (!entityTerms.length) continue;
-    const status = event.verification?.status;
-    if (status && !["officially_confirmed", "authority_announced"].includes(status)) continue;
-    const rawDate = event.startsAt || event.dateOnly;
-    if (!rawDate) continue;
-    const parsed = /^\\d{4}-\\d{2}-\\d{2}$/.test(rawDate) ? new Date(`${rawDate}T00:00:00Z`) : new Date(rawDate);
-    if (Number.isNaN(parsed.getTime())) continue;
-    const score = entityTerms.reduce((total, term) => total + (term.length >= 5 ? 3 : 1), 0);
-    matches.push({ event, university, parsed, score });
-  }
-  matches.sort((a, b) => b.score - a.score);
-  if (!matches.length || (matches.length > 1 && matches[0].score === matches[1].score &&
-      matches[0].university.id !== matches[1].university.id)) return null;
+  const rawTokens = normalize(effectiveQuestion).match(/[\p{L}\p{M}\p{N}]+/gu) || [];
+  const terms = termsFor(effectiveQuestion);
+  const exactCodes = rawTokens.filter((token) => token.length <= 5 &&
+    universities.some((university) => normalize(university.id) === token));
+  let candidates = universities.map((university) => {
+    const id = normalize(university.id);
+    const shortTokens = normalize(university.shortName || "").split(/[^\p{L}\p{M}\p{N}]+/u);
+    const name = normalize(university.name || "");
+    const fullNameMatch = Boolean(name && normalize(effectiveQuestion).includes(name));
+    const exactCode = fullNameMatch || exactCodes.includes(id) || rawTokens.some((token) =>
+      token.length <= 5 && (id === token || shortTokens.includes(token))
+    );
+    const matchedTerms = terms.filter((term) => {
+      if (term.length <= 4) return id === term || shortTokens.includes(term);
+      return name.includes(term) || normalize(university.shortName || "").includes(term);
+    });
+    return { university, score: (exactCode ? 100 : 0) + matchedTerms.reduce((sum, term) => sum + (term.length >= 5 ? 3 : 1), 0), exactCode };
+  }).filter((item) => item.score > 0);
+  if (candidates.some((item) => item.exactCode)) candidates = candidates.filter((item) => item.exactCode);
+  candidates.sort((a, b) => b.score - a.score);
+  if (!candidates.length || (candidates.length > 1 && candidates[0].score === candidates[1].score &&
+      candidates[0].university.id !== candidates[1].university.id)) return null;
 
-  const match = matches[0];
-  const date = new Intl.DateTimeFormat("bn-BD", {
+  const university = candidates[0].university;
+  const matchedEvents = events.filter((event) => {
+    const cycle = cycles.find((item) => item.id === event.cycleId);
+    const eventUniversityId = event.universityId || cycle?.universityId;
+    if (eventUniversityId !== university.id) return false;
+    const status = event.verification?.status;
+    return (!status || ["officially_confirmed", "authority_announced"].includes(status)) &&
+      (!asksDeadline || event.type === "application_deadline") && (event.startsAt || event.dateOnly);
+  }).map((event) => {
+    const rawDate = event.startsAt || event.dateOnly;
+    const parsed = /^\d{4}-\d{2}-\d{2}$/.test(rawDate) ? new Date(`${rawDate}T00:00:00Z`) : new Date(rawDate);
+    return { event, parsed };
+  }).filter((item) => !Number.isNaN(item.parsed.getTime()))
+    .sort((a, b) => a.parsed - b.parsed);
+  if (!matchedEvents.length) return null;
+
+  const dateFormat = new Intl.DateTimeFormat("bn-BD", {
     day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Dhaka"
-  }).format(match.parsed);
-  const time = match.event.startsAt ? new Intl.DateTimeFormat("bn-BD", {
-    hour: "numeric", minute: "2-digit", hour12: true, timeZone: "Asia/Dhaka"
-  }).format(match.parsed) : "";
-  const deadline = time ? `${date}, ${time}` : date;
-  return `${match.university.name}-এর অনলাইন আবেদনের শেষ সময় ${deadline}।`;
+  });
+  if (asksDeadline) {
+    const { event, parsed } = matchedEvents[0];
+    const time = event.startsAt ? new Intl.DateTimeFormat("bn-BD", {
+      hour: "numeric", minute: "2-digit", hour12: true, timeZone: "Asia/Dhaka"
+    }).format(parsed) : "";
+    return `${university.name}-এর অনলাইন আবেদনের শেষ সময় ${dateFormat.format(parsed)}${time ? `, ${time}` : ""}।`;
+  }
+
+  const lines = matchedEvents.slice(0, 8).map(({ event, parsed }) =>
+    `${safeString(event.title, 100) || "ভর্তি কার্যক্রম"} — ${dateFormat.format(parsed)}`
+  );
+  return `${university.name}-এর প্রকাশিত তারিখ:\n${lines.join("; ")}।`;
 }
 
 export function buildRelevantContext(data, question, page = "", history = []) {

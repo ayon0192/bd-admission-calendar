@@ -233,7 +233,7 @@ test("Worker answers verified RU deadline directly from calendar data and resolv
 test("Worker security, model constant and all quota ceilings are explicit", () => {
   const worker = read("workers/assistant.mjs");
   const config = read("workers/ai-config.mjs");
-  assert.match(config, /export const AI_MODEL = "@cf\/zai-org\/glm-4\.7-flash"/);
+  assert.match(config, /export const AI_MODEL = "@cf\/google\/gemma-4-26b-a4b-it"/);
   assert.match(worker, /https:\/\/bd-admission-calendar\.pages\.dev/);
   assert.match(worker, /https:\/\/bdac\.ayon0192\.workers\.dev/);
   assert.doesNotMatch(worker, /https:\/\/\*\.pages\.dev|\*\.pages\.dev|Access-Control-Allow-Origin['"]?\s*:\s*['"]\*['"]/i);
@@ -241,7 +241,7 @@ test("Worker security, model constant and all quota ceilings are explicit", () =
   assert.match(worker, /IP_DAILY_LIMIT\s*=\s*8/);
   assert.match(worker, /IP_MINUTE_LIMIT\s*=\s*2/);
   assert.match(worker, /MAX_QUESTION_CHARS\s*=\s*500/);
-  assert.match(worker, /MAX_COMPLETION_TOKENS\s*=\s*256/);
+  assert.match(worker, /MAX_COMPLETION_TOKENS\s*=\s*384/);
   assert.match(worker, /এই তথ্য আমার কাছে নেই/);
   assert.match(worker, /Ignore|উপেক্ষা/);
   assert.match(worker, /CF-Connecting-IP/);
@@ -334,14 +334,14 @@ test("Worker reserves quota before calling AI and returns Bengali quota messages
       assert.match(input.messages[0].content, /QUESTION/);
       assert.equal(input.reasoning_effort, null);
       assert.deepEqual(input.chat_template_kwargs, { enable_thinking: false, clear_thinking: true });
-      assert.equal(input.max_completion_tokens, 256);
+      assert.equal(input.max_completion_tokens, 384);
       assert.equal(Object.hasOwn(input, "max_tokens"), false);
       return { response: "১২ ফেব্রুয়ারি ২০২৭।" };
     } }
   };
   const request = () => worker.fetch(new Request("https://worker.example.workers.dev/api/chat", {
     method: "POST", headers: { Origin: "https://bd-admission-calendar.pages.dev", "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.11" },
-    body: JSON.stringify({ question: "রাজশাহী বিশ্ববিদ্যালয়ের Unit B ভর্তি পরীক্ষা কবে?", page: "calendar" })
+    body: JSON.stringify({ question: "RU er Unit B eligibility ki?", page: "calendar" })
   }), env);
   const response = await request();
   assert.equal(response.status, 200);
@@ -445,4 +445,33 @@ test("static build, CSP, Wrangler and offline shell include the assistant assets
 test("production font assets are copied into dist without writing into source files", () => {
   const build = read("scripts/build.cjs");
   assert.ok(build.includes('const fontsOut = path.join(DIST, "assets", "fonts");'));
+});
+
+
+test("short RU date query returns its verified schedule and preserves Unit labels", async () => {
+  const { resolveDeterministicCalendarAnswer } = await import("../workers/assistant-context.mjs");
+  const data = {
+    universities: [
+      { id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" },
+      { id: "RUET", name: "রাজশাহী প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়", shortName: "Rajshahi University of Engineering & Technology" }
+    ],
+    admissionCycles: [
+      { id: "RU-2026-27", universityId: "RU" },
+      { id: "RUET-2026-27", universityId: "RUET" }
+    ],
+    admissionDetails: [],
+    events: [
+      { id: "RU-APP-DEADLINE", cycleId: "RU-2026-27", title: "অনলাইন আবেদন ও ফি জমার শেষ সময়", type: "application_deadline", dateOnly: "2026-11-30", verification: { status: "officially_confirmed" } },
+      { id: "RU-A-EXAM", cycleId: "RU-2026-27", title: "Unit A ভর্তি পরীক্ষা", type: "admission_test", dateOnly: "2027-02-20", verification: { status: "officially_confirmed" } },
+      { id: "RU-B-EXAM", cycleId: "RU-2026-27", title: "Unit B ভর্তি পরীক্ষা", type: "admission_test", dateOnly: "2027-02-12", verification: { status: "officially_confirmed" } },
+      { id: "RUET-EXAM", cycleId: "RUET-2026-27", title: "RUET ভর্তি পরীক্ষা", type: "admission_test", dateOnly: "2027-01-28", verification: { status: "authority_announced" } }
+    ],
+    examCenters: [], circulars: [], notices: [], sources: []
+  };
+  const answer = resolveDeterministicCalendarAnswer(data, "RU er date");
+  assert.match(answer, /রাজশাহী বিশ্ববিদ্যালয়/);
+  assert.match(answer, /৩০ নভেম্বর,?\s*২০২৬/);
+  assert.match(answer, /Unit A.*২০ ফেব্রুয়ারি,?\s*২০২৭/);
+  assert.match(answer, /Unit B.*১২ ফেব্রুয়ারি,?\s*২০২৭/);
+  assert.doesNotMatch(answer, /RUET|একক/);
 });

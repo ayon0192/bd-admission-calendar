@@ -118,7 +118,12 @@
     pending = true;
     sendButton.disabled = true;
     input.disabled = true;
-    const waiting = addMessage("সাইটের তথ্য মিলিয়ে দেখছি…", "assistant bdac-ai__message--waiting");
+    const waiting = addMessage("তথ্য মিলিয়ে উত্তর তৈরি করছি…", "assistant bdac-ai__message--waiting");
+    const controller = new AbortController();
+    const slowNoticeTimer = window.setTimeout(() => {
+      if (waiting.isConnected) waiting.textContent = "উত্তর তৈরি হতে একটু সময় লাগছে…";
+    }, 8000);
+    const timeoutTimer = window.setTimeout(() => controller.abort(), 30000);
     const page = currentPage();
     const history = conversationHistory.slice(-8);
     try {
@@ -129,7 +134,8 @@
         cache: "no-store",
         redirect: "error",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, page, history })
+        body: JSON.stringify({ question, page, history }),
+        signal: controller.signal
       });
       let payload = null;
       try { payload = await response.json(); } catch (_) { /* handled below */ }
@@ -147,8 +153,14 @@
       }
     } catch (_) {
       waiting.remove();
-      addMessage("এআই সেবার সঙ্গে সংযোগ হচ্ছে না। ইন্টারনেট সংযোগ দেখে পরে আবার চেষ্টা করুন।", "assistant");
+      if (controller.signal.aborted) {
+        addMessage("উত্তর তৈরি করতে ৩০ সেকেন্ডের বেশি লাগছে। পরে আবার চেষ্টা করুন।", "assistant");
+      } else {
+        addMessage("এআই সেবার সঙ্গে সংযোগ হচ্ছে না। ইন্টারনেট সংযোগ দেখে পরে আবার চেষ্টা করুন।", "assistant");
+      }
     } finally {
+      window.clearTimeout(slowNoticeTimer);
+      window.clearTimeout(timeoutTimer);
       pending = false;
       sendButton.disabled = false;
       input.disabled = false;
