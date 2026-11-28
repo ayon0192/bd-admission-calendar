@@ -233,7 +233,7 @@ test("Worker answers verified RU deadline directly from calendar data and resolv
 test("Worker security, model constant and all quota ceilings are explicit", () => {
   const worker = read("workers/assistant.mjs");
   const config = read("workers/ai-config.mjs");
-  assert.match(config, /export const AI_MODEL = "@cf\/zai-org\/glm-4\.7-flash"/);
+  assert.match(config, /export const AI_MODEL = "@cf\\/google\\/gemma-4-26b-a4b-it"/);
   assert.match(worker, /https:\/\/bd-admission-calendar\.pages\.dev/);
   assert.match(worker, /https:\/\/bdac\.ayon0192\.workers\.dev/);
   assert.doesNotMatch(worker, /https:\/\/\*\.pages\.dev|\*\.pages\.dev|Access-Control-Allow-Origin['"]?\s*:\s*['"]\*['"]/i);
@@ -241,7 +241,7 @@ test("Worker security, model constant and all quota ceilings are explicit", () =
   assert.match(worker, /IP_DAILY_LIMIT\s*=\s*8/);
   assert.match(worker, /IP_MINUTE_LIMIT\s*=\s*2/);
   assert.match(worker, /MAX_QUESTION_CHARS\s*=\s*500/);
-  assert.match(worker, /MAX_COMPLETION_TOKENS\s*=\s*256/);
+  assert.match(worker, /MAX_COMPLETION_TOKENS\\s*=\\s*384/);
   assert.match(worker, /এই তথ্য আমার কাছে নেই/);
   assert.match(worker, /Ignore|উপেক্ষা/);
   assert.match(worker, /CF-Connecting-IP/);
