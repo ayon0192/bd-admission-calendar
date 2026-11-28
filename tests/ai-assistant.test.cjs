@@ -237,9 +237,9 @@ test("Worker keeps Cloudflare protections but has no application-defined usage q
   assert.ok(worker.includes("https://bd-admission-calendar.pages.dev"));
   assert.ok(worker.includes("https://bdac.ayon0192.workers.dev"));
   assert.doesNotMatch(worker, /Access-Control-Allow-Origin[^\n]*\*/i);
-  assert.match(worker, /MAX_QUESTION_CHARS\\s*=\\s*500/);
-  assert.match(worker, /MAX_REQUEST_BYTES\\s*=\\s*16000/);
-  assert.match(worker, /MAX_COMPLETION_TOKENS\\s*=\\s*384/);
+  assert.match(worker, /MAX_QUESTION_CHARS\s*=\s*500/);
+  assert.match(worker, /MAX_REQUEST_BYTES\s*=\s*16000/);
+  assert.match(worker, /MAX_COMPLETION_TOKENS\s*=\s*384/);
   assert.match(worker, /এই তথ্য আমার কাছে নেই/);
   assert.doesNotMatch(worker, /SITE_DAILY_LIMIT|IP_DAILY_LIMIT|IP_MINUTE_LIMIT|askRateLimiter|CF-Connecting-IP|ipHashSecret|HMAC/);
 });
