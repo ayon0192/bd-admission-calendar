@@ -45,7 +45,7 @@ test("outer and inner traversal, browser-first explanation, optional AI and brow
   assert.match(js, /Base branch: main/);
   assert.match(js, /Suggested working branch: owner-select/);
   assert.match(js, /data\/admission-records\.json/);
-  assert.match(js, /পুল রিকোয়েস্ট/);
+  assert.match(js, /Pull Request/);
   assert.match(js, /node --test/);
   assert.match(js, /navigator\.clipboard\.writeText/);
   assert.doesNotMatch(js, /fetch\([^)]*prompt/i);
