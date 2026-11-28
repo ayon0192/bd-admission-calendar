@@ -325,20 +325,20 @@ export function resolveFollowUpAnswer(data, question, history = []) {
 export function resolveDeterministicCalendarAnswer(data, question, history = []) {
   if (!data || typeof data !== "object" || typeof question !== "string") return null;
   const effectiveQuestion = questionWithHistory(question, history);
-  const asksDeadline = /(last\\s*date|deadline|abedon|application|আবেদন|শেষ\\s*সময়|শেষ\\s*তারিখ|জমার\\s*শেষ)/iu.test(effectiveQuestion);
-  const asksDate = asksDeadline || /\\bdate\\b|tarikh|তারিখ|কবে|schedule|routine/iu.test(effectiveQuestion);
+  const asksDeadline = /(last\s*date|deadline|abedon|application|আবেদন|শেষ\s*সময়|শেষ\s*তারিখ|জমার\s*শেষ)/iu.test(effectiveQuestion);
+  const asksDate = asksDeadline || /\bdate\b|tarikh|তারিখ|কবে|schedule|routine/iu.test(effectiveQuestion);
   if (!asksDate) return null;
 
   const universities = Array.isArray(data.universities) ? data.universities : [];
   const cycles = Array.isArray(data.admissionCycles) ? data.admissionCycles : [];
   const events = Array.isArray(data.events) ? data.events : [];
-  const rawTokens = normalize(effectiveQuestion).match(/[\\p{L}\\p{M}\\p{N}]+/gu) || [];
+  const rawTokens = normalize(effectiveQuestion).match(/[\p{L}\p{M}\p{N}]+/gu) || [];
   const terms = termsFor(effectiveQuestion);
   const exactCodes = rawTokens.filter((token) => token.length <= 5 &&
     universities.some((university) => normalize(university.id) === token));
   let candidates = universities.map((university) => {
     const id = normalize(university.id);
-    const shortTokens = normalize(university.shortName || "").split(/[^\\p{L}\\p{M}\\p{N}]+/u);
+    const shortTokens = normalize(university.shortName || "").split(/[^\p{L}\p{M}\p{N}]+/u);
     const name = normalize(university.name || "");
     const exactCode = exactCodes.includes(id) || rawTokens.some((token) =>
       token.length <= 5 && (id === token || shortTokens.includes(token))
@@ -364,7 +364,7 @@ export function resolveDeterministicCalendarAnswer(data, question, history = [])
       (!asksDeadline || event.type === "application_deadline") && (event.startsAt || event.dateOnly);
   }).map((event) => {
     const rawDate = event.startsAt || event.dateOnly;
-    const parsed = /^\\d{4}-\\d{2}-\\d{2}$/.test(rawDate) ? new Date(`${rawDate}T00:00:00Z`) : new Date(rawDate);
+    const parsed = /^\d{4}-\d{2}-\d{2}$/.test(rawDate) ? new Date(`${rawDate}T00:00:00Z`) : new Date(rawDate);
     return { event, parsed };
   }).filter((item) => !Number.isNaN(item.parsed.getTime()))
     .sort((a, b) => a.parsed - b.parsed);
@@ -384,7 +384,7 @@ export function resolveDeterministicCalendarAnswer(data, question, history = [])
   const lines = matchedEvents.slice(0, 8).map(({ event, parsed }) =>
     `${safeString(event.title, 100) || "ভর্তি কার্যক্রম"} — ${dateFormat.format(parsed)}`
   );
-  return `${university.name}-এর ২০২৬–২০২৭ শিক্ষাবর্ষের প্রকাশিত তারিখ:\\n${lines.join("; ")}।`;
+  return `${university.name}-এর ২০২৬–২০২৭ শিক্ষাবর্ষের প্রকাশিত তারিখ:\n${lines.join("; ")}।`;
 }
 
 export function buildRelevantContext(data, question, page = "", history = []) {
