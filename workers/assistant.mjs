@@ -149,7 +149,7 @@ function ownerElementContext(element) {
 function aiFailureResponse(error, respond) {
   const status = Number(error?.status || error?.statusCode || 0);
   const detail = String(error?.message || error || "");
-  if (status === 429 || /\\b429\\b|quota|rate.?limit|usage.{0,12}limit|exceed.{0,12}(quota|limit)/i.test(detail)) {
+  if (status === 429 || /\b429\b|quota|rate.?limit|usage.{0,12}limit|exceed.{0,12}(quota|limit)/i.test(detail)) {
     return respond(429, { message: "Cloudflare-এর এআই বরাদ্দ আপাতত শেষ হয়েছে। পরে আবার চেষ্টা করো। ক্যালেন্ডারের প্রকাশিত তারিখের প্রশ্নগুলো এআই ছাড়াই দেখা যাবে।" });
   }
   return respond(503, { message: "এই মুহূর্তে এআই উত্তর দিতে পারছে না। একটু পরে আবার চেষ্টা করো।" });
