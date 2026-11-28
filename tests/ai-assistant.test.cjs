@@ -159,7 +159,20 @@ test("context builder resolves a romanized follow-up using the prior user questi
   assert.match(context, /2026-11-30/);
 });
 
-test("context builder refuses to dump the dataset for unrelated questions", async () => {
+
+test("context builder retrieves admission-detail facts for romanized university questions", async () => {
+  const { buildRelevantContext } = await import("../workers/assistant-context.mjs");
+  const data = {
+    universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়", shortName: "Rajshahi University" }],
+    admissionCycles: [{ id: "RU-2026-27", universityId: "RU" }],
+    admissionDetails: [{ id: "RU-B-2026-27", cycleId: "RU-2026-27", unitGroup: "Unit B", application: { applicationUrl: "https://admission.ru.ac.bd", closesAt: "2026-11-30T23:59:00+06:00" }, verification: { status: "officially_confirmed" } }],
+    events: [], examCenters: [], circulars: [], notices: [], sources: []
+  };
+  const context = buildRelevantContext(data, "RU er application date kobe?");
+  assert.match(context, /RU-B-2026-27/);
+  assert.match(context, /৩০ নভেম্বর|2026-11-30/);
+});
+\ntest("context builder refuses to dump the dataset for unrelated questions", async () => {
   const { buildRelevantContext } = await import("../workers/assistant-context.mjs");
   const data = {
     universities: [{ id: "RU", name: "রাজশাহী বিশ্ববিদ্যালয়" }],
